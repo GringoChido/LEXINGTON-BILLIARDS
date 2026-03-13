@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Fonts */
+  --font-heading: var(--font-barlow-condensed), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Fluid type scale — Perfect Fourth (1.333) */
+  --text-display: clamp(3.5rem, 5vw + 1.5rem, 5.61rem);
+  --text-h1: clamp(3.157rem, 4vw + 1rem, 4.209rem);
+  --text-h2: clamp(2.369rem, 3vw + 1.2rem, 3.157rem);
+  --text-h3: clamp(1.777rem, 2vw + 1.2rem, 2.369rem);
+  --text-h4: clamp(1.5rem, 1.5vw + 1rem, 1.777rem);
+  --text-h5: clamp(1.125rem, 1vw + 0.9rem, 1.333rem);
+
+  /* Colors */
+  --color-background: #111111;
+  --color-surface: #1C1C1C;
+  --color-surface-alt: #252525;
+  --color-text: #F5F0EB;
+  --color-text-secondary: rgba(245, 240, 235, 0.7);
+  --color-text-tertiary: rgba(245, 240, 235, 0.45);
+  --color-border: rgba(245, 240, 235, 0.12);
+  --color-accent: #F5C518;
+  --color-accent-hover: #D4A910;
+  --color-accent-subtle: rgba(245, 197, 24, 0.15);
+  --color-accent-warm: #D97706;
+  --color-accent-teal: #0D9488;
+  --color-success: #22C55E;
+  --color-error: #EF4444;
+
+  /* Container */
+  --container-max: 90rem;
+  --content-max: 75rem;
+  --narrow-max: 42rem;
+
+  /* Section spacing */
+  --section-padding-y: clamp(4rem, 6vw, 6rem);
+  --section-padding-x: clamp(1rem, 4vw, 4rem);
+
+  /* Header */
+  --header-height: 72px;
+  --header-height-mobile: 64px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+/* Heading utilities */
+.heading-display {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.heading-section {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-warm);
+}
+
+/* Hero entrance animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
