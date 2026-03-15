@@ -15,7 +15,6 @@ const brandLogos: Record<string, string> = {
   "bullfrog": "/images/brands/bullfrog.svg",
   "jacuzzi": "/images/brands/jacuzzi.jpg",
   "big-green-egg": "/images/brands/big-green-egg.svg",
-  "custom-multicades": "/images/brands/cl-bailey.png",
   "raw-thrills": "/images/brands/raw-thrills.png",
 }
 
@@ -38,24 +37,21 @@ export const BrandCard = ({ brand, index = 0, reversed = false }: BrandCardProps
         reversed ? "lg:[direction:rtl]" : ""
       }`}
     >
-      {/* Brand logo area */}
-      <div
-        className="aspect-[4/3] rounded-xl overflow-hidden lg:[direction:ltr] flex items-center justify-center p-12"
-        style={{ background: "var(--color-surface-alt)" }}
-      >
+      {/* Brand logo — floating, no background */}
+      <div className="flex items-center justify-center py-8 lg:py-12 lg:[direction:ltr]">
         {logo ? (
-          <div className="relative w-full h-full max-w-[280px] max-h-[140px]">
+          <div className="relative w-full max-w-[260px] h-[100px]">
             <Image
               src={logo}
               alt={`${brand.name} logo`}
               fill
               className="object-contain"
-              sizes="280px"
+              sizes="260px"
             />
           </div>
         ) : (
           <span
-            className="heading text-[length:var(--text-h3)] text-center px-6"
+            className="heading text-[length:var(--text-h2)] text-center"
             style={{ color: "var(--color-text-muted)" }}
           >
             {brand.name}

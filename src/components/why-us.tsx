@@ -26,13 +26,13 @@ export const WhyUs = () => {
   return (
     <section
       className="py-[var(--section-py)] px-[var(--section-px)]"
-      style={{ background: "var(--color-background)" }}
+      style={{ background: "var(--color-dark)" }}
     >
       <div className="max-w-[var(--content-max)] mx-auto">
         {/* Heading */}
         <div className="text-center mx-auto max-w-[48ch] mb-12 lg:mb-16">
-          <p className="section-label mb-4">Why Lexington Billiards</p>
-          <h2 className="heading text-[length:var(--text-h2)] text-[var(--color-text)]">
+          <p className="section-label !text-[var(--color-primary)] mb-4">Why Lexington Billiards</p>
+          <h2 className="heading text-[length:var(--text-h2)] text-[var(--color-text-on-dark)]">
             50 Years of Bragging Rights
           </h2>
         </div>
@@ -51,22 +51,22 @@ export const WhyUs = () => {
               <motion.div
                 key={item.title}
                 variants={cardVariants}
-                className="card-hover bg-white border rounded-xl p-8"
-                style={{ borderColor: "var(--color-border)" }}
+                className="rounded-xl p-8 border"
+                style={{ background: "var(--color-dark-surface)", borderColor: "var(--color-border-dark)" }}
               >
                 {/* Icon circle */}
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center mb-5"
-                  style={{ background: "rgba(14,116,144,0.10)" }}
+                  style={{ background: "rgba(234,88,12,0.15)" }}
                 >
-                  <Icon size={22} style={{ color: "var(--color-secondary)" }} aria-hidden="true" />
+                  <Icon size={22} style={{ color: "var(--color-primary)" }} aria-hidden="true" />
                 </div>
 
-                <h3 className="heading text-[length:var(--text-h4)] text-[var(--color-text)] mb-3">
+                <h3 className="heading text-[length:var(--text-h4)] text-[var(--color-text-on-dark)] mb-3">
                   {item.title}
                 </h3>
 
-                <p className="text-[var(--color-text-secondary)] text-base leading-relaxed">
+                <p className="text-white/60 text-base leading-relaxed">
                   {item.description}
                 </p>
               </motion.div>
