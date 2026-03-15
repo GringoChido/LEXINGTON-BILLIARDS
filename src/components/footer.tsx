@@ -1,71 +1,114 @@
+"use client"
+
 import Link from "next/link"
 import { MapPin, Phone, Clock } from "lucide-react"
+import { company, navLinks } from "@/lib/content/company"
+import { FacebookIcon, InstagramIcon } from "@/components/social-icons"
 
-const quickLinks = [
-  { href: "/pool-tables", label: "Pool Tables" },
-  { href: "/hot-tubs-spas", label: "Hot Tubs & Spas" },
-  { href: "/big-green-egg", label: "Big Green Egg" },
-  { href: "/arcade-machines", label: "Arcade Machines" },
-  { href: "/service-repair", label: "Service & Repair" },
+const companyLinks = [
   { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Service & Repair" },
+  { href: "/contact", label: "Financing" },
 ]
 
 export const Footer = () => {
   return (
-    <footer className="bg-background border-t border-border">
-      <div className="mx-auto max-w-[var(--content-max)] px-4 sm:px-8 lg:px-16 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+    <footer className="bg-dark border-t border-border-dark">
+      <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)] pt-16 pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+
           {/* Brand */}
-          <div className="text-center md:text-left">
-            <div className="flex items-center gap-3 justify-center md:justify-start">
-              <span className="text-3xl">🦆</span>
-              <span className="font-heading font-semibold text-xl tracking-tight">
-                Lexington Billiards & Spas
-              </span>
-            </div>
-            <p className="mt-3 text-text-secondary text-sm">
-              Family-owned since 1975
+          <div className="lg:col-span-1">
+            <span className="font-heading font-bold text-base text-text-on-dark block mb-2">
+              {company.name}
+            </span>
+            <p className="font-body text-text-on-dark/60 text-sm leading-relaxed mb-6">
+              {company.tagline}. Family-owned since {company.established}.
             </p>
+            <div className="flex items-center gap-4">
+              <a
+                href={company.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-on-dark/60 hover:text-primary transition-colors"
+                aria-label="Facebook"
+              >
+                <FacebookIcon className="w-5 h-5" />
+              </a>
+              <a
+                href={company.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-on-dark/60 hover:text-primary transition-colors"
+                aria-label="Instagram"
+              >
+                <InstagramIcon className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Contact */}
-          <div className="text-center md:text-left space-y-3">
-            <h3 className="font-heading font-bold uppercase text-sm tracking-wider mb-4">
-              Contact
-            </h3>
-            <a
-              href="https://maps.google.com/?q=1431+Leestown+Rd+Lexington+KY+40511"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start gap-2 text-text-secondary text-sm hover:text-text transition-colors justify-center md:justify-start"
-            >
-              <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-              1431 Leestown Rd, Lexington, KY 40511
-            </a>
-            <a
-              href="tel:8592557639"
-              className="flex items-center gap-2 text-text-secondary text-sm hover:text-text transition-colors justify-center md:justify-start"
-            >
-              <Phone className="w-4 h-4 shrink-0" />
-              (859) 255-7639
-            </a>
-            <div className="flex items-center gap-2 text-text-secondary text-sm justify-center md:justify-start">
-              <Clock className="w-4 h-4 shrink-0" />
-              Mon–Sat 10am–6pm
-            </div>
+          <div>
+            <p className="section-label mb-5">Contact</p>
+            <ul className="space-y-3.5">
+              <li>
+                <a
+                  href={company.address.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2.5 text-text-on-dark/60 text-sm font-body hover:text-primary transition-colors"
+                >
+                  <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-primary/50" />
+                  {company.address.full}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={company.phone.href}
+                  className="flex items-center gap-2.5 text-text-on-dark/60 text-sm font-body hover:text-primary transition-colors"
+                >
+                  <Phone className="w-4 h-4 shrink-0 text-primary/50" />
+                  {company.phone.display}
+                </a>
+              </li>
+              <li>
+                <div className="flex items-start gap-2.5 text-text-on-dark/60 text-sm font-body">
+                  <Clock className="w-4 h-4 mt-0.5 shrink-0 text-primary/50" />
+                  <div>
+                    <p>{company.hours.weekday}</p>
+                    <p>{company.hours.weekend}</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
 
-          {/* Quick Links */}
-          <div className="text-center md:text-left">
-            <h3 className="font-heading font-bold uppercase text-sm tracking-wider mb-4">
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
+          {/* Shop */}
+          <div>
+            <p className="section-label mb-5">Shop</p>
+            <ul className="space-y-3">
+              {navLinks.filter((l) => l.href !== "/contact").map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-text-secondary text-sm hover:text-accent transition-colors"
+                    className="text-text-on-dark/60 text-sm font-body hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <p className="section-label mb-5">Company</p>
+            <ul className="space-y-3">
+              {companyLinks.map((link, i) => (
+                <li key={`${link.href}-${i}`}>
+                  <Link
+                    href={link.href}
+                    className="text-text-on-dark/60 text-sm font-body hover:text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -75,16 +118,16 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-2 text-text-tertiary text-xs">
-          <p>&copy; {new Date().getFullYear()} Lexington Billiards and Spas</p>
+        {/* Bottom bar */}
+        <div className="mt-14 pt-6 border-t border-border-dark flex flex-col sm:flex-row justify-between items-center gap-2 text-text-on-dark/40 text-xs font-body">
+          <p>&copy; {new Date().getFullYear()} {company.name}. All rights reserved.</p>
           <p>
             Built by{" "}
             <a
               href="https://untold.works"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-text-secondary transition-colors"
+              className="hover:text-primary transition-colors"
             >
               Untold.works
             </a>

@@ -1,33 +1,34 @@
 import type { Metadata } from "next"
-import { Barlow_Condensed, DM_Sans } from "next/font/google"
+import { Outfit, DM_Sans } from "next/font/google"
 import "./globals.css"
 
-const barlowCondensed = Barlow_Condensed({
+const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-barlow-condensed",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-outfit",
   display: "swap",
 })
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-dm-sans",
   display: "swap",
 })
 
 export const metadata: Metadata = {
   title: {
-    default: "Lexington Billiards and Spas | Pool Tables, Hot Tubs & Game Room Furniture",
-    template: "%s | Lexington Billiards and Spas",
+    default:
+      "Lexington Billiards & Spas | Pool Tables, Hot Tubs & Game Room Furniture Since 1975",
+    template: "%s | Lexington Billiards & Spas",
   },
   description:
-    "Visit Lexington's oldest game room showroom — pool tables, hot tubs, Big Green Egg grills, and arcade machines. Family-owned since 1975. Free delivery & expert installation in Central Kentucky.",
+    "Make your home the best house on the block. Premium pool tables, hot tubs, Big Green Egg grills, and arcade machines. Family-owned since 1975. Free delivery & expert installation in Central Kentucky.",
   metadataBase: new URL("https://lexingtonbilliardsandspas.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Lexington Billiards and Spas",
+    siteName: "Lexington Billiards & Spas",
   },
 }
 
@@ -39,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${barlowCondensed.variable} ${dmSans.variable} bg-background text-text font-body antialiased`}
+        className={`${outfit.variable} ${dmSans.variable} bg-background text-text font-body antialiased`}
       >
         {children}
       </body>

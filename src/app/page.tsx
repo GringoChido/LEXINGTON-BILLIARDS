@@ -1,21 +1,27 @@
-import { SiteHeader } from "@/components/site-header"
-import { Hero } from "@/components/hero"
-import { TrustBar } from "@/components/trust-bar"
-import { CategoryGrid } from "@/components/category-grid"
-import { AboutBand } from "@/components/about-band"
-import { CtaBand } from "@/components/cta-band"
+import { Navbar } from "@/components/navbar"
+import { HeroSlider } from "@/components/hero-slider"
+import { ExperienceGrid } from "@/components/experience-grid"
+import { ClBaileyFeature } from "@/components/cl-bailey-feature"
+import { BrandStrip } from "@/components/brand-strip"
+import { WhyUs } from "@/components/why-us"
+import { Testimonials } from "@/components/testimonials"
+import { SocialStrip } from "@/components/social-strip"
+import { ContactCta } from "@/components/contact-cta"
 import { Footer } from "@/components/footer"
 
 export default function HomePage() {
   return (
     <>
-      <SiteHeader />
-      <main className="pt-[var(--header-height-mobile)] lg:pt-[var(--header-height)]">
-        <Hero />
-        <TrustBar />
-        <CategoryGrid />
-        <AboutBand />
-        <CtaBand />
+      <Navbar />
+      <main>
+        <HeroSlider />
+        <ExperienceGrid />
+        <ClBaileyFeature />
+        <BrandStrip />
+        <WhyUs />
+        <Testimonials />
+        <SocialStrip />
+        <ContactCta />
       </main>
       <Footer />
     </>
