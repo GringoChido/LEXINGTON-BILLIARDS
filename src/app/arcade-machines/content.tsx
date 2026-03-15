@@ -15,7 +15,7 @@ const slides = [
     cta: { label: "See Our Machines", href: "#machines" },
   },
   {
-    sceneLabel: "Custom multicade close-up, Kentucky Wildcats blue theme, neon glow",
+    sceneLabel: "Custom multicade close-up, neon glow, dark room",
     headline: "Custom Multicades. Classic Games. Your Design.",
     cta: { label: "Visit the Showroom", href: "/contact" },
   },
@@ -76,63 +76,67 @@ const machines = [
 
 export const ArcadeContent = () => {
   return (
-    <>
+    <div style={{ background: "var(--cat-primary, #1A1A2E)" }}>
       <PageHeroSlider slides={slides} />
 
-      {/* ── MACHINE LINEUP ── */}
-      <section id="machines" className="py-[var(--section-py)]">
+      {/* ── MACHINE LINEUP ── on dark surface */}
+      <section id="machines" className="py-[var(--section-py)]" style={{ background: "var(--cat-primary, #1A1A2E)" }}>
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
-          <SectionHeading
-            label="What's In Our Showroom"
-            headline="The Machine Lineup"
-            description="Every machine is hand-built with commercial-grade components. Come play a few rounds before you decide."
-          />
+          <div className="mb-14 lg:mb-20">
+            <p className="section-label mb-4" style={{ color: "var(--cat-accent, #FFD60A)" }}>What&apos;s In Our Showroom</p>
+            <h2 className="heading text-[length:var(--text-h1)] mb-4" style={{ color: "var(--cat-light, #F8F9FA)" }}>The Machine Lineup</h2>
+            <p className="text-lg leading-relaxed max-w-[60ch]" style={{ color: "rgba(248,249,250,0.6)" }}>
+              Every machine is hand-built with commercial-grade components. Come play a few rounds before you decide.
+            </p>
+          </div>
 
           <div className="space-y-8">
-            {/* Bourbon Barrel \u2014 Hero card */}
+            {/* Bourbon Barrel — Hero card with red badge */}
             <motion.div
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
               className="relative rounded-2xl overflow-hidden scanlines"
-              style={{ background: "var(--color-dark)" }}
+              style={{ background: "var(--cat-surface, #16213E)" }}
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative aspect-[4/3] lg:aspect-auto min-h-[300px]">
                   <ScenePlaceholder label={machines[0].scene} className="w-full h-full !rounded-none" dark />
                 </div>
                 <div className="p-8 lg:p-12 flex flex-col justify-center relative z-10">
-                  <span className="pill pill-gold mb-4 inline-block w-fit">{machines[0].badge}</span>
-                  <h3 className="heading text-[length:var(--text-h2)] mb-3" style={{ color: "var(--color-text-on-dark)" }}>{machines[0].name}</h3>
-                  <p className="text-lg leading-relaxed mb-6" style={{ color: "rgba(250,246,239,0.65)" }}>{machines[0].descriptor}</p>
+                  <span className="pill mb-4 inline-block w-fit" style={{ background: "rgba(230,57,70,0.2)", color: "var(--cat-secondary, #E63946)" }}>{machines[0].badge}</span>
+                  <h3 className="heading text-[length:var(--text-h2)] mb-3" style={{ color: "var(--cat-accent, #FFD60A)" }}>{machines[0].name}</h3>
+                  <p className="text-lg leading-relaxed mb-6" style={{ color: "rgba(248,249,250,0.65)" }}>{machines[0].descriptor}</p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {machines[0].specs.map((s) => (
-                      <span key={s} className="pill" style={{ background: "rgba(250,246,239,0.1)", color: "var(--color-text-on-dark)" }}>{s}</span>
+                      <span key={s} className="pill" style={{ background: "rgba(6,214,160,0.15)", color: "var(--cat-neon-green, #06D6A0)" }}>{s}</span>
                     ))}
                   </div>
-                  <a href="/contact" className="btn-primary w-fit">Visit the Showroom</a>
+                  <a href="/contact" className="inline-flex items-center justify-center gap-2 font-heading font-bold text-sm px-8 py-4 rounded-lg w-fit" style={{ background: "var(--cat-accent, #FFD60A)", color: "var(--cat-primary, #1A1A2E)" }}>
+                    Visit the Showroom
+                  </a>
                 </div>
               </div>
             </motion.div>
 
-            {/* Widescreen \u2014 Feature */}
+            {/* Widescreen — Feature */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
-              className="lg:w-[66%] rounded-2xl overflow-hidden border card-hover"
-              style={{ borderColor: "var(--color-border)", background: "var(--color-cream)" }}
+              className="lg:w-[66%] rounded-2xl overflow-hidden border"
+              style={{ borderColor: "rgba(0,180,216,0.2)", background: "var(--cat-surface, #16213E)" }}
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
-                <ScenePlaceholder label={machines[1].scene} aspectRatio="4/5" />
+                <ScenePlaceholder label={machines[1].scene} aspectRatio="4/5" dark />
                 <div className="p-8 flex flex-col justify-center">
-                  <span className="pill pill-orange mb-3 inline-block w-fit">{machines[1].badge}</span>
-                  <h3 className="heading text-[length:var(--text-h3)] mb-2" style={{ color: "var(--color-text)" }}>{machines[1].name}</h3>
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--color-text-secondary)" }}>{machines[1].descriptor}</p>
+                  <span className="pill mb-3 inline-block w-fit" style={{ background: "rgba(0,180,216,0.15)", color: "var(--cat-neon-blue, #00B4D8)" }}>{machines[1].badge}</span>
+                  <h3 className="heading text-[length:var(--text-h3)] mb-2" style={{ color: "var(--cat-light, #F8F9FA)" }}>{machines[1].name}</h3>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(248,249,250,0.6)" }}>{machines[1].descriptor}</p>
                   <div className="flex flex-wrap gap-2">
-                    {machines[1].specs.map((s) => <span key={s} className="pill pill-dark">{s}</span>)}
+                    {machines[1].specs.map((s) => <span key={s} className="pill" style={{ background: "rgba(248,249,250,0.08)", color: "rgba(248,249,250,0.7)" }}>{s}</span>)}
                   </div>
                 </div>
               </div>
@@ -140,19 +144,19 @@ export const ArcadeContent = () => {
 
             {/* Uprights pair */}
             <div>
-              <p className="section-label mb-6">Classic Uprights \u2014 Pick Your Size</p>
+              <p className="text-sm font-bold uppercase tracking-wider mb-6" style={{ color: "var(--cat-neon-blue, #00B4D8)" }}>Classic Uprights — Pick Your Size</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {machines.slice(2, 4).map((m, i) => (
                   <motion.div key={m.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] as const }}
-                    className="rounded-xl overflow-hidden border card-hover" style={{ borderColor: "var(--color-border)", background: "var(--color-cream)" }}
+                    className="rounded-xl overflow-hidden border" style={{ borderColor: "rgba(248,249,250,0.08)", background: "var(--cat-surface, #16213E)" }}
                   >
-                    <ScenePlaceholder label={m.scene} aspectRatio="4/3" />
+                    <ScenePlaceholder label={m.scene} aspectRatio="4/3" dark />
                     <div className="p-6">
-                      <h4 className="heading text-[length:var(--text-h4)] mb-2" style={{ color: "var(--color-text)" }}>{m.name}</h4>
-                      <p className="text-sm mb-4" style={{ color: "var(--color-text-secondary)" }}>{m.descriptor}</p>
+                      <h4 className="heading text-[length:var(--text-h4)] mb-2" style={{ color: "var(--cat-light, #F8F9FA)" }}>{m.name}</h4>
+                      <p className="text-sm mb-4" style={{ color: "rgba(248,249,250,0.6)" }}>{m.descriptor}</p>
                       <div className="flex flex-wrap gap-1.5">
-                        {m.specs.map((s) => <span key={s} className="pill pill-dark text-[11px]">{s}</span>)}
+                        {m.specs.map((s) => <span key={s} className="pill text-[11px]" style={{ background: "rgba(6,214,160,0.1)", color: "var(--cat-neon-green, #06D6A0)" }}>{s}</span>)}
                       </div>
                     </div>
                   </motion.div>
@@ -162,19 +166,19 @@ export const ArcadeContent = () => {
 
             {/* Cocktail pair */}
             <div>
-              <p className="section-label mb-6">Classic Cocktail Style</p>
+              <p className="text-sm font-bold uppercase tracking-wider mb-6" style={{ color: "var(--cat-neon-green, #06D6A0)" }}>Classic Cocktail Style</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {machines.slice(4, 6).map((m, i) => (
                   <motion.div key={m.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] as const }}
-                    className="rounded-xl overflow-hidden border card-hover" style={{ borderColor: "var(--color-border)", background: "var(--color-cream)" }}
+                    className="rounded-xl overflow-hidden border" style={{ borderColor: "rgba(248,249,250,0.08)", background: "var(--cat-surface, #16213E)" }}
                   >
-                    <ScenePlaceholder label={m.scene} aspectRatio="4/3" />
+                    <ScenePlaceholder label={m.scene} aspectRatio="4/3" dark />
                     <div className="p-6">
-                      <h4 className="heading text-[length:var(--text-h4)] mb-2" style={{ color: "var(--color-text)" }}>{m.name}</h4>
-                      <p className="text-sm mb-4" style={{ color: "var(--color-text-secondary)" }}>{m.descriptor}</p>
+                      <h4 className="heading text-[length:var(--text-h4)] mb-2" style={{ color: "var(--cat-light, #F8F9FA)" }}>{m.name}</h4>
+                      <p className="text-sm mb-4" style={{ color: "rgba(248,249,250,0.6)" }}>{m.descriptor}</p>
                       <div className="flex flex-wrap gap-1.5">
-                        {m.specs.map((s) => <span key={s} className="pill pill-dark text-[11px]">{s}</span>)}
+                        {m.specs.map((s) => <span key={s} className="pill text-[11px]" style={{ background: "rgba(6,214,160,0.1)", color: "var(--cat-neon-green, #06D6A0)" }}>{s}</span>)}
                       </div>
                     </div>
                   </motion.div>
@@ -182,27 +186,27 @@ export const ArcadeContent = () => {
               </div>
             </div>
 
-            {/* Virtual Pinball \u2014 Hero */}
+            {/* Virtual Pinball — Hero with neon blue */}
             <motion.div
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
               className="rounded-2xl overflow-hidden scanlines"
-              style={{ background: "var(--color-dark)" }}
+              style={{ background: "var(--cat-surface, #16213E)", border: "1px solid rgba(0,180,216,0.2)" }}
             >
               <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-0">
                 <div className="relative aspect-[3/4] lg:aspect-auto min-h-[300px]">
                   <ScenePlaceholder label={machines[6].scene} className="w-full h-full !rounded-none" dark />
                 </div>
                 <div className="p-8 lg:p-12 flex flex-col justify-center relative z-10">
-                  <p className="heading text-[length:var(--text-stat)] mb-2" style={{ color: "var(--color-primary)" }}>863+</p>
-                  <p className="text-sm font-bold uppercase tracking-wider mb-4" style={{ color: "rgba(250,246,239,0.5)" }}>Classic Pinball Tables</p>
-                  <h3 className="heading text-[length:var(--text-h2)] mb-3" style={{ color: "var(--color-text-on-dark)" }}>{machines[6].name}</h3>
-                  <p className="text-lg leading-relaxed mb-6" style={{ color: "rgba(250,246,239,0.65)" }}>{machines[6].descriptor}</p>
+                  <p className="heading text-[length:var(--text-stat)] mb-2" style={{ color: "var(--cat-neon-blue, #00B4D8)" }}>863+</p>
+                  <p className="text-sm font-bold uppercase tracking-wider mb-4" style={{ color: "rgba(248,249,250,0.5)" }}>Classic Pinball Tables</p>
+                  <h3 className="heading text-[length:var(--text-h2)] mb-3" style={{ color: "var(--cat-light, #F8F9FA)" }}>{machines[6].name}</h3>
+                  <p className="text-lg leading-relaxed mb-6" style={{ color: "rgba(248,249,250,0.65)" }}>{machines[6].descriptor}</p>
                   <div className="flex flex-wrap gap-2">
                     {machines[6].specs.map((s) => (
-                      <span key={s} className="pill" style={{ background: "rgba(250,246,239,0.1)", color: "var(--color-text-on-dark)" }}>{s}</span>
+                      <span key={s} className="pill" style={{ background: "rgba(0,180,216,0.12)", color: "var(--cat-neon-blue, #00B4D8)" }}>{s}</span>
                     ))}
                   </div>
                 </div>
@@ -212,10 +216,13 @@ export const ArcadeContent = () => {
         </div>
       </section>
 
-      {/* ── BRANDS ── */}
-      <section className="py-[var(--section-py)]" style={{ background: "var(--color-cream)" }}>
+      {/* ── BRANDS — slightly lighter dark ── */}
+      <section className="py-[var(--section-py)]" style={{ background: "var(--cat-surface, #16213E)" }}>
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
-          <SectionHeading label="Our Arcade Brands" headline="Built for Serious Game Rooms" />
+          <div className="mb-14 lg:mb-20">
+            <p className="section-label mb-4" style={{ color: "var(--cat-accent, #FFD60A)" }}>Our Arcade Brands</p>
+            <h2 className="heading text-[length:var(--text-h2)]" style={{ color: "var(--cat-light, #F8F9FA)" }}>Built for Serious Game Rooms</h2>
+          </div>
           <div className="space-y-16 lg:space-y-24">
             {arcadeBrands.map((brand, i) => (
               <BrandCard key={brand.slug} brand={brand} index={i} reversed={i % 2 !== 0} />
@@ -225,6 +232,6 @@ export const ArcadeContent = () => {
       </section>
 
       <BottomCta headline="Come Play One" variant="dark" />
-    </>
+    </div>
   )
 }

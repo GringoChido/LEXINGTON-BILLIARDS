@@ -3,7 +3,7 @@
 @theme inline {
   /* ── Typography ── */
   --font-heading: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
 
   /* Fluid type scale — big enough to stop scrolling */
   --text-display: clamp(3rem, 6vw + 1rem, 5.5rem);

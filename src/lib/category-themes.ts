@@ -1,0 +1,53 @@
+export const categoryThemes = {
+  "pool-tables": {
+    primary: "#1B4332",
+    secondary: "#8B5E3C",
+    accent: "#C9952A",
+    surface: "#F5F0E8",
+    dark: "#0D2B1F",
+    highlight: "#4A7C59",
+    name: "Pool Tables",
+  },
+  spas: {
+    primary: "#0A4A5C",
+    secondary: "#1A8FA0",
+    accent: "#7DD4E0",
+    surface: "#F0F7F9",
+    dark: "#062838",
+    highlight: "#2DB8CC",
+    warm: "#C4975A",
+    name: "Spas",
+  },
+  "big-green-egg": {
+    primary: "#1E5C1E",
+    secondary: "#B85C00",
+    accent: "#F5A623",
+    surface: "#F7F3EE",
+    dark: "#0F2E0F",
+    stone: "#8C7B6B",
+    ash: "#D4CEC8",
+    name: "Big Green Egg",
+  },
+  "arcade-machines": {
+    primary: "#1A1A2E",
+    secondary: "#E63946",
+    accent: "#FFD60A",
+    surface: "#16213E",
+    neonBlue: "#00B4D8",
+    neonGreen: "#06D6A0",
+    light: "#F8F9FA",
+    name: "Arcade Machines",
+  },
+  "billiard-accessories": {
+    primary: "#2C1810",
+    secondary: "#8B4513",
+    accent: "#D4AF37",
+    surface: "#FBF7F0",
+    dark: "#1A0F08",
+    felt: "#2D5A27",
+    lightWood: "#C19A6B",
+    name: "Billiard Accessories",
+  },
+} as const
+
+export type CategoryKey = keyof typeof categoryThemes

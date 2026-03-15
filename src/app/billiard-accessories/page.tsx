@@ -1,17 +1,19 @@
 import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { CategoryTheme } from "@/components/category-theme"
 import { BilliardAccessoriesContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "Billiard & Game Room Accessories | Lexington Billiards & Spas",
+  title: "Billiard Accessories | Lexington Billiards & Spas",
   description:
-    "Cue sticks, table lights, bar stools, game room furniture, and billiard supplies. RAM Game Room, Falcon Cues, Imperial, and Toltec Lighting — all in our Lexington showroom since 1975.",
+    "Pool cues, billiard lighting, bar stools, cloth, and game room furniture. Falcon Cues, Imperial, Toltec Lighting, and RAM. Visit our Lexington showroom.",
 }
 
 export default function BilliardAccessoriesPage() {
   return (
     <>
+      <CategoryTheme category="billiard-accessories" />
       <Navbar />
       <main>
         <BilliardAccessoriesContent />

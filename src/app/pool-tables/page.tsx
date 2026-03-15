@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { CategoryTheme } from "@/components/category-theme"
 import { PoolTablesContent } from "./content"
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function PoolTablesPage() {
   return (
     <>
+      <CategoryTheme category="pool-tables" />
       <Navbar />
       <main>
         <PoolTablesContent />

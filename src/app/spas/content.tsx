@@ -27,31 +27,11 @@ const slides = [
 ]
 
 const serviceFeatures = [
-  {
-    icon: ShieldCheck,
-    title: "Factory-Authorized Service",
-    description: "Warranty repairs done right, by certified technicians who know these spas inside and out.",
-  },
-  {
-    icon: Droplets,
-    title: "Chemicals & Supplies",
-    description: "Full line of spa chemicals, filters, covers, and replacement parts — always in stock.",
-  },
-  {
-    icon: Truck,
-    title: "Free Delivery & Install",
-    description: "Delivery and installation included within Lexington. We handle placement, electrical, and first fill.",
-  },
-  {
-    icon: Wrench,
-    title: "Spa Moving Service",
-    description: "Relocating? We\u2019ll disconnect, transport, and reinstall your spa at your new home.",
-  },
-  {
-    icon: CreditCard,
-    title: "Financing Available",
-    description: "Flexible financing options to fit your budget. Ask about current promotions.",
-  },
+  { icon: ShieldCheck, title: "Factory-Authorized Service", description: "Warranty repairs done right, by certified technicians who know these spas inside and out." },
+  { icon: Droplets, title: "Chemicals & Supplies", description: "Full line of spa chemicals, filters, covers, and replacement parts — always in stock." },
+  { icon: Truck, title: "Free Delivery & Install", description: "Delivery and installation included within Lexington. We handle placement, electrical, and first fill." },
+  { icon: Wrench, title: "Spa Moving Service", description: "Relocating? We\u2019ll disconnect, transport, and reinstall your spa at your new home." },
+  { icon: CreditCard, title: "Financing Available", description: "Flexible financing options to fit your budget. Ask about current promotions." },
 ]
 
 export const SpasContent = () => {
@@ -60,7 +40,7 @@ export const SpasContent = () => {
       <PageHeroSlider slides={slides} />
 
       {/* ── INTRO ── */}
-      <section className="py-[var(--section-py)]">
+      <section className="py-[var(--section-py)]" style={{ background: "var(--cat-surface, #F0F7F9)" }}>
         <div className="mx-auto max-w-[var(--narrow-max)] px-[var(--section-px)] text-center">
           <motion.div
             initial={{ opacity: 0, y: 32 }}
@@ -68,10 +48,8 @@ export const SpasContent = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
           >
-            <p className="heading text-[length:var(--text-stat)] mb-4" style={{ color: "var(--color-teal)" }}>
-              50+
-            </p>
-            <p className="section-label mb-4">Years as Lexington&apos;s Spa Dealer</p>
+            <p className="heading text-[length:var(--text-stat)] mb-4" style={{ color: "var(--cat-secondary, #1A8FA0)" }}>50+</p>
+            <p className="section-label mb-4" style={{ color: "var(--cat-primary, #0A4A5C)" }}>Years as Lexington&apos;s Spa Dealer</p>
             <p className="text-lg leading-relaxed mb-10 max-w-[55ch] mx-auto" style={{ color: "var(--color-text-secondary)" }}>
               Nobody in Central Kentucky has been selling and servicing hot tubs
               longer than us. Big-box stores sell you a spa and wish you luck.
@@ -80,7 +58,7 @@ export const SpasContent = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {["Free Delivery", "Factory Warranty Service", "Financing Available", "Chemicals In Stock"].map((tag) => (
-                <span key={tag} className="pill pill-teal">{tag}</span>
+                <span key={tag} className="pill" style={{ background: "rgba(10,74,92,0.1)", color: "var(--cat-primary, #0A4A5C)" }}>{tag}</span>
               ))}
             </div>
           </motion.div>
@@ -88,13 +66,9 @@ export const SpasContent = () => {
       </section>
 
       {/* ── BRAND SHOWCASE ── */}
-      <section id="brands" className="py-[var(--section-py)]" style={{ background: "var(--color-cream)" }}>
+      <section id="brands" className="py-[var(--section-py)]">
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
-          <SectionHeading
-            label="Our Spa Brands"
-            headline="Hydrotherapy You Can Trust"
-            description="Every spa in our showroom is plumbed, powered, and ready for you to test before you buy."
-          />
+          <SectionHeading label="Our Spa Brands" headline="Hydrotherapy You Can Trust" description="Every spa in our showroom is plumbed, powered, and ready for you to test before you buy." />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {spaBrands.map((brand, i) => (
               <motion.div
@@ -118,8 +92,8 @@ export const SpasContent = () => {
                   </h3>
                 </div>
                 <div className="px-8 pt-8 pb-8">
-                  {brand.featured && <span className="pill pill-teal mb-3 inline-block">Lead Brand</span>}
-                  <p className="text-sm font-semibold mb-3" style={{ color: "var(--color-teal)" }}>{brand.tagline}</p>
+                  {brand.featured && <span className="pill mb-3 inline-block" style={{ background: "rgba(10,74,92,0.1)", color: "var(--cat-primary, #0A4A5C)" }}>Lead Brand</span>}
+                  <p className="text-sm font-semibold mb-3" style={{ color: "var(--cat-secondary, #1A8FA0)" }}>{brand.tagline}</p>
                   <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>{brand.description}</p>
                 </div>
               </motion.div>
@@ -128,8 +102,8 @@ export const SpasContent = () => {
         </div>
       </section>
 
-      {/* ── SERVICE — Teal band ── */}
-      <section className="py-[var(--section-py)]" style={{ background: "var(--color-teal)" }}>
+      {/* ── SERVICE — deep water band ── */}
+      <section className="py-[var(--section-py)]" style={{ background: "var(--cat-dark, #062838)" }}>
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
             <motion.div
@@ -138,12 +112,8 @@ export const SpasContent = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
             >
-              <p className="text-sm font-bold uppercase tracking-wider mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>
-                Full-Service Spa Dealer
-              </p>
-              <h2 className="heading text-[length:var(--text-h2)] mb-6" style={{ color: "#FFFFFF" }}>
-                We Don&apos;t Just Sell — We Service
-              </h2>
+              <p className="text-sm font-bold uppercase tracking-wider mb-4" style={{ color: "var(--cat-accent, #7DD4E0)" }}>Full-Service Spa Dealer</p>
+              <h2 className="heading text-[length:var(--text-h2)] mb-6" style={{ color: "#FFFFFF" }}>We Don&apos;t Just Sell — We Service</h2>
               <p className="text-lg leading-relaxed max-w-[55ch]" style={{ color: "rgba(255,255,255,0.7)" }}>
                 When you buy a spa from us, you get a relationship — not a receipt. Our technicians
                 are factory-trained, our parts are always in stock, and our phone number never changes.
@@ -158,9 +128,9 @@ export const SpasContent = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] as const }}
                   className="rounded-xl p-5"
-                  style={{ background: "rgba(255,255,255,0.1)" }}
+                  style={{ background: "rgba(255,255,255,0.08)" }}
                 >
-                  <feature.icon className="w-5 h-5 mb-3" style={{ color: "rgba(255,255,255,0.8)" }} />
+                  <feature.icon className="w-5 h-5 mb-3" style={{ color: "var(--cat-accent, #7DD4E0)" }} />
                   <h3 className="font-heading font-bold text-base mb-1" style={{ color: "#FFFFFF" }}>{feature.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>{feature.description}</p>
                 </motion.div>
@@ -171,13 +141,9 @@ export const SpasContent = () => {
       </section>
 
       {/* ── SHOWROOM ── */}
-      <section className="py-[var(--section-py)]">
+      <section className="py-[var(--section-py)]" style={{ background: "var(--cat-surface, #F0F7F9)" }}>
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
-          <SectionHeading
-            label="In Our Showroom"
-            headline="See Them Running. Feel the Jets."
-            description="Our spas are plumbed and powered — test the jets, feel the seats, find your perfect fit."
-          />
+          <SectionHeading label="In Our Showroom" headline="See Them Running. Feel the Jets." description="Our spas are plumbed and powered — test the jets, feel the seats, find your perfect fit." />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { name: "2-Person Intimate", scene: "Small two-person spa, cozy patio" },
@@ -194,12 +160,12 @@ export const SpasContent = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] as const }}
                 className="rounded-xl overflow-hidden card-hover border"
-                style={{ borderColor: "var(--color-border)", background: "var(--color-cream)" }}
+                style={{ borderColor: "var(--color-border)", background: "var(--color-background)" }}
               >
                 <ScenePlaceholder label={product.scene} aspectRatio="4/3" />
                 <div className="p-5">
                   <h4 className="heading text-[length:var(--text-h4)] mb-2" style={{ color: "var(--color-text)" }}>{product.name}</h4>
-                  <span className="text-sm font-bold" style={{ color: "var(--color-teal)" }}>See in Showroom &rarr;</span>
+                  <span className="text-sm font-bold" style={{ color: "var(--cat-secondary, #1A8FA0)" }}>See in Showroom &rarr;</span>
                 </div>
               </motion.div>
             ))}

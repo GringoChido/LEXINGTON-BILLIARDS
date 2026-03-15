@@ -58,8 +58,8 @@ export const BigGreenEggContent = () => {
     <>
       <PageHeroSlider slides={slides} />
 
-      {/* ── BRAND FEATURE ── */}
-      <section className="py-[var(--section-py)]" style={{ background: "var(--color-dark)" }}>
+      {/* ── BRAND FEATURE — full BGE green ── */}
+      <section className="py-[var(--section-py)]" style={{ background: "var(--cat-primary, #1E5C1E)" }}>
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)] text-center">
           <motion.div
             initial={{ opacity: 0, y: 32 }}
@@ -72,12 +72,12 @@ export const BigGreenEggContent = () => {
                 <Image src={eggLogo} alt="Big Green Egg logo" fill className="object-contain brightness-0 invert opacity-70" sizes="160px" />
               </div>
             )}
-            <p className="section-label mb-4" style={{ color: "var(--color-green-egg)" }}>Authorized Dealer</p>
+            <p className="section-label mb-4" style={{ color: "var(--cat-accent, #F5A623)" }}>Authorized Dealer</p>
             <h2 className="heading text-[length:var(--text-h1)] mb-6 max-w-[20ch] mx-auto" style={{ color: "var(--color-text-on-dark)" }}>
               It&apos;s Not a Grill.{" "}
-              <span style={{ color: "var(--color-green-egg)" }}>It&apos;s an Obsession.</span>
+              <span style={{ color: "var(--cat-accent, #F5A623)" }}>It&apos;s an Obsession.</span>
             </h2>
-            <p className="text-lg leading-relaxed max-w-[50ch] mx-auto" style={{ color: "rgba(250,246,239,0.6)" }}>
+            <p className="text-lg leading-relaxed max-w-[50ch] mx-auto" style={{ color: "rgba(250,246,239,0.7)" }}>
               The Big Green Egg has a cult following for a reason. One cooker that grills, smokes,
               bakes, and roasts \u2014 with temperature control no gas grill can match. We keep several
               models on display, organic charcoal in stock, and a full line of EGGcessories.
@@ -87,7 +87,7 @@ export const BigGreenEggContent = () => {
       </section>
 
       {/* ── SIZE GUIDE ── */}
-      <section id="eggs" className="py-[var(--section-py)]">
+      <section id="eggs" className="py-[var(--section-py)]" style={{ background: "var(--cat-surface, #F7F3EE)" }}>
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
           <SectionHeading label="Find Your EGG" headline="Six Sizes. One Obsession." description="From the portable Mini to the neighborhood-feeding 2XL." />
           <div className="flex flex-wrap justify-center items-end gap-6 lg:gap-10">
@@ -104,11 +104,11 @@ export const BigGreenEggContent = () => {
                   whileHover={{ y: -8, scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   className={`${egg.h} rounded-[40%] mb-4 flex items-center justify-center relative`}
-                  style={{ background: "var(--color-green-egg)" }}
+                  style={{ background: "var(--cat-primary, #1E5C1E)" }}
                 >
                   <span className="text-white font-bold text-xs">{egg.name}</span>
                   <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                    <span className="text-xs font-medium px-3 py-1.5 rounded-full" style={{ background: "var(--color-dark)", color: "var(--color-text-on-dark)" }}>
+                    <span className="text-xs font-medium px-3 py-1.5 rounded-full" style={{ background: "var(--cat-dark, #0F2E0F)", color: "var(--color-text-on-dark)" }}>
                       {egg.tagline}
                     </span>
                   </div>
@@ -121,7 +121,7 @@ export const BigGreenEggContent = () => {
       </section>
 
       {/* ── ANATOMY ── */}
-      <section className="py-[var(--section-py)] border-y" style={{ background: "var(--color-cream)", borderColor: "var(--color-border)" }}>
+      <section className="py-[var(--section-py)]" style={{ background: "var(--cat-dark, #0F2E0F)" }}>
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div
@@ -136,8 +136,8 @@ export const BigGreenEggContent = () => {
               </div>
             </motion.div>
             <div>
-              <p className="section-label mb-2" style={{ color: "var(--color-green-egg)" }}>How It Works</p>
-              <h2 className="heading text-[length:var(--text-h2)] mb-8" style={{ color: "var(--color-text)" }}>Engineered for Perfection</h2>
+              <p className="section-label mb-2" style={{ color: "var(--cat-accent, #F5A623)" }}>How It Works</p>
+              <h2 className="heading text-[length:var(--text-h2)] mb-8" style={{ color: "var(--color-text-on-dark)" }}>Engineered for Perfection</h2>
               <div className="space-y-6">
                 {anatomy.map((item, i) => (
                   <motion.div
@@ -148,12 +148,12 @@ export const BigGreenEggContent = () => {
                     transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] as const }}
                     className="flex gap-4 items-start"
                   >
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ background: "var(--color-green-egg)" }}>
-                      <span className="text-white text-xs font-bold">{i + 1}</span>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ background: "var(--cat-accent, #F5A623)" }}>
+                      <span className="text-xs font-bold" style={{ color: "var(--cat-dark, #0F2E0F)" }}>{i + 1}</span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-sm mb-1 uppercase tracking-wide" style={{ color: "var(--color-text)" }}>{item.label}</h4>
-                      <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>{item.description}</p>
+                      <h4 className="font-bold text-sm mb-1 uppercase tracking-wide" style={{ color: "var(--cat-accent, #F5A623)" }}>{item.label}</h4>
+                      <p className="text-sm leading-relaxed" style={{ color: "rgba(250,246,239,0.65)" }}>{item.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -163,8 +163,8 @@ export const BigGreenEggContent = () => {
         </div>
       </section>
 
-      {/* ── WHY THE EGG ── */}
-      <section className="py-[var(--section-py)]">
+      {/* ── WHY THE EGG ── alternating surface/dark */}
+      <section className="py-[var(--section-py)]" style={{ background: "var(--cat-surface, #F7F3EE)" }}>
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
           <SectionHeading label="Why The EGG" headline="Five Reasons You'll Never Go Back" />
           <div className="space-y-12 lg:space-y-20">
@@ -181,7 +181,7 @@ export const BigGreenEggContent = () => {
                   <ScenePlaceholder label={feature.scene} aspectRatio="16/10" />
                 </div>
                 <div className="lg:[direction:ltr]">
-                  <h3 className="heading text-[length:var(--text-h3)] mb-4 uppercase tracking-wide" style={{ color: "var(--color-green-egg)" }}>
+                  <h3 className="heading text-[length:var(--text-h3)] mb-4 uppercase tracking-wide" style={{ color: "var(--cat-secondary, #B85C00)" }}>
                     {feature.title}
                   </h3>
                   <p className="text-lg leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>{feature.description}</p>
@@ -193,7 +193,7 @@ export const BigGreenEggContent = () => {
       </section>
 
       {/* ── EGGcessories ── */}
-      <section className="py-[var(--section-py)]" style={{ background: "var(--color-surface)" }}>
+      <section className="py-[var(--section-py)]" style={{ background: "var(--cat-dark, #0F2E0F)" }}>
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center">
             <motion.div
@@ -202,15 +202,15 @@ export const BigGreenEggContent = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
             >
-              <p className="section-label mb-4" style={{ color: "var(--color-green-egg)" }}>Always In Stock</p>
-              <h2 className="heading text-[length:var(--text-h2)] mb-4" style={{ color: "var(--color-text)" }}>EGGcessories & Charcoal</h2>
-              <p className="text-lg leading-relaxed mb-6" style={{ color: "var(--color-text-secondary)" }}>
+              <p className="section-label mb-4" style={{ color: "var(--cat-accent, #F5A623)" }}>Always In Stock</p>
+              <h2 className="heading text-[length:var(--text-h2)] mb-4" style={{ color: "var(--color-text-on-dark)" }}>EGGcessories & Charcoal</h2>
+              <p className="text-lg leading-relaxed mb-6" style={{ color: "rgba(250,246,239,0.7)" }}>
                 We keep a full line of Big Green Egg EGGcessories in stock \u2014 plates, grids, pizza stones, tables, covers, and more.
                 Plus organic Big Green Egg lump charcoal so you can fire it up the same day.
               </p>
               <div className="flex flex-wrap gap-3">
                 {["Plates & Grids", "Pizza Stones", "Tables & Nests", "Organic Charcoal", "Covers", "Rubs & Sauces"].map((item) => (
-                  <span key={item} className="pill" style={{ background: "rgba(45,106,47,0.1)", color: "var(--color-green-egg)" }}>{item}</span>
+                  <span key={item} className="pill" style={{ background: "rgba(245,166,35,0.15)", color: "var(--cat-accent, #F5A623)" }}>{item}</span>
                 ))}
               </div>
             </motion.div>
@@ -221,7 +221,7 @@ export const BigGreenEggContent = () => {
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] as const }}
               className="rounded-xl overflow-hidden"
             >
-              <ScenePlaceholder label="EGGcessories display \u2014 plates, pizza stones, charcoal bags" aspectRatio="4/3" />
+              <ScenePlaceholder label="EGGcessories display \u2014 plates, pizza stones, charcoal bags" aspectRatio="4/3" dark />
             </motion.div>
           </div>
         </div>
