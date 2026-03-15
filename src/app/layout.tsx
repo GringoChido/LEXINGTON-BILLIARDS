@@ -1,11 +1,11 @@
 import type { Metadata } from "next"
-import { Outfit, DM_Sans } from "next/font/google"
+import { Bricolage_Grotesque, DM_Sans } from "next/font/google"
 import "./globals.css"
 
-const outfit = Outfit({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-outfit",
+  variable: "--font-bricolage",
   display: "swap",
 })
 
@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} ${dmSans.variable} bg-background text-text font-body antialiased`}
+        className={`${bricolage.variable} ${dmSans.variable} bg-background text-text font-body antialiased`}
       >
         {children}
       </body>

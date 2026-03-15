@@ -1,21 +1,13 @@
 "use client"
 
 import Image from "next/image"
-
-const brands = [
-  { name: "C.L. Bailey", logo: "/images/brands/cl-bailey.png" },
-  { name: "Brunswick", logo: "/images/brands/brunswick.svg" },
-  { name: "Olhausen", logo: "/images/brands/olhausen.svg" },
-  { name: "Imperial", logo: "/images/brands/imperial.png" },
-  { name: "American Heritage", logo: "/images/brands/american-heritage.png" },
-  { name: "Maax", logo: "/images/brands/maax.svg" },
-  { name: "Bullfrog Spas", logo: "/images/brands/bullfrog.svg" },
-  { name: "Jacuzzi", logo: "/images/brands/jacuzzi.jpg" },
-  { name: "Big Green Egg", logo: "/images/brands/big-green-egg.svg" },
-]
+import { brandLogos, allBrands } from "@/lib/content/brands"
 
 export const BrandStrip = () => {
-  const doubled = [...brands, ...brands]
+  const brandsWithLogos = allBrands
+    .filter((b) => brandLogos[b.slug])
+    .map((b) => ({ name: b.name, logo: brandLogos[b.slug] }))
+  const doubled = [...brandsWithLogos, ...brandsWithLogos]
 
   return (
     <section

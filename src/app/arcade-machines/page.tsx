@@ -6,7 +6,7 @@ import { ArcadeContent } from "./content"
 export const metadata: Metadata = {
   title: "Arcade Machines | Lexington Billiards & Spas",
   description:
-    "Custom multicade cabinets with 60+ classic games and Raw Thrills premium arcade machines. The perfect addition to any Lexington game room. Visit our showroom today.",
+    "Custom built arcade cabinets — handcrafted one at a time, not kits. Full-size stand-up units and cocktail tables with 60+ classic games. Custom team colors available. Visit our Lexington showroom.",
 }
 
 export default function ArcadePage() {

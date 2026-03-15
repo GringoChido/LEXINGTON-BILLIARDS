@@ -6,7 +6,7 @@ import { BigGreenEggContent } from "./content"
 export const metadata: Metadata = {
   title: "Big Green Egg | Lexington Billiards & Spas",
   description:
-    "Authorized Big Green Egg dealer in Lexington, Kentucky. The ultimate ceramic kamado grill for smoking, grilling, baking, and roasting. Full line of EGGcessories in stock.",
+    "Authorized Big Green Egg distributor in Lexington, Kentucky. Several models on display, organic lump charcoal in stock, free delivery within 50 miles. Full line of EGGcessories available.",
 }
 
 export default function BigGreenEggPage() {

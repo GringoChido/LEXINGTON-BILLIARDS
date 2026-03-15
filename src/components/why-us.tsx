@@ -66,7 +66,7 @@ export const WhyUs = () => {
                   {item.title}
                 </h3>
 
-                <p className="text-white/60 text-base leading-relaxed">
+                <p className="text-white/60 text-lg leading-relaxed">
                   {item.description}
                 </p>
               </motion.div>

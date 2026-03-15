@@ -10,30 +10,44 @@ export const experienceCategories: ExperienceCategory[] = [
   {
     href: "/pool-tables",
     label: "Pool Tables",
-    experienceTitle: "The Game Room",
-    tagline: "Where legends are made and rivalries never die",
+    experienceTitle: "Pool Tables",
+    tagline: "The game room starts here",
     image: "/images/pool-tables.jpg",
   },
   {
     href: "/spas",
     label: "Hot Tubs & Spas",
-    experienceTitle: "The Backyard",
-    tagline: "Your private escape, right outside the back door",
+    experienceTitle: "Hot Tubs & Spas",
+    tagline: "Your backyard is missing one",
     image: "/images/hot-tubs.jpg",
   },
   {
     href: "/big-green-egg",
     label: "Big Green Egg",
-    experienceTitle: "The Cookout",
-    tagline: "Low and slow or hot and fast — one grill does it all",
+    experienceTitle: "Big Green Egg",
+    tagline: "It\u2019s not a grill. It\u2019s an obsession.",
     image: "/images/big-green-egg.jpg",
   },
   {
     href: "/arcade-machines",
     label: "Arcade Machines",
-    experienceTitle: "The Party",
-    tagline: "Pac-Man, Galaga, and 58 of their closest friends",
+    experienceTitle: "Arcade Machines",
+    tagline: "Bring the arcade home",
     image: "/images/arcade.webp",
+  },
+  {
+    href: "/billiard-accessories",
+    label: "Billiard Accessories",
+    experienceTitle: "Billiard Accessories",
+    tagline: "Everything your game room needs",
+    image: "/images/accessories.jpg",
+  },
+  {
+    href: "/contact",
+    label: "Game Room Furniture & Decor",
+    experienceTitle: "Furniture & Decor",
+    tagline: "The details make the room",
+    image: "/images/pool-tables.jpg",
   },
 ]
 
@@ -42,7 +56,7 @@ export const productCategories = [
   { href: "/spas", label: "Hot Tubs & Spas", shortLabel: "Spas", image: "/images/hot-tubs.jpg" },
   { href: "/big-green-egg", label: "Big Green Egg", shortLabel: "BGE", image: "/images/big-green-egg.jpg" },
   { href: "/arcade-machines", label: "Arcade Machines", shortLabel: "Arcade", image: "/images/arcade.webp" },
-  { href: "/accessories", label: "Accessories", shortLabel: "Accessories", image: "/images/accessories.jpg" },
+  { href: "/billiard-accessories", label: "Game Room Accessories", shortLabel: "Accessories", image: "/images/accessories.jpg" },
 ] as const
 
 export const testimonials = [

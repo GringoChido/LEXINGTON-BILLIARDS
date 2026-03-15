@@ -56,23 +56,23 @@ export const Footer = () => {
                   href={company.address.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2.5 text-text-on-dark/60 text-sm font-body hover:text-primary transition-colors"
+                  className="flex items-start gap-2.5 text-text-on-dark/60 text-base font-body hover:text-primary transition-colors"
                 >
-                  <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-primary/50" />
+                  <MapPin className="w-4 h-4 mt-1 shrink-0 text-primary/50" />
                   {company.address.full}
                 </a>
               </li>
               <li>
                 <a
                   href={company.phone.href}
-                  className="flex items-center gap-2.5 text-text-on-dark/60 text-sm font-body hover:text-primary transition-colors"
+                  className="flex items-center gap-2.5 text-text-on-dark text-xl font-heading font-bold hover:text-primary transition-colors"
                 >
-                  <Phone className="w-4 h-4 shrink-0 text-primary/50" />
+                  <Phone className="w-5 h-5 shrink-0 text-primary" />
                   {company.phone.display}
                 </a>
               </li>
               <li>
-                <div className="flex items-start gap-2.5 text-text-on-dark/60 text-sm font-body">
+                <div className="flex items-start gap-2.5 text-text-on-dark/60 text-base font-body">
                   <Clock className="w-4 h-4 mt-0.5 shrink-0 text-primary/50" />
                   <div>
                     <p>{company.hours.weekday}</p>

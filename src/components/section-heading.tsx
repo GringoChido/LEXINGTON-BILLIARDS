@@ -33,7 +33,7 @@ export const SectionHeading = ({
       </h2>
       {description && (
         <p
-          className="text-base lg:text-lg leading-relaxed"
+          className="text-lg leading-relaxed max-w-[60ch]"
           style={{ color: dark ? "rgba(255,247,237,0.6)" : "var(--color-text-secondary)" }}
         >
           {description}

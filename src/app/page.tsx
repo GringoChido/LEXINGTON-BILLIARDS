@@ -15,8 +15,8 @@ export default function HomePage() {
       <main>
         <HeroSlider />
         <ExperienceGrid />
-        <WhyUs />
         <BrandStrip />
+        <WhyUs />
         <Testimonials />
         <SocialStrip />
         <ContactCta />

@@ -36,25 +36,25 @@ export const navLinks = [
   { href: "/spas", label: "Hot Tubs & Spas" },
   { href: "/big-green-egg", label: "Big Green Egg" },
   { href: "/arcade-machines", label: "Arcade" },
-  { href: "/accessories", label: "Accessories" },
+  { href: "/billiard-accessories", label: "Game Room Accessories" },
   { href: "/contact", label: "Contact" },
 ] as const
 
 export const whyUs = [
   {
-    title: "Best Pool Tables in the Business",
-    description: "C.L. Bailey, Brunswick, Olhausen, Imperial, American Heritage — names that define the game.",
+    title: "Built on Pool Tables Since 1975",
+    description: "The Wilson family has sold, delivered, and serviced pool tables in Central Kentucky for 50 years. C.L. Bailey, Brunswick, Olhausen, Imperial, American Heritage.",
   },
   {
     title: "Lexington's Oldest Spa Dealer",
-    description: "Nobody in Central Kentucky has been selling and servicing hot tubs longer than us.",
+    description: "Nobody in Central Kentucky has been selling and servicing hot tubs longer than us. Factory-authorized service on every brand we carry.",
   },
   {
-    title: "Free Delivery & Installation",
-    description: "Within 50 miles of Lexington. Professional setup, leveling, and white-glove service on every order.",
+    title: "Free Delivery & Professional Setup",
+    description: "Within 50 miles of Lexington. Tables delivered, assembled, and leveled. Spas installed and ready to soak.",
   },
   {
-    title: "Quality Service & Repair",
-    description: "Factory-authorized technicians. Re-cloth, re-cushion, spa maintenance — we do it all.",
+    title: "50 Years of Service & Repair",
+    description: "Re-cloth, re-cushion, cue repair, spa maintenance — we do it all. Our service team covers all of Central and Eastern Kentucky.",
   },
 ] as const
