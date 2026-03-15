@@ -3,121 +3,100 @@
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
 import { experienceCategories } from "@/lib/content/categories"
-import { ScenePlaceholder } from "@/components/scene-placeholder"
+
+const tiles = experienceCategories.map((cat) => ({
+  title: cat.experienceTitle,
+  hook: cat.tagline,
+  href: cat.href,
+  image: cat.image,
+}))
 
 const containerVariants = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.08 } },
 }
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 32 },
+const tileVariants = {
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] as const },
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const },
   },
 }
 
 export const ExperienceGrid = () => {
-  const cats = experienceCategories
-
   return (
-    <section
-      className="py-[var(--section-py)] px-[var(--section-px)]"
-      style={{ background: "var(--color-background)" }}
-    >
-      <div className="max-w-[var(--content-max)] mx-auto">
-        {/* Headline — this is a MOMENT */}
+    <section className="py-24 md:py-32" style={{ background: "var(--color-cream)" }}>
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        {/* ── HEADLINE ── */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
-          className="mb-14 lg:mb-20"
+          className="mb-16"
         >
-          <h2 className="heading text-[length:var(--text-h1)]" style={{ color: "var(--color-text)" }}>
-            What&apos;s Your Saturday?
-          </h2>
           <p
-            className="heading text-[length:var(--text-h2)] mt-1"
+            className="font-heading font-bold tracking-widest uppercase text-sm mb-3"
             style={{ color: "var(--color-primary)" }}
           >
-            Build Your Perfect Day.
+            Choose Your Adventure
+          </p>
+          <h2
+            className="font-heading font-black leading-none"
+            style={{ fontSize: "clamp(3rem, 7vw, 6rem)", color: "var(--color-text)" }}
+          >
+            What&apos;s Your
+            <span className="block" style={{ color: "var(--color-primary)" }}>
+              Saturday?
+            </span>
+          </h2>
+          <p
+            className="font-heading mt-4"
+            style={{
+              fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
+              color: "rgba(28,28,28,0.55)",
+            }}
+          >
+            Build your perfect day — everything you need is here.
           </p>
         </motion.div>
 
-        {/* Asymmetric grid:
-            Row 1: Pool Tables (2 cols wide) + Spas (1 col, tall)
-            Row 2: Big Green Egg + Arcade
-            Row 3: Accessories (2 cols wide)
-            Row 4: Furniture & Decor (full width banner)
-        */}
+        {/* ── GRID ── */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-5"
+          className="grid grid-cols-1 md:grid-cols-5 gap-3"
+          style={{
+            gridTemplateRows: "auto",
+          }}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-40px" }}
         >
-          {/* Pool Tables — LARGE, 7 cols */}
-          <motion.div variants={cardVariants} className="lg:col-span-7">
-            <CategoryTile
-              cat={cats[0]}
-              aspect="aspect-[4/3] lg:aspect-[16/10]"
-              headingSize="text-[length:var(--text-h2)]"
-            />
+          {/* Row 1: Pool Tables (3fr) | Spas (2fr) */}
+          <motion.div variants={tileVariants} className="md:col-span-3 h-[280px] md:h-[380px]">
+            <TileCard tile={tiles[0]} />
+          </motion.div>
+          <motion.div variants={tileVariants} className="md:col-span-2 h-[280px] md:h-[380px]">
+            <TileCard tile={tiles[1]} />
           </motion.div>
 
-          {/* Spas — tall right, 5 cols */}
-          <motion.div variants={cardVariants} className="lg:col-span-5">
-            <CategoryTile
-              cat={cats[1]}
-              aspect="aspect-[4/3] lg:aspect-[4/5]"
-              headingSize="text-[length:var(--text-h3)]"
-            />
+          {/* Row 2: Big Green Egg (3fr) | Arcade (2fr) */}
+          <motion.div variants={tileVariants} className="md:col-span-3 h-[260px] md:h-[320px]">
+            <TileCard tile={tiles[2]} />
+          </motion.div>
+          <motion.div variants={tileVariants} className="md:col-span-2 h-[260px] md:h-[320px]">
+            <TileCard tile={tiles[3]} />
           </motion.div>
 
-          {/* Big Green Egg — 5 cols */}
-          <motion.div variants={cardVariants} className="lg:col-span-5">
-            <CategoryTile
-              cat={cats[2]}
-              aspect="aspect-[4/3]"
-              headingSize="text-[length:var(--text-h3)]"
-            />
+          {/* Row 3: Accessories (2fr) | Furniture (3fr) — dominance flips */}
+          <motion.div variants={tileVariants} className="md:col-span-2 h-[260px] md:h-[360px]">
+            <TileCard tile={tiles[4]} />
           </motion.div>
-
-          {/* Arcade — 7 cols */}
-          <motion.div variants={cardVariants} className="lg:col-span-7">
-            <CategoryTile
-              cat={cats[3]}
-              aspect="aspect-[4/3] lg:aspect-[16/10]"
-              headingSize="text-[length:var(--text-h3)]"
-            />
-          </motion.div>
-
-          {/* Billiard Accessories — 7 cols wide */}
-          <motion.div variants={cardVariants} className="lg:col-span-7">
-            <CategoryTile
-              cat={cats[4]}
-              aspect="aspect-[4/3] lg:aspect-[16/10]"
-              headingSize="text-[length:var(--text-h3)]"
-            />
-          </motion.div>
-
-          {/* Game Room Furniture & Decor — 5 cols */}
-          <motion.div variants={cardVariants} className="lg:col-span-5">
-            <CategoryTile
-              cat={cats[5]}
-              aspect="aspect-[4/3]"
-              headingSize="text-[length:var(--text-h3)]"
-            />
+          <motion.div variants={tileVariants} className="md:col-span-3 h-[260px] md:h-[360px]">
+            <TileCard tile={tiles[5]} />
           </motion.div>
         </motion.div>
       </div>
@@ -125,56 +104,53 @@ export const ExperienceGrid = () => {
   )
 }
 
-const CategoryTile = ({
-  cat,
-  aspect,
-  headingSize,
-}: {
-  cat: (typeof experienceCategories)[number]
-  aspect: string
-  headingSize: string
-}) => {
-  const hasImage = cat.image && !cat.image.includes("placeholder")
+const TileCard = ({ tile }: { tile: (typeof tiles)[number] }) => {
+  const hasImage = tile.image && !tile.image.includes("placeholder")
 
   return (
-    <Link
-      href={cat.href}
-      className={`group relative block overflow-hidden rounded-2xl ${aspect} bg-[var(--color-dark)]`}
-      aria-label={cat.experienceTitle}
-    >
-      {hasImage ? (
-        <Image
-          src={cat.image}
-          alt={cat.experienceTitle}
-          fill
-          className="object-cover transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-105"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 60vw"
-        />
-      ) : (
-        <ScenePlaceholder
-          label={`${cat.experienceTitle} showroom`}
-          className="w-full h-full !rounded-none"
-          dark
-        />
-      )}
+    <Link href={tile.href} className="block h-full">
+      <div className="relative overflow-hidden rounded-2xl h-full group cursor-pointer">
+        {hasImage ? (
+          <Image
+            src={tile.image}
+            alt={tile.title}
+            fill
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, 60vw"
+          />
+        ) : (
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(145deg, var(--color-dark) 0%, #3a3530 100%)",
+            }}
+          />
+        )}
 
-      {/* Overlay — deepens on hover */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent transition-opacity duration-500 group-hover:from-black/85" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-black/90 transition-all duration-500" />
 
-      {/* Content */}
-      <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-        <h3 className={`heading ${headingSize} text-white mb-1.5`}>
-          {cat.experienceTitle}
-        </h3>
-        <p className="text-white/60 text-sm italic leading-relaxed mb-4">
-          {cat.tagline}
-        </p>
-
-        {/* CTA — slides up on hover */}
-        <span className="inline-flex items-center gap-1.5 text-[var(--color-primary)] font-heading font-bold text-sm opacity-0 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-          Explore
-          <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
-        </span>
+        {/* Content */}
+        <div className="absolute bottom-0 left-0 right-0 p-8">
+          <h3
+            className="font-heading font-black text-white leading-none mb-2"
+            style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)" }}
+          >
+            {tile.title}
+          </h3>
+          <p className="text-white/80 font-medium text-base leading-snug translate-y-2 opacity-80 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+            {tile.hook}
+          </p>
+          <div className="mt-4 overflow-hidden h-0 group-hover:h-10 transition-all duration-300">
+            <span
+              className="inline-flex items-center gap-2 font-heading font-bold px-5 py-2 rounded-full text-sm text-white"
+              style={{ background: "var(--color-primary)" }}
+            >
+              Explore →
+            </span>
+          </div>
+        </div>
       </div>
     </Link>
   )
