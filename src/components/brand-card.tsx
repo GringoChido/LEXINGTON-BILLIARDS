@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import type { Brand } from "@/lib/content/brands"
 import { brandLogos } from "@/lib/content/brands"
+import { ScenePlaceholder } from "./scene-placeholder"
 
 interface BrandCardProps {
   brand: Brand
@@ -32,57 +33,68 @@ export const BrandCard = ({
           delay: index * 0.1,
           ease: [0.16, 1, 0.3, 1] as const,
         }}
-        className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8 lg:gap-16 items-center rounded-2xl border overflow-hidden"
+        className="rounded-2xl border overflow-hidden"
         style={{ borderColor: "var(--color-border)", background: "var(--color-cream)" }}
       >
-        <div className="flex items-center justify-center py-12 px-8">
-          {logo ? (
-            <div className="relative w-full max-w-[280px] h-[110px]">
-              <Image
-                src={logo}
-                alt={`${brand.name} logo`}
-                fill
-                className="object-contain"
-                sizes="280px"
-              />
+        {/* Large lifestyle image — full width */}
+        <ScenePlaceholder label={brand.scene} aspectRatio="21/9" />
+
+        {/* Content row: logo + details */}
+        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 lg:gap-10 p-8 lg:p-10 items-center">
+          {/* Logo */}
+          <div className="flex items-center justify-center lg:justify-start">
+            {logo ? (
+              <div className="relative w-[200px] h-[80px] lg:w-[240px] lg:h-[90px]">
+                <Image
+                  src={logo}
+                  alt={`${brand.name} logo`}
+                  fill
+                  className="object-contain"
+                  sizes="240px"
+                />
+              </div>
+            ) : (
+              <span
+                className="heading text-[length:var(--text-h3)]"
+                style={{ color: "var(--color-text-muted)" }}
+              >
+                {brand.name}
+              </span>
+            )}
+          </div>
+
+          {/* Details */}
+          <div>
+            <div className="flex flex-wrap gap-2 mb-3">
+              {brand.featured && (
+                <span className="pill pill-gold">Featured Brand</span>
+              )}
+              {brand.established && (
+                <span className="pill pill-dark">Est. {brand.established}</span>
+              )}
             </div>
-          ) : (
-            <span
-              className="heading text-[length:var(--text-h2)] text-center"
-              style={{ color: "var(--color-text-muted)" }}
+            <h3
+              className="heading text-[length:var(--text-h3)] mb-2"
+              style={{ color: "var(--color-text)" }}
             >
               {brand.name}
-            </span>
-          )}
-        </div>
-        <div className="px-8 pb-10 lg:py-12 lg:pr-12">
-          {brand.featured && (
-            <span className="pill pill-gold mb-3 inline-block">Featured Brand</span>
-          )}
-          {brand.established && (
-            <span className="pill pill-dark mb-3 inline-block">Est. {brand.established}</span>
-          )}
-          <h3
-            className="heading text-[length:var(--text-h3)] mb-2"
-            style={{ color: "var(--color-text)" }}
-          >
-            {brand.name}
-          </h3>
-          <p
-            className="font-semibold text-sm mb-4"
-            style={{ color: "var(--color-primary)" }}
-          >
-            {brand.tagline}
-          </p>
-          <p
-            className="text-base leading-relaxed mb-6"
-            style={{ color: "var(--color-text-secondary)" }}
-          >
-            {brand.description}
-          </p>
-          <button className="btn-outline inline-flex items-center gap-2">
-            Learn More <ArrowRight className="w-4 h-4" />
-          </button>
+            </h3>
+            <p
+              className="font-semibold text-sm mb-3"
+              style={{ color: "var(--color-primary)" }}
+            >
+              {brand.tagline}
+            </p>
+            <p
+              className="text-base leading-relaxed mb-5 max-w-[65ch]"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
+              {brand.description}
+            </p>
+            <button className="btn-outline inline-flex items-center gap-2">
+              Learn More <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </motion.div>
     )
@@ -98,46 +110,49 @@ export const BrandCard = ({
         delay: index * 0.15,
         ease: [0.16, 1, 0.3, 1] as const,
       }}
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-0 rounded-2xl border overflow-hidden ${
         reversed ? "lg:[direction:rtl]" : ""
       }`}
+      style={{ borderColor: "var(--color-border)", background: "var(--color-cream)" }}
     >
-      {/* Brand logo — floating, no background */}
-      <div className="flex items-center justify-center py-8 lg:py-12 lg:[direction:ltr]">
+      {/* Lifestyle image — takes full half */}
+      <div className="lg:[direction:ltr]">
+        <ScenePlaceholder label={brand.scene} aspectRatio="4/3" />
+      </div>
+
+      {/* Content half: logo + text + CTA */}
+      <div className="p-8 lg:p-10 flex flex-col justify-center lg:[direction:ltr]">
+        {/* Logo */}
         {logo ? (
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="relative w-full max-w-[260px] h-[100px]"
-          >
+          <div className="relative w-[180px] h-[70px] mb-5">
             <Image
               src={logo}
               alt={`${brand.name} logo`}
               fill
-              className="object-contain"
-              sizes="260px"
+              className="object-contain object-left"
+              sizes="180px"
             />
-          </motion.div>
+          </div>
         ) : (
           <span
-            className="heading text-[length:var(--text-h2)] text-center"
+            className="heading text-[length:var(--text-h3)] mb-4 block"
             style={{ color: "var(--color-text-muted)" }}
           >
             {brand.name}
           </span>
         )}
-      </div>
 
-      {/* Content */}
-      <div className="lg:[direction:ltr]">
-        {brand.featured && (
-          <span className="pill pill-gold mb-3 inline-block">Featured Brand</span>
-        )}
-        {brand.established && (
-          <span className="pill pill-dark mb-3 inline-block">
-            Est. {brand.established}
-          </span>
-        )}
+        {/* Pills */}
+        <div className="flex flex-wrap gap-2 mb-3">
+          {brand.featured && (
+            <span className="pill pill-gold">Featured Brand</span>
+          )}
+          {brand.established && (
+            <span className="pill pill-dark">Est. {brand.established}</span>
+          )}
+        </div>
+
+        {/* Brand name + tagline */}
         <h3
           className="heading text-[length:var(--text-h3)] mb-2"
           style={{ color: "var(--color-text)" }}
@@ -145,20 +160,26 @@ export const BrandCard = ({
           {brand.name}
         </h3>
         <p
-          className="font-semibold text-sm mb-4"
+          className="font-semibold text-sm mb-3"
           style={{ color: "var(--color-primary)" }}
         >
           {brand.tagline}
         </p>
+
+        {/* Description */}
         <p
           className="text-base leading-relaxed mb-6"
           style={{ color: "var(--color-text-secondary)" }}
         >
           {brand.description}
         </p>
-        <button className="btn-outline inline-flex items-center gap-2">
-          Learn More <ArrowRight className="w-4 h-4" />
-        </button>
+
+        {/* CTA */}
+        <div>
+          <button className="btn-outline inline-flex items-center gap-2">
+            Learn More <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
     </motion.div>
   )
