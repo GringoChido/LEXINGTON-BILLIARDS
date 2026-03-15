@@ -52,7 +52,7 @@ export const Navbar = () => {
           <div className="flex items-center gap-5">
             <a
               href={company.phone.href}
-              className="flex items-center gap-2 text-primary font-heading font-bold text-sm hover:text-primary/80 transition-colors"
+              className="flex items-center gap-2 text-primary font-display font-bold text-sm hover:text-primary/80 transition-colors"
             >
               <Phone className="w-3.5 h-3.5" />
               {company.phone.display}
@@ -100,7 +100,7 @@ export const Navbar = () => {
                 height={48}
                 className="w-12 h-12"
               />
-              <span className="hidden sm:block font-heading font-bold text-text-on-dark text-[15px] leading-tight tracking-tight">
+              <span className="hidden sm:block font-display font-bold text-text-on-dark text-[15px] leading-tight tracking-tight">
                 Lexington<br />
                 Billiards
               </span>
@@ -112,7 +112,7 @@ export const Navbar = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="font-heading font-semibold text-[12px] uppercase tracking-[0.08em] text-text-on-dark/65 hover:text-white transition-colors duration-300 whitespace-nowrap"
+                  className="font-display font-semibold text-[12px] uppercase tracking-[0.08em] text-text-on-dark/65 hover:text-white transition-colors duration-300 whitespace-nowrap"
                 >
                   {link.label}
                 </Link>
@@ -155,7 +155,7 @@ export const Navbar = () => {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block py-3 font-heading font-semibold text-[13px] uppercase tracking-wide text-text-on-dark/70 border-b border-border-dark hover:text-white transition-colors"
+                    className="block py-3 font-display font-semibold text-[13px] uppercase tracking-wide text-text-on-dark/70 border-b border-border-dark hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>

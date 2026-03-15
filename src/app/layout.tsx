@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
-import { Bricolage_Grotesque, DM_Sans } from "next/font/google"
+import { Fraunces, DM_Sans, DM_Mono } from "next/font/google"
 import "./globals.css"
 
-const bricolage = Bricolage_Grotesque({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-bricolage",
+  weight: ["400", "700", "800", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-fraunces",
   display: "swap",
 })
 
@@ -13,6 +14,13 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-dm-sans",
+  display: "swap",
+})
+
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-dm-mono",
   display: "swap",
 })
 
@@ -40,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bricolage.variable} ${dmSans.variable} bg-background text-text font-body antialiased`}
+        className={`${fraunces.variable} ${dmSans.variable} ${dmMono.variable} bg-background text-text font-body antialiased`}
       >
         {children}
       </body>

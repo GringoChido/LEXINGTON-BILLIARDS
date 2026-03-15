@@ -3,7 +3,7 @@
 import { PageHeroSlider } from "@/components/page-hero-slider"
 import { BrandCard } from "@/components/brand-card"
 import { SectionHeading } from "@/components/section-heading"
-import { BottomCta } from "@/components/bottom-cta"
+import { CTABlock } from "@/components/cta-block"
 import { ScenePlaceholder } from "@/components/scene-placeholder"
 import { arcadeBrands } from "@/lib/content/brands"
 import { motion } from "framer-motion"
@@ -79,15 +79,36 @@ export const ArcadeContent = () => {
     <div style={{ background: "var(--cat-primary, #1A1A2E)" }}>
       <PageHeroSlider slides={slides} />
 
-      {/* ── MACHINE LINEUP ── on dark surface */}
+      {/* ── CATEGORY INTRO ── */}
+      <section className="py-[var(--section-py)]" style={{ background: "var(--cat-primary, #1A1A2E)" }}>
+        <div className="mx-auto max-w-[var(--narrow-max)] px-[var(--section-px)] text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
+          >
+            <p className="heading text-[length:var(--text-stat)] mb-4" style={{ color: "var(--cat-accent, #FFD60A)" }}>7</p>
+            <p className="section-label mb-4" style={{ color: "var(--cat-neon-green, #06D6A0)" }}>Machine Types In Our Showroom</p>
+            <p className="text-lg leading-relaxed mb-10 max-w-[55ch] mx-auto" style={{ color: "rgba(248,249,250,0.6)" }}>
+              Uprights, cocktail tables, bourbon barrels, and virtual pinball — every machine is
+              hand-built with commercial-grade components. Come play a few rounds before you decide.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {["Hand-Built Cabinets", "60+ Classic Games", "Commercial Grade", "Custom Designs"].map((tag) => (
+                <span key={tag} className="pill" style={{ background: "rgba(6,214,160,0.12)", color: "var(--cat-neon-green, #06D6A0)" }}>{tag}</span>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── MACHINE LINEUP / PRODUCT GRID ── */}
       <section id="machines" className="py-[var(--section-py)]" style={{ background: "var(--cat-primary, #1A1A2E)" }}>
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
           <div className="mb-14 lg:mb-20">
             <p className="section-label mb-4" style={{ color: "var(--cat-accent, #FFD60A)" }}>What&apos;s In Our Showroom</p>
             <h2 className="heading text-[length:var(--text-h1)] mb-4" style={{ color: "var(--cat-light, #F8F9FA)" }}>The Machine Lineup</h2>
-            <p className="text-lg leading-relaxed max-w-[60ch]" style={{ color: "rgba(248,249,250,0.6)" }}>
-              Every machine is hand-built with commercial-grade components. Come play a few rounds before you decide.
-            </p>
           </div>
 
           <div className="space-y-8">
@@ -113,7 +134,7 @@ export const ArcadeContent = () => {
                       <span key={s} className="pill" style={{ background: "rgba(6,214,160,0.15)", color: "var(--cat-neon-green, #06D6A0)" }}>{s}</span>
                     ))}
                   </div>
-                  <a href="/contact" className="inline-flex items-center justify-center gap-2 font-heading font-bold text-sm px-8 py-4 rounded-lg w-fit" style={{ background: "var(--cat-accent, #FFD60A)", color: "var(--cat-primary, #1A1A2E)" }}>
+                  <a href="/contact" className="inline-flex items-center justify-center gap-2 font-display font-bold text-sm px-8 py-4 rounded-lg w-fit" style={{ background: "var(--cat-accent, #FFD60A)", color: "var(--cat-primary, #1A1A2E)" }}>
                     Visit the Showroom
                   </a>
                 </div>
@@ -144,7 +165,7 @@ export const ArcadeContent = () => {
 
             {/* Uprights pair */}
             <div>
-              <p className="text-sm font-bold uppercase tracking-wider mb-6" style={{ color: "var(--cat-neon-blue, #00B4D8)" }}>Classic Uprights — Pick Your Size</p>
+              <p className="font-accent text-sm font-medium uppercase tracking-wider mb-6" style={{ color: "var(--cat-neon-blue, #00B4D8)" }}>Classic Uprights — Pick Your Size</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {machines.slice(2, 4).map((m, i) => (
                   <motion.div key={m.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -166,7 +187,7 @@ export const ArcadeContent = () => {
 
             {/* Cocktail pair */}
             <div>
-              <p className="text-sm font-bold uppercase tracking-wider mb-6" style={{ color: "var(--cat-neon-green, #06D6A0)" }}>Classic Cocktail Style</p>
+              <p className="font-accent text-sm font-medium uppercase tracking-wider mb-6" style={{ color: "var(--cat-neon-green, #06D6A0)" }}>Classic Cocktail Style</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {machines.slice(4, 6).map((m, i) => (
                   <motion.div key={m.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -201,7 +222,7 @@ export const ArcadeContent = () => {
                 </div>
                 <div className="p-8 lg:p-12 flex flex-col justify-center relative z-10">
                   <p className="heading text-[length:var(--text-stat)] mb-2" style={{ color: "var(--cat-neon-blue, #00B4D8)" }}>863+</p>
-                  <p className="text-sm font-bold uppercase tracking-wider mb-4" style={{ color: "rgba(248,249,250,0.5)" }}>Classic Pinball Tables</p>
+                  <p className="font-accent text-sm font-medium uppercase tracking-wider mb-4" style={{ color: "rgba(248,249,250,0.5)" }}>Classic Pinball Tables</p>
                   <h3 className="heading text-[length:var(--text-h2)] mb-3" style={{ color: "var(--cat-light, #F8F9FA)" }}>{machines[6].name}</h3>
                   <p className="text-lg leading-relaxed mb-6" style={{ color: "rgba(248,249,250,0.65)" }}>{machines[6].descriptor}</p>
                   <div className="flex flex-wrap gap-2">
@@ -216,22 +237,19 @@ export const ArcadeContent = () => {
         </div>
       </section>
 
-      {/* ── BRANDS — slightly lighter dark ── */}
+      {/* ── BRANDS ── */}
       <section className="py-[var(--section-py)]" style={{ background: "var(--cat-surface, #16213E)" }}>
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
-          <div className="mb-14 lg:mb-20">
-            <p className="section-label mb-4" style={{ color: "var(--cat-accent, #FFD60A)" }}>Our Arcade Brands</p>
-            <h2 className="heading text-[length:var(--text-h2)]" style={{ color: "var(--cat-light, #F8F9FA)" }}>Built for Serious Game Rooms</h2>
-          </div>
+          <SectionHeading label="Our Arcade Brands" headline="Built for Serious Game Rooms" />
           <div className="space-y-16 lg:space-y-24">
             {arcadeBrands.map((brand, i) => (
-              <BrandCard key={brand.slug} brand={brand} index={i} reversed={i % 2 !== 0} />
+              <BrandCard key={brand.slug} brand={brand} index={i} reversed={i % 2 !== 0} variant={i === 0 ? "wide" : "default"} />
             ))}
           </div>
         </div>
       </section>
 
-      <BottomCta headline="Come Play One" variant="dark" />
+      <CTABlock headline="Come Play One" />
     </div>
   )
 }

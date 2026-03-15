@@ -69,7 +69,7 @@ export const ContactContent = () => {
           >
             <a
               href={company.phone.href}
-              className="font-heading font-[800] text-4xl sm:text-5xl lg:text-6xl text-primary tracking-tight hover:text-primary-hover transition-colors duration-200 inline-block mb-6"
+              className="heading text-4xl sm:text-5xl lg:text-6xl text-primary hover:text-primary-hover transition-colors duration-200 inline-block mb-6"
             >
               {company.phone.display}
             </a>
@@ -121,7 +121,7 @@ export const ContactContent = () => {
                   <div key={item.label} className="flex items-start gap-3">
                     <item.icon className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-xs font-semibold tracking-widest uppercase text-text-muted mb-0.5">
+                      <p className="font-accent text-xs font-medium tracking-widest uppercase text-text-muted mb-0.5">
                         {item.label}
                       </p>
                       {item.href ? (
@@ -143,7 +143,7 @@ export const ContactContent = () => {
 
               {/* Social links */}
               <div className="flex items-center gap-4 pt-4 border-t border-border">
-                <span className="text-xs font-semibold tracking-widest uppercase text-text-muted">
+                <span className="font-accent text-xs font-medium tracking-widest uppercase text-text-muted">
                   Follow Us
                 </span>
                 <a

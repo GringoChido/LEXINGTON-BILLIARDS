@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { PageHeroSlider } from "@/components/page-hero-slider"
 import { SectionHeading } from "@/components/section-heading"
-import { BottomCta } from "@/components/bottom-cta"
+import { CTABlock } from "@/components/cta-block"
 import { ScenePlaceholder } from "@/components/scene-placeholder"
 import { brandLogos } from "@/lib/content/brands"
 import { motion } from "framer-motion"
@@ -152,7 +152,7 @@ export const BigGreenEggContent = () => {
                       <span className="text-xs font-bold" style={{ color: "var(--cat-dark, #0F2E0F)" }}>{i + 1}</span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-sm mb-1 uppercase tracking-wide" style={{ color: "var(--cat-accent, #F5A623)" }}>{item.label}</h4>
+                      <h4 className="font-accent font-medium text-sm mb-1 uppercase tracking-wide" style={{ color: "var(--cat-accent, #F5A623)" }}>{item.label}</h4>
                       <p className="text-sm leading-relaxed" style={{ color: "rgba(250,246,239,0.65)" }}>{item.description}</p>
                     </div>
                   </motion.div>
@@ -227,7 +227,7 @@ export const BigGreenEggContent = () => {
         </div>
       </section>
 
-      <BottomCta headline="Come Fire One Up" variant="green" />
+      <CTABlock headline="Come Fire One Up" />
     </>
   )
 }

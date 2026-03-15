@@ -19,7 +19,7 @@ export const Footer = () => {
 
           {/* Brand */}
           <div className="lg:col-span-1">
-            <span className="font-heading font-bold text-base text-text-on-dark block mb-2">
+            <span className="font-display font-bold text-base text-text-on-dark block mb-2">
               {company.name}
             </span>
             <p className="font-body text-text-on-dark/60 text-sm leading-relaxed mb-6">
@@ -65,7 +65,7 @@ export const Footer = () => {
               <li>
                 <a
                   href={company.phone.href}
-                  className="flex items-center gap-2.5 text-text-on-dark text-xl font-heading font-bold hover:text-primary transition-colors"
+                  className="flex items-center gap-2.5 text-text-on-dark text-xl font-display font-bold hover:text-primary transition-colors"
                 >
                   <Phone className="w-5 h-5 shrink-0 text-primary" />
                   {company.phone.display}

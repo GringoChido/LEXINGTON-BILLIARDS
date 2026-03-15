@@ -48,7 +48,7 @@ export const ClBaileyFeature = () => {
               className="absolute bottom-5 left-5 right-5 rounded-xl px-5 py-4"
               style={{ background: "rgba(28,25,23,0.82)", backdropFilter: "blur(12px)", border: "1px solid var(--color-border-dark)" }}
             >
-              <p className="font-heading font-700 text-white/90 text-sm leading-snug italic">
+              <p className="font-display font-700 text-white/90 text-sm leading-snug italic">
                 &ldquo;Quality meets craftsmanship — at a price that makes sense.&rdquo;
               </p>
             </div>
@@ -68,7 +68,7 @@ export const ClBaileyFeature = () => {
             </h2>
 
             <p
-              className="font-heading font-700 text-[length:var(--text-h4)] mb-6"
+              className="font-display font-700 text-[length:var(--text-h4)] mb-6"
               style={{ color: "var(--color-primary)" }}
             >
               {clBailey.tagline}

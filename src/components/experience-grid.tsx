@@ -39,13 +39,13 @@ export const ExperienceGrid = () => {
           className="mb-16"
         >
           <p
-            className="font-heading font-bold tracking-widest uppercase text-sm mb-3"
+            className="font-accent font-medium tracking-widest uppercase text-sm mb-3"
             style={{ color: "var(--color-primary)" }}
           >
             Choose Your Adventure
           </p>
           <h2
-            className="font-heading font-black leading-none"
+            className="heading"
             style={{ fontSize: "clamp(3rem, 7vw, 6rem)", color: "var(--color-text)" }}
           >
             What&apos;s Your
@@ -54,10 +54,11 @@ export const ExperienceGrid = () => {
             </span>
           </h2>
           <p
-            className="font-heading mt-4"
+            className="heading mt-4"
             style={{
               fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
               color: "rgba(28,28,28,0.55)",
+              fontWeight: 400,
             }}
           >
             Build your perfect day — everything you need is here.
@@ -134,7 +135,7 @@ const TileCard = ({ tile }: { tile: (typeof tiles)[number] }) => {
         {/* Content */}
         <div className="absolute bottom-0 left-0 right-0 p-8">
           <h3
-            className="font-heading font-black text-white leading-none mb-2"
+            className="heading text-white mb-2"
             style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)" }}
           >
             {tile.title}
@@ -144,7 +145,7 @@ const TileCard = ({ tile }: { tile: (typeof tiles)[number] }) => {
           </p>
           <div className="mt-4 overflow-hidden h-0 group-hover:h-10 transition-all duration-300">
             <span
-              className="inline-flex items-center gap-2 font-heading font-bold px-5 py-2 rounded-full text-sm text-white"
+              className="inline-flex items-center gap-2 font-display font-bold px-5 py-2 rounded-full text-sm text-white"
               style={{ background: "var(--color-primary)" }}
             >
               Explore →
