@@ -1,8 +1,23 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import type { Brand } from "@/lib/content/brands"
+
+const brandLogos: Record<string, string> = {
+  "cl-bailey": "/images/brands/cl-bailey.png",
+  "brunswick": "/images/brands/brunswick.svg",
+  "olhausen": "/images/brands/olhausen.svg",
+  "imperial": "/images/brands/imperial.png",
+  "american-heritage": "/images/brands/american-heritage.png",
+  "maax": "/images/brands/maax.svg",
+  "bullfrog": "/images/brands/bullfrog.svg",
+  "jacuzzi": "/images/brands/jacuzzi.jpg",
+  "big-green-egg": "/images/brands/big-green-egg.svg",
+  "custom-multicades": "/images/brands/cl-bailey.png",
+  "raw-thrills": "/images/brands/raw-thrills.png",
+}
 
 interface BrandCardProps {
   brand: Brand
@@ -11,6 +26,8 @@ interface BrandCardProps {
 }
 
 export const BrandCard = ({ brand, index = 0, reversed = false }: BrandCardProps) => {
+  const logo = brandLogos[brand.slug]
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 32 }}
@@ -21,22 +38,38 @@ export const BrandCard = ({ brand, index = 0, reversed = false }: BrandCardProps
         reversed ? "lg:[direction:rtl]" : ""
       }`}
     >
-      {/* Image placeholder */}
-      <div className="aspect-[4/3] bg-surface-alt rounded-xl overflow-hidden lg:[direction:ltr]">
-        <div className="w-full h-full flex items-center justify-center">
+      {/* Brand logo area */}
+      <div
+        className="aspect-[4/3] rounded-xl overflow-hidden lg:[direction:ltr] flex items-center justify-center p-12"
+        style={{ background: "var(--color-surface-alt)" }}
+      >
+        {logo ? (
+          <div className="relative w-full h-full max-w-[280px] max-h-[140px]">
+            <Image
+              src={logo}
+              alt={`${brand.name} logo`}
+              fill
+              className="object-contain"
+              sizes="280px"
+            />
+          </div>
+        ) : (
           <span
             className="heading text-[length:var(--text-h3)] text-center px-6"
             style={{ color: "var(--color-text-muted)" }}
           >
             {brand.name}
           </span>
-        </div>
+        )}
       </div>
 
       {/* Content */}
       <div className="lg:[direction:ltr]">
         {brand.featured && (
-          <span className="inline-block bg-primary/10 text-primary rounded-full px-3 py-1 text-xs font-semibold mb-3">
+          <span
+            className="inline-block rounded-full px-3 py-1 text-xs font-semibold mb-3"
+            style={{ background: "rgba(234,88,12,0.1)", color: "var(--color-primary)" }}
+          >
             Featured Brand
           </span>
         )}
@@ -46,7 +79,9 @@ export const BrandCard = ({ brand, index = 0, reversed = false }: BrandCardProps
         >
           {brand.name}
         </h3>
-        <p className="text-primary font-semibold text-sm mb-4">{brand.tagline}</p>
+        <p className="font-semibold text-sm mb-4" style={{ color: "var(--color-primary)" }}>
+          {brand.tagline}
+        </p>
         <p
           className="text-base leading-relaxed mb-6"
           style={{ color: "var(--color-text-secondary)" }}

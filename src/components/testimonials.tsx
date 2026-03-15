@@ -7,7 +7,7 @@ import { SectionHeading } from "./section-heading"
 
 export const Testimonials = () => {
   return (
-    <section className="py-[var(--section-py)] bg-surface">
+    <section className="py-[var(--section-py)]" style={{ background: "var(--color-surface)" }}>
       <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
         <SectionHeading
           label="From Our Customers"
@@ -21,19 +21,20 @@ export const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] as const }}
-              className="relative bg-white rounded-xl p-8 border border-border"
+              className="relative bg-white rounded-xl p-8 border"
+              style={{ borderColor: "var(--color-border)" }}
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, j) => (
-                  <Star key={j} className="w-4 h-4 fill-accent text-accent" />
+                  <Star key={j} className="w-4 h-4" style={{ fill: "var(--color-accent)", color: "var(--color-accent)" }} />
                 ))}
               </div>
-              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+              <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--color-text-secondary)" }}>
                 &ldquo;{item.quote}&rdquo;
               </p>
               <footer>
-                <p className="text-text text-sm font-semibold font-heading">{item.author}</p>
-                <p className="text-text-muted text-xs mt-0.5">{item.location}</p>
+                <p className="text-sm font-semibold font-heading" style={{ color: "var(--color-text)" }}>{item.author}</p>
+                <p className="text-xs mt-0.5" style={{ color: "var(--color-text-muted)" }}>{item.location}</p>
               </footer>
             </motion.blockquote>
           ))}

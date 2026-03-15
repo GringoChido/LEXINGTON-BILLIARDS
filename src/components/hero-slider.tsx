@@ -93,11 +93,7 @@ export const HeroSlider = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Bottom fade to background */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none z-10"
-        style={{ background: "linear-gradient(to bottom, transparent, var(--color-background))" }}
-      />
+      {/* Hard bottom edge — wave divider handles the transition */}
 
       {/* Content */}
       <div className="relative z-20 h-full flex flex-col justify-center px-[var(--section-px)]">
@@ -138,7 +134,7 @@ export const HeroSlider = () => {
       </div>
 
       {/* Dot navigation */}
-      <div className="absolute bottom-36 left-0 right-0 z-20 flex justify-center gap-2.5">
+      <div className="absolute bottom-8 left-0 right-0 z-20 flex justify-center gap-2.5">
         {slides.map((_, i) => (
           <button
             key={i}
