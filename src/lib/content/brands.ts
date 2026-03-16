@@ -18,7 +18,7 @@ export const poolTableBrands: Brand[] = [
     description:
       "C.L. Bailey is the heart of our lineup. Solid hardwood construction, classic styling, and value that makes owning a real pool table accessible to every family. This is the brand we stock deepest — and for good reason.",
     scene: "C.L. Bailey pool table in warm living room, hardwood floors, pendant lighting, family game night",
-    image: "/images/brands/scene-cl-bailey.jpeg",
+    image: "/images/brands/scene-cl-bailey.jpg",
     featured: true,
   },
   {

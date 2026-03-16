@@ -17,7 +17,7 @@ const slides = [
     cta: { label: "See Our Tables", href: "#brands" },
   },
   {
-    image: "/images/pool-tables-slide-2.png",
+    image: "/images/pool-tables-slide-2.jpg",
     headline: "50 Years of Putting the Perfect Table in Your Home",
     cta: { label: "Visit the Showroom", href: "/contact" },
   },
