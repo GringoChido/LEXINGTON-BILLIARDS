@@ -4,6 +4,7 @@ export interface Brand {
   tagline: string
   description: string
   scene: string
+  image?: string
   featured?: boolean
   established?: string
 }
@@ -17,6 +18,7 @@ export const poolTableBrands: Brand[] = [
     description:
       "C.L. Bailey is the heart of our lineup. Solid hardwood construction, classic styling, and value that makes owning a real pool table accessible to every family. This is the brand we stock deepest — and for good reason.",
     scene: "C.L. Bailey pool table in warm living room, hardwood floors, pendant lighting, family game night",
+    image: "/images/brands/scene-cl-bailey.jpeg",
     featured: true,
   },
   {
@@ -26,6 +28,7 @@ export const poolTableBrands: Brand[] = [
     description:
       "Brunswick has defined billiards for nearly two centuries. Tournament-grade engineering meets contemporary design — the choice of players who demand the best.",
     scene: "Brunswick tournament pool table in upscale game room, slate top, leather pockets, dark wood finish",
+    image: "/images/brands/scene-brunswick.webp",
     established: "1845",
   },
   {
@@ -35,6 +38,7 @@ export const poolTableBrands: Brand[] = [
     description:
       "A.E. Schmidt has been building pool tables in St. Louis since 1850 — the oldest manufacturer in the country. Heirloom-quality construction with old-world craftsmanship that has never gone out of style.",
     scene: "A.E. Schmidt heirloom pool table, ornate carved legs, green felt, traditional billiard room",
+    image: "/images/brands/scene-ae-schmidt.jpg",
     established: "1850",
   },
   {
@@ -44,6 +48,7 @@ export const poolTableBrands: Brand[] = [
     description:
       "Connelly builds every table by hand in their Tucson, Arizona facility. Premium hardwoods, Italian slate, and furniture-grade finishes — tables built for players who know the difference.",
     scene: "Connelly pool table closeup, hand-rubbed hardwood rail, Italian slate bed, precision craftsmanship",
+    image: "/images/brands/scene-connelly.webp",
   },
   {
     name: "Olhausen",
@@ -52,6 +57,7 @@ export const poolTableBrands: Brand[] = [
     description:
       "Every Olhausen table is handcrafted in Portland, Tennessee with premium hardwoods and Italian slate. Built to last generations, not just years.",
     scene: "Olhausen pool table in modern game room, clean lines, contemporary finish, LED table light above",
+    image: "/images/brands/scene-olhausen.webp",
     established: "1972",
   },
   {
@@ -61,6 +67,7 @@ export const poolTableBrands: Brand[] = [
     description:
       "Imperial brings together billiards, shuffleboard, and game room furniture under one roof. Quality construction with officially licensed designs that fit any space.",
     scene: "Imperial shuffleboard table and pool table in spacious game room, sports memorabilia on walls",
+    image: "/images/brands/scene-imperial.webp",
   },
   {
     name: "American Heritage",
@@ -69,6 +76,7 @@ export const poolTableBrands: Brand[] = [
     description:
       "American Heritage combines stunning furniture design with serious playability. Their tables are as beautiful to look at as they are to play on.",
     scene: "American Heritage billiard table as dining table, elegant room, convertible top, chandelier",
+    image: "/images/brands/scene-american-heritage.jpg",
   },
 ]
 

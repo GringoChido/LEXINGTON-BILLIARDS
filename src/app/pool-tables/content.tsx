@@ -5,24 +5,24 @@ import { BrandCard } from "@/components/brand-card"
 import { SectionHeading } from "@/components/section-heading"
 import { ClothSwatches } from "@/components/cloth-swatches"
 import { CTABlock } from "@/components/cta-block"
-import { ScenePlaceholder } from "@/components/scene-placeholder"
+import Image from "next/image"
 import { poolTableBrands } from "@/lib/content/brands"
 import { motion } from "framer-motion"
 import { Truck, Package, Palette, Wrench, Phone } from "lucide-react"
 
 const slides = [
   {
-    image: "/images/pool-tables.webp",
+    image: "/images/pool-tables.jpeg",
     headline: "Kentucky\u2019s Best Game Room Starts Here",
     cta: { label: "See Our Tables", href: "#brands" },
   },
   {
-    sceneLabel: "Pool table on covered patio, friends playing, evening light",
+    image: "/images/pool-tables-slide-2.png",
     headline: "50 Years of Putting the Perfect Table in Your Home",
     cta: { label: "Visit the Showroom", href: "/contact" },
   },
   {
-    sceneLabel: "Close-up of felt, balls racked, chalk on rail",
+    image: "/images/pool-tables-slide-3.jpg",
     headline: "The Right Table. Delivered. Set Up. Ready to Play.",
     cta: { label: "Call Greg: (859) 255-7639", href: "tel:8592557639" },
   },
@@ -55,7 +55,7 @@ export const PoolTablesContent = () => {
               <h2 className="heading text-[length:var(--text-h1)] mb-6" style={{ color: "var(--color-text)" }}>
                 Built on Billiards
               </h2>
-              <div className="space-y-4 text-lg leading-relaxed mb-10 max-w-[60ch]" style={{ color: "var(--color-text-secondary)" }}>
+              <div className="space-y-4 text-base md:text-lg leading-relaxed mb-8 md:mb-10 max-w-[60ch]" style={{ color: "var(--color-text-secondary)" }}>
                 <p>
                   The Wilson family has been selling, delivering, and servicing
                   pool tables in Central Kentucky for fifty years. Three
@@ -97,7 +97,7 @@ export const PoolTablesContent = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
-              className="rounded-2xl p-8 border-l-4"
+              className="rounded-2xl p-5 md:p-8 border-l-4"
               style={{ borderColor: "var(--cat-primary, #1B4332)", background: "var(--color-background)" }}
             >
               <p className="font-accent font-medium text-sm mb-6 uppercase tracking-wider" style={{ color: "var(--cat-primary, #1B4332)" }}>
@@ -149,11 +149,17 @@ export const PoolTablesContent = () => {
             >
               <p className="section-label mb-4" style={{ color: "var(--cat-primary, #1B4332)" }}>Included Free</p>
               <h3 className="heading text-[length:var(--text-h2)] mb-4" style={{ color: "var(--color-text)" }}>Free Premium Accessory Kit</h3>
-              <p className="text-lg leading-relaxed mb-8" style={{ color: "var(--color-text-secondary)" }}>
+              <p className="text-base md:text-lg leading-relaxed mb-6 md:mb-8" style={{ color: "var(--color-text-secondary)" }}>
                 Every table comes with everything you need to play — a complete accessory kit with balls, two cues, a rack, brush, chalk, and table cover. No surprise add-ons, no extra charges.
               </p>
-              <div className="rounded-xl overflow-hidden">
-                <ScenePlaceholder label="Accessory kit flat lay — cues, balls, rack, brush, chalk, cover" aspectRatio="16/10" />
+              <div className="relative rounded-xl overflow-hidden" style={{ aspectRatio: "16/10" }}>
+                <Image
+                  src="/images/accessory-kit.webp"
+                  alt="Free premium accessory kit — cues, balls, rack, brush, chalk, cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 600px"
+                />
               </div>
             </motion.div>
             <motion.div
@@ -164,7 +170,7 @@ export const PoolTablesContent = () => {
             >
               <p className="section-label mb-4" style={{ color: "var(--cat-primary, #1B4332)" }}>Your Choice</p>
               <h3 className="heading text-[length:var(--text-h2)] mb-4" style={{ color: "var(--color-text)" }}>29 Cloth Colors</h3>
-              <p className="text-lg leading-relaxed mb-8" style={{ color: "var(--color-text-secondary)" }}>
+              <p className="text-base md:text-lg leading-relaxed mb-6 md:mb-8" style={{ color: "var(--color-text-secondary)" }}>
                 Championship and Simonis premium felt in every color you can imagine. Pick your color in our showroom — we&apos;ll install it the day your table is delivered.
               </p>
               <ClothSwatches />
@@ -187,7 +193,7 @@ export const PoolTablesContent = () => {
               <h2 className="heading text-[length:var(--text-h2)] mb-4" style={{ color: "var(--color-text-on-dark)" }}>
                 50 Years of Repair Experience
               </h2>
-              <p className="text-lg leading-relaxed max-w-[55ch]" style={{ color: "rgba(250,246,239,0.65)" }}>
+              <p className="text-base md:text-lg leading-relaxed max-w-[55ch]" style={{ color: "rgba(250,246,239,0.65)" }}>
                 Re-cloth, re-cushion, disassemble, move, and reassemble — we do
                 it all. Our service team covers all of Central and Eastern
                 Kentucky. When something needs attention, you call the same family that
@@ -201,7 +207,15 @@ export const PoolTablesContent = () => {
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] as const }}
               className="rounded-xl overflow-hidden"
             >
-              <ScenePlaceholder label="Service technician re-clothing a pool table on-site" aspectRatio="16/10" dark />
+              <div className="relative w-full" style={{ aspectRatio: "16/10" }}>
+                <Image
+                  src="/images/repair-service.jpg"
+                  alt="50 years of pool table repair and service experience"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 700px"
+                />
+              </div>
             </motion.div>
           </div>
         </div>

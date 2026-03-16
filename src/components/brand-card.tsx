@@ -37,7 +37,19 @@ export const BrandCard = ({
         style={{ borderColor: "var(--color-border)", background: "var(--color-cream)" }}
       >
         {/* Large lifestyle image — full width */}
-        <ScenePlaceholder label={brand.scene} aspectRatio="21/9" />
+        {brand.image ? (
+          <div className="relative w-full" style={{ aspectRatio: "21/9" }}>
+            <Image
+              src={brand.image}
+              alt={`${brand.name} lifestyle`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 1200px"
+            />
+          </div>
+        ) : (
+          <ScenePlaceholder label={brand.scene} aspectRatio="21/9" />
+        )}
 
         {/* Content row: logo + details */}
         <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-5 lg:gap-10 p-5 md:p-8 lg:p-10 items-center">
@@ -117,7 +129,19 @@ export const BrandCard = ({
     >
       {/* Lifestyle image — takes full half */}
       <div className="lg:[direction:ltr]">
-        <ScenePlaceholder label={brand.scene} aspectRatio="4/3" />
+        {brand.image ? (
+          <div className="relative w-full h-full min-h-[280px]" style={{ aspectRatio: "4/3" }}>
+            <Image
+              src={brand.image}
+              alt={`${brand.name} lifestyle`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 600px"
+            />
+          </div>
+        ) : (
+          <ScenePlaceholder label={brand.scene} aspectRatio="4/3" />
+        )}
       </div>
 
       {/* Content half: logo + text + CTA */}

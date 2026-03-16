@@ -142,18 +142,22 @@ export const PageHeroSlider = ({
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-1">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-2 rounded-full transition-all duration-500 ${
-              i === current
-                ? "w-8 bg-white"
-                : "w-2 bg-white/40 hover:bg-white/60"
-            }`}
+            className="w-11 h-11 flex items-center justify-center"
             aria-label={`Go to slide ${i + 1}`}
-          />
+          >
+            <span
+              className={`block h-2 rounded-full transition-all duration-500 ${
+                i === current
+                  ? "w-8 bg-white"
+                  : "w-2 bg-white/40"
+              }`}
+            />
+          </button>
         ))}
       </div>
 
