@@ -40,11 +40,11 @@ export const BrandCard = ({
         <ScenePlaceholder label={brand.scene} aspectRatio="21/9" />
 
         {/* Content row: logo + details */}
-        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 lg:gap-10 p-8 lg:p-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-5 lg:gap-10 p-5 md:p-8 lg:p-10 items-center">
           {/* Logo */}
           <div className="flex items-center justify-center lg:justify-start">
             {logo ? (
-              <div className="relative w-[200px] h-[80px] lg:w-[240px] lg:h-[90px]">
+              <div className="relative w-[160px] h-[64px] md:w-[200px] md:h-[80px] lg:w-[240px] lg:h-[90px]">
                 <Image
                   src={logo}
                   alt={`${brand.name} logo`}
@@ -121,10 +121,10 @@ export const BrandCard = ({
       </div>
 
       {/* Content half: logo + text + CTA */}
-      <div className="p-8 lg:p-10 flex flex-col justify-center lg:[direction:ltr]">
+      <div className="p-5 md:p-8 lg:p-10 flex flex-col justify-center lg:[direction:ltr]">
         {/* Logo */}
         {logo ? (
-          <div className="relative w-[180px] h-[70px] mb-5">
+          <div className="relative w-[140px] h-[56px] md:w-[180px] md:h-[70px] mb-5">
             <Image
               src={logo}
               alt={`${brand.name} logo`}

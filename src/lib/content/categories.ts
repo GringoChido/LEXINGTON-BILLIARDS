@@ -12,50 +12,43 @@ export const experienceCategories: ExperienceCategory[] = [
     label: "Pool Tables",
     experienceTitle: "Pool Tables",
     tagline: "The game room starts here",
-    image: "/images/pool-tables.jpg",
+    image: "/images/tile-pool-tables.jpg",
   },
   {
     href: "/spas",
     label: "Hot Tubs & Spas",
     experienceTitle: "Hot Tubs & Spas",
     tagline: "Your backyard is missing one",
-    image: "/images/hot-tubs.jpg",
+    image: "/images/tile-hot-tubs.jpg",
   },
   {
     href: "/big-green-egg",
     label: "Big Green Egg",
     experienceTitle: "Big Green Egg",
     tagline: "It\u2019s not a grill. It\u2019s an obsession.",
-    image: "/images/big-green-egg.jpg",
+    image: "/images/tile-big-green-egg.webp",
   },
   {
     href: "/arcade-machines",
     label: "Arcade Machines",
     experienceTitle: "Arcade Machines",
     tagline: "Bring the arcade home",
-    image: "/images/arcade.webp",
+    image: "/images/tile-arcade.avif",
   },
   {
     href: "/billiard-accessories",
     label: "Billiard Accessories",
     experienceTitle: "Billiard Accessories",
     tagline: "Everything your game room needs",
-    image: "/images/accessories.jpg",
-  },
-  {
-    href: "/contact",
-    label: "Game Room Furniture & Decor",
-    experienceTitle: "Furniture & Decor",
-    tagline: "The details make the room",
-    image: "/images/pool-tables.jpg",
+    image: "/images/tile-accessories.webp",
   },
 ]
 
 export const productCategories = [
-  { href: "/pool-tables", label: "Pool Tables", shortLabel: "Tables", image: "/images/pool-tables.jpg" },
+  { href: "/pool-tables", label: "Pool Tables", shortLabel: "Tables", image: "/images/pool-tables.webp" },
   { href: "/spas", label: "Hot Tubs & Spas", shortLabel: "Spas", image: "/images/hot-tubs.jpg" },
   { href: "/big-green-egg", label: "Big Green Egg", shortLabel: "BGE", image: "/images/big-green-egg.jpg" },
-  { href: "/arcade-machines", label: "Arcade Machines", shortLabel: "Arcade", image: "/images/arcade.webp" },
+  { href: "/arcade-machines", label: "Arcade Machines", shortLabel: "Arcade", image: "/images/arcade.jpg" },
   { href: "/billiard-accessories", label: "Game Room Accessories", shortLabel: "Accessories", image: "/images/accessories.jpg" },
 ] as const
 

@@ -12,7 +12,7 @@ import { Truck, Package, Palette, Wrench, Phone } from "lucide-react"
 
 const slides = [
   {
-    image: "/images/pool-tables.jpg",
+    image: "/images/pool-tables.webp",
     headline: "Kentucky\u2019s Best Game Room Starts Here",
     cta: { label: "See Our Tables", href: "#brands" },
   },

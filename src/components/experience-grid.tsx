@@ -36,7 +36,7 @@ export const ExperienceGrid = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
-          className="mb-16"
+          className="mb-10 md:mb-16"
         >
           <p
             className="font-accent font-medium tracking-widest uppercase text-sm mb-3"
@@ -67,37 +67,31 @@ export const ExperienceGrid = () => {
 
         {/* ── GRID ── */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-5 gap-3"
-          style={{
-            gridTemplateRows: "auto",
-          }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-3"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
         >
-          {/* Row 1: Pool Tables (3fr) | Spas (2fr) */}
-          <motion.div variants={tileVariants} className="md:col-span-3 h-[280px] md:h-[380px]">
+          {/* Row 1: Pool Tables | Spas */}
+          <motion.div variants={tileVariants} className="h-[280px] md:h-[380px]">
             <TileCard tile={tiles[0]} />
           </motion.div>
-          <motion.div variants={tileVariants} className="md:col-span-2 h-[280px] md:h-[380px]">
+          <motion.div variants={tileVariants} className="h-[280px] md:h-[380px]">
             <TileCard tile={tiles[1]} />
           </motion.div>
 
-          {/* Row 2: Big Green Egg (3fr) | Arcade (2fr) */}
-          <motion.div variants={tileVariants} className="md:col-span-3 h-[260px] md:h-[320px]">
+          {/* Row 2: Big Green Egg | Arcade */}
+          <motion.div variants={tileVariants} className="h-[260px] md:h-[340px]">
             <TileCard tile={tiles[2]} />
           </motion.div>
-          <motion.div variants={tileVariants} className="md:col-span-2 h-[260px] md:h-[320px]">
+          <motion.div variants={tileVariants} className="h-[260px] md:h-[340px]">
             <TileCard tile={tiles[3]} />
           </motion.div>
 
-          {/* Row 3: Accessories (2fr) | Furniture (3fr) — dominance flips */}
-          <motion.div variants={tileVariants} className="md:col-span-2 h-[260px] md:h-[360px]">
+          {/* Row 3: Accessories — full width */}
+          <motion.div variants={tileVariants} className="md:col-span-2 h-[260px] md:h-[320px]">
             <TileCard tile={tiles[4]} />
-          </motion.div>
-          <motion.div variants={tileVariants} className="md:col-span-3 h-[260px] md:h-[360px]">
-            <TileCard tile={tiles[5]} />
           </motion.div>
         </motion.div>
       </div>
@@ -133,19 +127,19 @@ const TileCard = ({ tile }: { tile: (typeof tiles)[number] }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-black/90 transition-all duration-500" />
 
         {/* Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-8">
+        <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8">
           <h3
-            className="heading text-white mb-2"
-            style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)" }}
+            className="heading text-white mb-1.5"
+            style={{ fontSize: "clamp(1.25rem, 3vw, 2.25rem)" }}
           >
             {tile.title}
           </h3>
-          <p className="text-white/80 font-medium text-base leading-snug translate-y-2 opacity-80 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          <p className="text-white/80 font-medium text-sm md:text-base leading-snug md:translate-y-2 md:opacity-80 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
             {tile.hook}
           </p>
-          <div className="mt-4 overflow-hidden h-0 group-hover:h-10 transition-all duration-300">
+          <div className="mt-3 md:mt-4 md:overflow-hidden md:h-0 group-hover:h-10 md:transition-all md:duration-300">
             <span
-              className="inline-flex items-center gap-2 font-display font-bold px-5 py-2 rounded-full text-sm text-white"
+              className="inline-flex items-center gap-2 font-display font-bold px-4 py-2 rounded-full text-sm text-white"
               style={{ background: "var(--color-primary)" }}
             >
               Explore →

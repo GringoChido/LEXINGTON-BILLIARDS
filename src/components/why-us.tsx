@@ -1,10 +1,18 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Trophy, Clock, Truck, Wrench } from "lucide-react"
 import { whyUs } from "@/lib/content/company"
 
 const icons = [Trophy, Clock, Truck, Wrench]
+
+const cardImages = [
+  "/images/why-pool-tables.jpg",
+  "/images/why-spas.jpg",
+  "/images/why-delivery.jpg",
+  "/images/why-service.jpg",
+]
 
 const containerVariants = {
   hidden: {},
@@ -51,24 +59,37 @@ export const WhyUs = () => {
               <motion.div
                 key={item.title}
                 variants={cardVariants}
-                className="rounded-xl p-8 border"
+                className="relative rounded-xl p-5 sm:p-8 border overflow-hidden"
                 style={{ background: "var(--color-dark-surface)", borderColor: "var(--color-border-dark)" }}
               >
-                {/* Icon circle */}
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center mb-5"
-                  style={{ background: "rgba(234,88,12,0.15)" }}
-                >
-                  <Icon size={22} style={{ color: "var(--color-primary)" }} aria-hidden="true" />
+                {/* Background image — ghosted */}
+                <Image
+                  src={cardImages[i]}
+                  alt=""
+                  fill
+                  className="object-cover opacity-[0.12]"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-surface)] via-[var(--color-dark-surface)]/60 to-transparent" />
+
+                {/* Content */}
+                <div className="relative z-10">
+                  {/* Icon circle */}
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mb-5"
+                    style={{ background: "rgba(234,88,12,0.15)" }}
+                  >
+                    <Icon size={22} style={{ color: "var(--color-primary)" }} aria-hidden="true" />
+                  </div>
+
+                  <h3 className="heading text-[length:var(--text-h4)] text-[var(--color-text-on-dark)] mb-3">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-white/60 text-base sm:text-lg leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-
-                <h3 className="heading text-[length:var(--text-h4)] text-[var(--color-text-on-dark)] mb-3">
-                  {item.title}
-                </h3>
-
-                <p className="text-white/60 text-lg leading-relaxed">
-                  {item.description}
-                </p>
               </motion.div>
             )
           })}

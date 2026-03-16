@@ -8,11 +8,11 @@ import { company } from "@/lib/content/company"
 
 const slides = [
   {
-    image: "/images/pool-tables.jpg",
-    headline: "Make Your Home the Best House on the Block",
-    sub: "Premium pool tables, hot tubs, grills & arcade machines — all under one roof.",
-    ctaLabel: "Explore Pool Tables",
-    ctaHref: "/pool-tables",
+    image: "/images/pool-tables.webp",
+    headline: "Make Your Home the Best on the Block",
+    sub: "Get ready for the spring at Lexington Billiards — pool tables, hot tubs, grills & arcade machines all under one roof.",
+    ctaLabel: "Visit the Showroom",
+    ctaHref: "/contact",
   },
   {
     image: "/images/hot-tubs.jpg",
@@ -22,6 +22,13 @@ const slides = [
     ctaHref: "/spas",
   },
   {
+    image: "/images/pool-tables-hero.jpg",
+    headline: "Check Out Our Pool Tables",
+    sub: "Seven premium brands, free delivery & setup, and 29 cloth colors to choose from.",
+    ctaLabel: "Explore Pool Tables",
+    ctaHref: "/pool-tables",
+  },
+  {
     image: "/images/big-green-egg.jpg",
     headline: "Fire Up Something Legendary",
     sub: "The Big Green Egg — grill, smoke, bake, and roast with one incredible cooker.",
@@ -29,7 +36,7 @@ const slides = [
     ctaHref: "/big-green-egg",
   },
   {
-    image: "/images/arcade.webp",
+    image: "/images/arcade.jpg",
     headline: "Bring the Arcade Home",
     sub: "Custom multicade cabinets loaded with 60+ classic games.",
     ctaLabel: "See Arcade Machines",
@@ -112,11 +119,11 @@ export const HeroSlider = () => {
                 Est. 1975 · Lexington, KY
               </p>
 
-              <h1 className="heading text-[length:var(--text-display)] text-[var(--color-text-on-dark)] mb-5">
+              <h1 className="heading text-[length:var(--text-display)] text-[var(--color-text-on-dark)] mb-5 break-words">
                 {slides[current].headline}
               </h1>
 
-              <p className="text-white/75 text-lg leading-relaxed mb-8 max-w-[480px]">
+              <p className="text-white/75 text-base md:text-lg leading-relaxed mb-8 max-w-[480px]">
                 {slides[current].sub}
               </p>
 
@@ -134,18 +141,24 @@ export const HeroSlider = () => {
       </div>
 
       {/* Dot navigation */}
-      <div className="absolute bottom-8 left-0 right-0 z-20 flex justify-center gap-2.5">
+      <div className="absolute bottom-8 left-0 right-0 z-20 flex justify-center gap-1">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => goTo(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              i === current
-                ? "w-8 bg-[var(--color-primary)]"
-                : "w-2 bg-white/40 hover:bg-white/70"
+            className={`relative flex items-center justify-center w-11 h-11 ${
+              i === current ? "" : "opacity-70 hover:opacity-100"
             }`}
-          />
+          >
+            <span
+              className={`rounded-full transition-all duration-300 ${
+                i === current
+                  ? "w-8 h-2 bg-[var(--color-primary)]"
+                  : "w-2 h-2 bg-white/40"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </section>

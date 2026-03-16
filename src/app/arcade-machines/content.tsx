@@ -10,7 +10,7 @@ import { motion } from "framer-motion"
 
 const slides = [
   {
-    image: "/images/arcade.webp",
+    image: "/images/arcade.jpg",
     headline: "Bring the Arcade Home",
     cta: { label: "See Our Machines", href: "#machines" },
   },

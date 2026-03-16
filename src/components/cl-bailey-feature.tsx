@@ -34,7 +34,7 @@ export const ClBaileyFeature = () => {
             className="relative aspect-[4/3] rounded-2xl overflow-hidden"
           >
             <Image
-              src="/images/pool-tables.jpg"
+              src="/images/pool-tables.webp"
               alt="C.L. Bailey pool table"
               fill
               className="object-cover"
@@ -45,10 +45,10 @@ export const ClBaileyFeature = () => {
 
             {/* Quote badge */}
             <div
-              className="absolute bottom-5 left-5 right-5 rounded-xl px-5 py-4"
+              className="absolute bottom-4 left-4 right-4 rounded-xl px-4 py-3 md:bottom-5 md:left-5 md:right-5 md:px-5 md:py-4"
               style={{ background: "rgba(28,25,23,0.82)", backdropFilter: "blur(12px)", border: "1px solid var(--color-border-dark)" }}
             >
-              <p className="font-display font-700 text-white/90 text-sm leading-snug italic">
+              <p className="font-display font-bold text-white/90 text-sm leading-snug italic">
                 &ldquo;Quality meets craftsmanship — at a price that makes sense.&rdquo;
               </p>
             </div>
@@ -63,12 +63,12 @@ export const ClBaileyFeature = () => {
           >
             <p className="section-label !text-[var(--color-primary)] mb-4">Our Lead Brand</p>
 
-            <h2 className="heading text-[length:var(--text-h1)] text-[var(--color-text-on-dark)] mb-3">
+            <h2 className="heading text-[length:var(--text-h1)] text-[var(--color-text-on-dark)] mb-3 break-words">
               {clBailey.name}
             </h2>
 
             <p
-              className="font-display font-700 text-[length:var(--text-h4)] mb-6"
+              className="font-display font-bold text-[length:var(--text-h4)] mb-6"
               style={{ color: "var(--color-primary)" }}
             >
               {clBailey.tagline}
@@ -80,7 +80,7 @@ export const ClBaileyFeature = () => {
 
             {/* Stat strip */}
             <div
-              className="flex gap-8 mb-10 py-6 border-t border-b"
+              className="flex flex-wrap gap-6 md:gap-8 mb-10 py-6 border-t border-b"
               style={{ borderColor: "var(--color-border-dark)" }}
             >
               {[
