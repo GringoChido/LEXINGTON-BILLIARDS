@@ -6,12 +6,13 @@ import { SectionHeading } from "@/components/section-heading"
 import { CTABlock } from "@/components/cta-block"
 import { ScenePlaceholder } from "@/components/scene-placeholder"
 import { accessoryBrands } from "@/lib/content/brands"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Lamp, Armchair, Palette, Shield } from "lucide-react"
 
 const slides = [
   {
-    image: "/images/accessories.jpg",
+    image: "/images/accessories.webp",
     headline: "Everything for the Serious Game Room",
     cta: { label: "See What We Carry", href: "#brands" },
   },
@@ -29,10 +30,10 @@ const slides = [
 
 
 const accessoryCategories = [
-  { name: "Cue Sticks & Repair", icon: Palette, scene: "Pool cues lined up on rack, exotic wood, leather wraps" },
-  { name: "Table Lights & Fixtures", icon: Lamp, scene: "Billiard table pendant light, art glass shade, warm glow" },
-  { name: "Bar Stools & Seating", icon: Armchair, scene: "Spectator bar stools, leather, hardwood, game room" },
-  { name: "Cloth & Re-Cloth Service", icon: Shield, scene: "Pool table cloth being installed, green felt, precision" },
+  { name: "Cue Sticks & Repair", icon: Palette, image: "/images/cue-sticks-repair.webp" },
+  { name: "Table Lights & Fixtures", icon: Lamp, image: "/images/table-lights-fixtures.webp" },
+  { name: "Bar Stools & Seating", icon: Armchair, image: "/images/bar-stools-seating.webp" },
+  { name: "Cloth & Re-Cloth Service", icon: Shield, image: "/images/cloth-recloth-service.webp" },
 ]
 
 export const BilliardAccessoriesContent = () => {
@@ -82,7 +83,9 @@ export const BilliardAccessoriesContent = () => {
                 className="rounded-xl overflow-hidden border card-hover"
                 style={{ borderColor: "var(--color-border)", background: "var(--color-background)" }}
               >
-                <ScenePlaceholder label={cat.scene} aspectRatio="16/9" />
+                <div className="relative" style={{ aspectRatio: "16/9" }}>
+                  <Image src={cat.image} alt={cat.name} fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
+                </div>
                 <div className="p-6 flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={{ background: "rgba(212,175,55,0.12)" }}>
                     <cat.icon className="w-5 h-5" style={{ color: "var(--cat-accent, #D4AF37)" }} />
@@ -136,7 +139,9 @@ export const BilliardAccessoriesContent = () => {
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] as const }}
               className="rounded-xl overflow-hidden"
             >
-              <ScenePlaceholder label="Billiard supplies display — Aramith balls, chalk, brushes, cloth samples" aspectRatio="4/3" />
+              <div className="relative" style={{ aspectRatio: "4/3" }}>
+                <Image src="/images/supplies-service.webp" alt="Billiard supplies and service" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              </div>
             </motion.div>
           </div>
         </div>

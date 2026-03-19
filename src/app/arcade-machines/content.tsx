@@ -10,17 +10,17 @@ import { motion } from "framer-motion"
 
 const slides = [
   {
-    image: "/images/arcade.jpg",
+    image: "/images/gameroom-slide-1.webp",
     headline: "Bring the Arcade Home",
     cta: { label: "See Our Machines", href: "#machines" },
   },
   {
-    sceneLabel: "Custom multicade close-up, neon glow, dark room",
+    image: "/images/gameroom-slide-2.webp",
     headline: "Custom Multicades. Classic Games. Your Design.",
     cta: { label: "Visit the Showroom", href: "/contact" },
   },
   {
-    sceneLabel: "Bourbon barrel arcade machine in home game room, warm lighting",
+    image: "/images/gameroom-slide-3.webp",
     headline: "Hundreds of Games. One Machine.",
     cta: { label: "Call (859) 255-7639", href: "tel:8592557639" },
   },

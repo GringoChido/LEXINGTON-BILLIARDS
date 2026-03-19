@@ -36,7 +36,7 @@ const slides = [
     ctaHref: "/big-green-egg",
   },
   {
-    image: "/images/arcade.jpg",
+    image: "/images/arcade.webp",
     headline: "Bring the Arcade Home",
     sub: "Custom multicade cabinets loaded with 60+ classic games.",
     ctaLabel: "See Arcade Machines",

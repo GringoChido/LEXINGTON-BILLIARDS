@@ -18,7 +18,7 @@ export const poolTableBrands: Brand[] = [
     description:
       "C.L. Bailey is the heart of our lineup. Solid hardwood construction, classic styling, and value that makes owning a real pool table accessible to every family. This is the brand we stock deepest — and for good reason.",
     scene: "C.L. Bailey pool table in warm living room, hardwood floors, pendant lighting, family game night",
-    image: "/images/brands/scene-cl-bailey.jpg",
+    image: "/images/brands/scene-cl-bailey.webp",
     featured: true,
   },
   {
@@ -38,7 +38,7 @@ export const poolTableBrands: Brand[] = [
     description:
       "A.E. Schmidt has been building pool tables in St. Louis since 1850 — the oldest manufacturer in the country. Heirloom-quality construction with old-world craftsmanship that has never gone out of style.",
     scene: "A.E. Schmidt heirloom pool table, ornate carved legs, green felt, traditional billiard room",
-    image: "/images/brands/scene-ae-schmidt.jpg",
+    image: "/images/brands/scene-ae-schmidt.webp",
     established: "1850",
   },
   {
@@ -76,7 +76,7 @@ export const poolTableBrands: Brand[] = [
     description:
       "American Heritage combines stunning furniture design with serious playability. Their tables are as beautiful to look at as they are to play on.",
     scene: "American Heritage billiard table as dining table, elegant room, convertible top, chandelier",
-    image: "/images/brands/scene-american-heritage.jpg",
+    image: "/images/brands/scene-american-heritage.webp",
   },
 ]
 
@@ -187,13 +187,13 @@ export const accessoryBrands: Brand[] = [
 
 /* ── All brand logos (slug → path) ── */
 export const brandLogos: Record<string, string> = {
-  "cl-bailey": "/images/brands/cl-bailey.png",
+  "cl-bailey": "/images/brands/cl-bailey.webp",
   "brunswick": "/images/brands/brunswick.svg",
   "ae-schmidt": "/images/brands/ae-schmidt.svg",
   "connelly": "/images/brands/connelly.svg",
   "olhausen": "/images/brands/olhausen.svg",
-  "imperial": "/images/brands/imperial.png",
-  "american-heritage": "/images/brands/american-heritage.png",
+  "imperial": "/images/brands/imperial.webp",
+  "american-heritage": "/images/brands/american-heritage.webp",
   "american-whirlpool": "/images/brands/american-whirlpool.svg",
   "vita-spa": "/images/brands/vita-spa.svg",
   "big-green-egg": "/images/brands/big-green-egg.svg",
@@ -203,7 +203,7 @@ export const brandLogos: Record<string, string> = {
   "toltec": "/images/brands/toltec.svg",
   "maax": "/images/brands/maax.svg",
   "bullfrog": "/images/brands/bullfrog.svg",
-  "jacuzzi": "/images/brands/jacuzzi.jpg",
+  "jacuzzi": "/images/brands/jacuzzi.webp",
 }
 
 /* ── All brands for marquee ── */

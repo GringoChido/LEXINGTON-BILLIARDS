@@ -12,17 +12,17 @@ import { Truck, Package, Palette, Wrench, Phone } from "lucide-react"
 
 const slides = [
   {
-    image: "/images/pool-tables.jpeg",
+    image: "/images/pool-tables.webp",
     headline: "Kentucky\u2019s Best Game Room Starts Here",
     cta: { label: "See Our Tables", href: "#brands" },
   },
   {
-    image: "/images/pool-tables-slide-2.jpg",
+    image: "/images/pool-tables-slide-2.webp",
     headline: "50 Years of Putting the Perfect Table in Your Home",
     cta: { label: "Visit the Showroom", href: "/contact" },
   },
   {
-    image: "/images/pool-tables-slide-3.jpg",
+    image: "/images/pool-tables-slide-3.webp",
     headline: "The Right Table. Delivered. Set Up. Ready to Play.",
     cta: { label: "Call Greg: (859) 255-7639", href: "tel:8592557639" },
   },
@@ -209,7 +209,7 @@ export const PoolTablesContent = () => {
             >
               <div className="relative w-full" style={{ aspectRatio: "16/10" }}>
                 <Image
-                  src="/images/repair-service.jpg"
+                  src="/images/repair-service.webp"
                   alt="50 years of pool table repair and service experience"
                   fill
                   className="object-cover"

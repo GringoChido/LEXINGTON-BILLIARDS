@@ -8,10 +8,10 @@ import { whyUs } from "@/lib/content/company"
 const icons = [Trophy, Clock, Truck, Wrench]
 
 const cardImages = [
-  "/images/why-pool-tables.jpg",
-  "/images/why-spas.jpg",
-  "/images/why-delivery.jpg",
-  "/images/why-service.jpg",
+  "/images/why-pool-tables.webp",
+  "/images/why-spas.webp",
+  "/images/why-delivery.webp",
+  "/images/why-service.webp",
 ]
 
 const containerVariants = {

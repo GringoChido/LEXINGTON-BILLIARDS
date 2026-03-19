@@ -12,14 +12,14 @@ export const experienceCategories: ExperienceCategory[] = [
     label: "Pool Tables",
     experienceTitle: "Pool Tables",
     tagline: "The game room starts here",
-    image: "/images/tile-pool-tables.jpg",
+    image: "/images/tile-pool-tables.webp",
   },
   {
     href: "/spas",
     label: "Hot Tubs & Spas",
     experienceTitle: "Hot Tubs & Spas",
     tagline: "Your backyard is missing one",
-    image: "/images/tile-hot-tubs.jpg",
+    image: "/images/tile-hot-tubs.webp",
   },
   {
     href: "/big-green-egg",
@@ -48,8 +48,8 @@ export const productCategories = [
   { href: "/pool-tables", label: "Pool Tables", shortLabel: "Tables", image: "/images/pool-tables.webp" },
   { href: "/spas", label: "Hot Tubs & Spas", shortLabel: "Spas", image: "/images/hot-tubs.webp" },
   { href: "/big-green-egg", label: "Big Green Egg", shortLabel: "BGE", image: "/images/big-green-egg.webp" },
-  { href: "/arcade-machines", label: "Arcade Machines", shortLabel: "Arcade", image: "/images/arcade.jpg" },
-  { href: "/billiard-accessories", label: "Game Room Accessories", shortLabel: "Accessories", image: "/images/accessories.jpg" },
+  { href: "/arcade-machines", label: "Arcade Machines", shortLabel: "Arcade", image: "/images/arcade.webp" },
+  { href: "/billiard-accessories", label: "Game Room Accessories", shortLabel: "Accessories", image: "/images/accessories.webp" },
 ] as const
 
 export const testimonials = [
