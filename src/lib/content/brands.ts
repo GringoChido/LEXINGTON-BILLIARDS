@@ -150,7 +150,7 @@ export const accessoryBrands: Brand[] = [
     tagline: "Professional grade, player approved",
     description:
       "Falcon has been crafting precision cue sticks for serious players since 1987. Premium shafts, exotic wraps, and professional-grade tips — the cue that elevates your game.",
-    scene: "Falcon cue sticks displayed on wall rack, exotic wood inlays, leather wraps, closeup detail",
+    image: "/images/falcon-cues-lifestyle.webp",
   },
   {
     name: "Imperial",
