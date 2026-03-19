@@ -200,7 +200,7 @@ export const brandLogos: Record<string, string> = {
   "raw-thrills": "/images/brands/raw-thrills.png",
   "ram-game-room": "/images/brands/ram-game-room.svg",
   "falcon-cues": "/images/brands/falcon-cues.svg",
-  "toltec": "/images/brands/toltec.svg",
+  "toltec": "/images/brands/toltec.webp",
   "maax": "/images/brands/maax.svg",
   "bullfrog": "/images/brands/bullfrog.svg",
   "jacuzzi": "/images/brands/jacuzzi.webp",
