@@ -138,26 +138,11 @@ export const accessoryBrands: Brand[] = [
   {
     name: "RAM Game Room",
     slug: "ram-game-room",
-    tagline: "Complete game room solutions",
+    tagline: "Game Room · Furniture · Outdoor Decor",
+    featured: true,
     description:
-      "Bar stools, pub tables, dartboards, wall decor, and game room furniture. RAM brings everything together under one roof.",
-    scene: "RAM Game Room setup with bar stools, pub table, dartboard cabinet, and wall art in styled basement",
-  },
-  {
-    name: "RAM Furniture",
-    slug: "ram-furniture",
-    tagline: "Built for game night",
-    description:
-      "Spectator chairs, pub tables, and bar stools in styles from rustic to contemporary. Hardwood construction built for the long session.",
-    scene: "RAM spectator chairs around pool table, leather seats, hardwood frames, warm game room lighting",
-  },
-  {
-    name: "RAM Outdoor Decor",
-    slug: "ram-outdoor-decor",
-    tagline: "Bring the game room outside",
-    description:
-      "Weather-resistant outdoor game room furniture, patio bars, and entertainment pieces that hold up to Kentucky seasons.",
-    scene: "RAM outdoor patio bar and stools, covered porch, summer evening, outdoor entertainment area",
+      "Bar stools, pub tables, poker tables, dartboards, spectator chairs, wall decor, and outdoor entertainment furniture. From game night essentials to weather-resistant patio bars — RAM brings everything together under one roof.",
+    image: "/images/ram-lifestyle.webp",
   },
   {
     name: "Falcon Cues",
@@ -198,7 +183,7 @@ export const brandLogos: Record<string, string> = {
   "vita-spa": "/images/brands/vita-spa.webp",
   "big-green-egg": "/images/brands/big-green-egg.svg",
   "raw-thrills": "/images/brands/raw-thrills.png",
-  "ram-game-room": "/images/brands/ram-game-room.svg",
+  "ram-game-room": "/images/brands/ram-game-room.webp",
   "falcon-cues": "/images/brands/falcon-cues.svg",
   "toltec": "/images/brands/toltec.webp",
   "maax": "/images/brands/maax.svg",
