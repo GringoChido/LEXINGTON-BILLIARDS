@@ -91,7 +91,7 @@ export const Navbar = () => {
           <div className="flex items-center h-[var(--header-height-mobile)] lg:h-[var(--header-height)]">
             <Link href="/" className="flex items-center gap-3 shrink-0 lg:w-[220px]">
               <Image
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt={company.name}
                 width={48}
                 height={48}

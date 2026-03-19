@@ -15,7 +15,7 @@ export const CTABlock = ({ headline }: CTABlockProps) => {
     <section className="relative overflow-hidden bg-charcoal py-24 md:py-32">
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] md:w-[520px] md:h-[520px] opacity-[0.12] pointer-events-none select-none">
         <Image
-          src="/images/logo.png"
+          src="/images/logo.webp"
           alt=""
           fill
           className="object-contain"

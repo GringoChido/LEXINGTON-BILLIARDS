@@ -184,7 +184,7 @@ export const brandLogos: Record<string, string> = {
   "american-whirlpool": "/images/brands/american-whirlpool.webp",
   "vita-spa": "/images/brands/vita-spa.webp",
   "big-green-egg": "/images/brands/big-green-egg.svg",
-  "raw-thrills": "/images/brands/raw-thrills.png",
+  "raw-thrills": "/images/brands/raw-thrills.svg",
   "ram-game-room": "/images/brands/ram-game-room.webp",
   "falcon-cues": "/images/brands/falcon-cues.svg",
   "toltec": "/images/brands/toltec.webp",

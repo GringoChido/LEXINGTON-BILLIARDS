@@ -121,7 +121,7 @@ export const AboutContent = () => {
       {/* ── HERO ── */}
       <section className="relative pt-[calc(var(--header-height)+4rem)] pb-20 lg:pb-28 overflow-hidden" style={{ background: "var(--color-dark)" }}>
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-[0.06] pointer-events-none select-none">
-          <Image src="/images/logo.png" alt="" fill className="object-contain" sizes="500px" />
+          <Image src="/images/logo.webp" alt="" fill className="object-contain" sizes="500px" />
         </div>
         <div className="relative z-10 mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
           <motion.div

@@ -1,71 +1,111 @@
-import sharp from 'sharp';
-import fs from 'fs';
-import path from 'path';
+import sharp from "sharp"
+import { readdir, stat, unlink, rename } from "fs/promises"
+import { join, extname, basename } from "path"
+import { existsSync } from "fs"
 
-const jobs = [
-  // Hero slides — max 1920w, quality 80
-  { src: 'public/images/pool-tables.jpeg', out: 'public/images/pool-tables.jpeg', w: 1920, q: 80 },
-  { src: 'public/images/pool-tables-slide-2.png', out: 'public/images/pool-tables-slide-2.jpg', w: 1920, q: 80 },
-  { src: 'public/images/pool-tables-slide-3.jpg', out: 'public/images/pool-tables-slide-3.jpg', w: 1920, q: 80 },
-  { src: 'public/images/pool-tables-hero.jpg', out: 'public/images/pool-tables-hero.jpg', w: 1920, q: 80 },
-  // Brand scenes — max 1200w, quality 80
-  { src: 'public/images/brands/scene-cl-bailey.jpeg', out: 'public/images/brands/scene-cl-bailey.jpg', w: 1200, q: 80 },
-  { src: 'public/images/brands/scene-brunswick.webp', out: 'public/images/brands/scene-brunswick.webp', w: 1200, q: 80 },
-  { src: 'public/images/brands/scene-ae-schmidt.jpg', out: 'public/images/brands/scene-ae-schmidt.jpg', w: 1200, q: 80 },
-  { src: 'public/images/brands/scene-connelly.webp', out: 'public/images/brands/scene-connelly.webp', w: 1200, q: 80 },
-  { src: 'public/images/brands/scene-olhausen.webp', out: 'public/images/brands/scene-olhausen.webp', w: 1200, q: 80 },
-  { src: 'public/images/brands/scene-imperial.webp', out: 'public/images/brands/scene-imperial.webp', w: 1200, q: 80 },
-  { src: 'public/images/brands/scene-american-heritage.jpg', out: 'public/images/brands/scene-american-heritage.jpg', w: 1200, q: 80 },
-  // Feature images — max 1200w
-  { src: 'public/images/accessory-kit.webp', out: 'public/images/accessory-kit.webp', w: 1200, q: 80 },
-  { src: 'public/images/repair-service.jpg', out: 'public/images/repair-service.jpg', w: 1200, q: 80 },
-  // Homepage hero images
-  { src: 'public/images/pool-tables.webp', out: 'public/images/pool-tables.webp', w: 1920, q: 80 },
-  { src: 'public/images/hot-tubs.jpg', out: 'public/images/hot-tubs.jpg', w: 1920, q: 80 },
-  { src: 'public/images/big-green-egg.jpg', out: 'public/images/big-green-egg.jpg', w: 1920, q: 80 },
-  { src: 'public/images/arcade.jpg', out: 'public/images/arcade.jpg', w: 1920, q: 80 },
-  // Tile images — max 800w
-  { src: 'public/images/tile-pool-tables.jpg', out: 'public/images/tile-pool-tables.jpg', w: 800, q: 80 },
-  { src: 'public/images/tile-hot-tubs.jpg', out: 'public/images/tile-hot-tubs.jpg', w: 800, q: 80 },
-  { src: 'public/images/tile-big-green-egg.webp', out: 'public/images/tile-big-green-egg.webp', w: 800, q: 80 },
-  { src: 'public/images/tile-arcade.avif', out: 'public/images/tile-arcade.avif', w: 800, q: 80 },
-  { src: 'public/images/tile-accessories.webp', out: 'public/images/tile-accessories.webp', w: 800, q: 80 },
-  // Why-us background images — max 800w
-  { src: 'public/images/why-pool-tables.jpg', out: 'public/images/why-pool-tables.jpg', w: 800, q: 80 },
-  { src: 'public/images/why-spas.jpg', out: 'public/images/why-spas.jpg', w: 800, q: 80 },
-  { src: 'public/images/why-delivery.jpg', out: 'public/images/why-delivery.jpg', w: 800, q: 80 },
-  { src: 'public/images/why-service.jpg', out: 'public/images/why-service.jpg', w: 800, q: 80 },
-];
+const PUBLIC = "public/images"
 
-let totalBefore = 0;
-let totalAfter = 0;
-
-for (const job of jobs) {
-  if (!fs.existsSync(job.src)) {
-    console.log('SKIP (missing):', job.src);
-    continue;
+async function getFiles(dir) {
+  const entries = await readdir(dir, { withFileTypes: true })
+  const files = []
+  for (const e of entries) {
+    const full = join(dir, e.name)
+    if (e.isDirectory()) files.push(...(await getFiles(full)))
+    else files.push(full)
   }
-  const before = fs.statSync(job.src).size;
-  totalBefore += before;
-  const ext = path.extname(job.out).slice(1);
-  const tmp = job.out + '.tmp';
-
-  let pipe = sharp(job.src).resize({ width: job.w, withoutEnlargement: true });
-
-  if (ext === 'jpg' || ext === 'jpeg') pipe = pipe.jpeg({ quality: job.q, mozjpeg: true });
-  else if (ext === 'webp') pipe = pipe.webp({ quality: job.q });
-  else if (ext === 'avif') pipe = pipe.avif({ quality: job.q });
-  else if (ext === 'png') pipe = pipe.png({ quality: job.q });
-
-  await pipe.toFile(tmp);
-
-  if (job.src !== job.out && fs.existsSync(job.src)) fs.unlinkSync(job.src);
-  fs.renameSync(tmp, job.out);
-
-  const after = fs.statSync(job.out).size;
-  totalAfter += after;
-  const pct = ((1 - after / before) * 100).toFixed(0);
-  console.log(`${job.out}: ${(before / 1024).toFixed(0)}KB → ${(after / 1024).toFixed(0)}KB (-${pct}%)`);
+  return files
 }
 
-console.log(`\nTotal: ${(totalBefore / 1024 / 1024).toFixed(1)}MB → ${(totalAfter / 1024 / 1024).toFixed(1)}MB (-${((1 - totalAfter / totalBefore) * 100).toFixed(0)}%)`);
+async function optimize() {
+  const files = await getFiles(PUBLIC)
+  const imageFiles = files.filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f))
+
+  let totalBefore = 0
+  let totalAfter = 0
+  const converted = [] // jpg/png files converted to webp (to delete after)
+
+  for (const file of imageFiles) {
+    const ext = extname(file).toLowerCase()
+    const name = basename(file)
+    const before = (await stat(file)).size
+    totalBefore += before
+
+    // Determine max width based on usage context
+    const isHero = name.includes("hero") || name.includes("slide") || name.includes("lifestyle")
+    const isBrandLogo = file.includes("/brands/") && !name.includes("scene-")
+    const isTile = name.includes("tile-")
+    const isWhy = name.includes("why-")
+    const maxWidth = isBrandLogo ? 400 : isTile || isWhy ? 800 : isHero ? 1600 : 1200
+    const quality = isBrandLogo ? 85 : 78
+
+    // Validate image is readable
+    let meta
+    try {
+      meta = await sharp(file).metadata()
+    } catch {
+      console.log(`SKIP ${file} — not a valid image`)
+      totalBefore -= before
+      continue
+    }
+
+    if (ext === ".jpg" || ext === ".jpeg" || ext === ".png") {
+      // Check if a .webp version already exists
+      const webpPath = file.replace(/\.(jpg|jpeg|png)$/i, ".webp")
+      if (existsSync(webpPath)) {
+        // Webp already exists — this is a duplicate, just delete it
+        console.log(`DELETE ${file} (webp version exists)`)
+        converted.push(file)
+        totalBefore -= before // don't count toward totals
+        continue
+      }
+
+      // Convert to webp
+      const needsResize = meta.width && meta.width > maxWidth
+      let pipeline = sharp(file)
+      if (needsResize) pipeline = pipeline.resize(maxWidth, null, { withoutEnlargement: true })
+
+      const hasAlpha = meta.channels === 4
+      await pipeline.webp({ quality, effort: 6, alphaQuality: hasAlpha ? 90 : undefined }).toFile(webpPath)
+
+      const after = (await stat(webpPath)).size
+      totalAfter += after
+      const savings = ((1 - after / before) * 100).toFixed(0)
+      console.log(`CONVERT ${file} (${fmtSize(before)}) → ${webpPath} (${fmtSize(after)}) [${savings}% saved]`)
+      converted.push(file)
+    } else {
+      // Re-optimize existing webp in-place
+      const needsResize = meta.width && meta.width > maxWidth
+
+      const buf = await (needsResize
+        ? sharp(file).resize(maxWidth, null, { withoutEnlargement: true }).webp({ quality, effort: 6 }).toBuffer()
+        : sharp(file).webp({ quality, effort: 6 }).toBuffer())
+
+      if (buf.length < before * 0.92) {
+        // Write to tmp then rename to avoid corrupting in-place
+        const tmp = file + ".tmp"
+        await sharp(buf).toFile(tmp)
+        await rename(tmp, file)
+        totalAfter += buf.length
+        const savings = ((1 - buf.length / before) * 100).toFixed(0)
+        console.log(`OPTIMIZE ${file} (${fmtSize(before)}) → (${fmtSize(buf.length)}) [${savings}% saved]`)
+      } else {
+        totalAfter += before
+        console.log(`SKIP ${file} (${fmtSize(before)}) — already optimal`)
+      }
+    }
+  }
+
+  // Delete converted originals
+  for (const f of converted) {
+    await unlink(f)
+  }
+
+  console.log(`\nTotal: ${fmtSize(totalBefore)} → ${fmtSize(totalAfter)} (${((1 - totalAfter / totalBefore) * 100).toFixed(1)}% saved)`)
+  if (converted.length) console.log(`Deleted ${converted.length} old jpg/png files`)
+}
+
+function fmtSize(bytes) {
+  return (bytes / 1024).toFixed(0) + "K"
+}
+
+optimize().catch(console.error)

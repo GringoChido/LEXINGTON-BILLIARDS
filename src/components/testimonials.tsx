@@ -56,7 +56,7 @@ export const Testimonials = () => {
               <div className="flex gap-1.5 mb-4">
                 {[...Array(5)].map((_, j) => (
                   <div key={j} className="relative w-5 h-5">
-                    <Image src="/images/logo.png" alt="" fill className="object-contain" sizes="20px" />
+                    <Image src="/images/logo.webp" alt="" fill className="object-contain" sizes="20px" />
                   </div>
                 ))}
               </div>
