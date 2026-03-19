@@ -4,7 +4,6 @@ import { PageHeroSlider } from "@/components/page-hero-slider"
 import { BrandCard } from "@/components/brand-card"
 import { SectionHeading } from "@/components/section-heading"
 import { CTABlock } from "@/components/cta-block"
-import { ScenePlaceholder } from "@/components/scene-placeholder"
 import { accessoryBrands } from "@/lib/content/brands"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -17,12 +16,12 @@ const slides = [
     cta: { label: "See What We Carry", href: "#brands" },
   },
   {
-    sceneLabel: "Game room with billiard lighting, bar stools, and wall decor",
+    image: "/images/table-lights-fixtures.webp",
     headline: "Cues. Lights. Furniture. All Under One Roof.",
     cta: { label: "Visit the Showroom", href: "/contact" },
   },
   {
-    sceneLabel: "Close-up of pool cue tips and exotic wood wraps",
+    image: "/images/cue-sticks-repair.webp",
     headline: "The Details Make the Game Room",
     cta: { label: "Call (859) 255-7639", href: "tel:8592557639" },
   },
