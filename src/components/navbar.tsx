@@ -7,10 +7,13 @@ import { Menu, X, Phone, MapPin, Clock } from "lucide-react"
 import { AnimatePresence, motion } from "framer-motion"
 import { navLinks, company } from "@/lib/content/company"
 import { FacebookIcon, InstagramIcon } from "@/components/social-icons"
+import { LanguageToggle } from "@/components/language-toggle"
+import { useLanguage } from "@/lib/i18n/context"
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -26,12 +29,9 @@ export const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      {/* ── TOP UTILITY BAR ── desktop only
-          Three zones: address (left) · hours (center) · phone + social (right)
-          Slightly darker than main nav for visual separation */}
+      {/* ── TOP UTILITY BAR ── desktop only */}
       <div className="hidden lg:block" style={{ background: "rgba(20,18,16,0.95)" }}>
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)] h-12 flex items-center justify-between">
-          {/* Left — Address (links to contact page) */}
           <Link
             href="/contact"
             className="flex items-center gap-2 text-text-on-dark/70 hover:text-white transition-colors group"
@@ -42,14 +42,14 @@ export const Navbar = () => {
             </span>
           </Link>
 
-          {/* Center — Hours */}
           <div className="flex items-center gap-2 text-text-on-dark/60">
             <Clock className="w-3.5 h-3.5" />
             <span className="text-[13px] font-medium">{company.hours.weekday}</span>
           </div>
 
-          {/* Right — Phone + Social */}
           <div className="flex items-center gap-5">
+            <LanguageToggle />
+            <div className="w-px h-4 bg-text-on-dark/20" />
             <a
               href={company.phone.href}
               className="flex items-center gap-2 text-primary font-display font-bold text-sm hover:text-primary/80 transition-colors"
@@ -82,16 +82,13 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* ── MAIN NAV BAR ──
-          Logo (fixed width left) · nav links (true center) · spacer (balances logo)
-          No phone number here — it lives in the utility bar above. No duplication. */}
+      {/* ── MAIN NAV BAR ── */}
       <div
         className="border-b transition-colors duration-500"
         style={{ borderColor: scrolled ? "var(--color-border-dark)" : "rgba(255,255,255,0.08)" }}
       >
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
           <div className="flex items-center h-[var(--header-height-mobile)] lg:h-[var(--header-height)]">
-            {/* Logo — fixed width so nav links stay truly centered */}
             <Link href="/" className="flex items-center gap-3 shrink-0 lg:w-[220px]">
               <Image
                 src="/images/logo.png"
@@ -106,7 +103,6 @@ export const Navbar = () => {
               </span>
             </Link>
 
-            {/* Desktop nav links — true center thanks to fixed-width logo + spacer */}
             <nav className="hidden lg:flex items-center justify-center flex-1 gap-9">
               {navLinks.map((link) => (
                 <Link
@@ -114,22 +110,24 @@ export const Navbar = () => {
                   href={link.href}
                   className="font-display font-semibold text-[12px] uppercase tracking-[0.08em] text-text-on-dark/65 hover:text-white transition-colors duration-300 whitespace-nowrap"
                 >
-                  {link.label}
+                  {t(link.label)}
                 </Link>
               ))}
             </nav>
 
-            {/* Right spacer — matches logo width to keep nav centered */}
             <div className="hidden lg:block w-[220px]" />
 
-            {/* Mobile hamburger */}
-            <button
-              onClick={() => setOpen(!open)}
-              className="lg:hidden ml-auto w-10 h-10 flex items-center justify-center text-text-on-dark"
-              aria-label={open ? "Close menu" : "Open menu"}
-            >
-              {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
+            {/* Mobile: language toggle + hamburger */}
+            <div className="lg:hidden ml-auto flex items-center gap-3">
+              <LanguageToggle />
+              <button
+                onClick={() => setOpen(!open)}
+                className="w-10 h-10 flex items-center justify-center text-text-on-dark"
+                aria-label={open ? "Close menu" : "Open menu"}
+              >
+                {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -157,7 +155,7 @@ export const Navbar = () => {
                     onClick={() => setOpen(false)}
                     className="block py-3 font-display font-semibold text-[13px] uppercase tracking-wide text-text-on-dark/70 border-b border-border-dark hover:text-white transition-colors"
                   >
-                    {link.label}
+                    {t(link.label)}
                   </Link>
                 </motion.div>
               ))}
@@ -174,7 +172,7 @@ export const Navbar = () => {
                   onClick={() => setOpen(false)}
                 >
                   <Phone className="w-4 h-4" />
-                  Call {company.phone.display}
+                  {t({ en: "Call", es: "Llamar" })} {company.phone.display}
                 </a>
                 <Link
                   href="/contact"

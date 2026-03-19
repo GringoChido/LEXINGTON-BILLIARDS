@@ -5,71 +5,94 @@ import { PageHeroSlider } from "@/components/page-hero-slider"
 import { CTABlock } from "@/components/cta-block"
 import { brandLogos } from "@/lib/content/brands"
 import { motion } from "framer-motion"
+import { useLanguage, type T } from "@/lib/i18n/context"
 
 const slides = [
   {
     image: "/images/bge-slide-1.webp",
-    headline: "Once You Cook on an Egg, Everything Else Is Just a Grill",
-    cta: { label: "See the Lineup", href: "#eggs" },
+    headline: { en: "Once You Cook on an Egg, Everything Else Is Just a Grill", es: "Una Vez Que Cocinas en un Egg, Todo lo Demás Es Solo una Parrilla" } as T,
+    cta: { label: { en: "See the Lineup", es: "Ver la Línea" } as T, href: "#eggs" },
   },
   {
     image: "/images/bge-slide-2.webp",
-    headline: "The Grill That Changes Everything",
-    cta: { label: "Visit the Showroom", href: "/contact" },
+    headline: { en: "The Grill That Changes Everything", es: "La Parrilla Que lo Cambia Todo" } as T,
+    cta: { label: { en: "Visit the Showroom", es: "Visita la Sala de Exhibición" } as T, href: "/contact" },
   },
   {
     image: "/images/bge-slide-3.webp",
-    headline: "Come Fire One Up in Our Showroom",
-    cta: { label: "Call (859) 255-7639", href: "tel:8592557639" },
+    headline: { en: "Come Fire One Up in Our Showroom", es: "Ven a Encender Uno en Nuestra Sala de Exhibición" } as T,
+    cta: { label: { en: "Call (859) 255-7639", es: "Llama al (859) 255-7639" } as T, href: "tel:8592557639" },
   },
 ]
 
-const eggSizes = [
-  { name: "2XL", tagline: "The neighborhood centerpiece", feeds: "10+", diameter: '29"' },
-  { name: "XLarge", tagline: "The backyard centerpiece", feeds: "6\u201310", diameter: '24"' },
-  { name: "Large", tagline: "The most popular EGG", feeds: "4\u20136", diameter: '18.25"' },
-  { name: "Medium", tagline: "Perfect for smaller families", feeds: "2\u20134", diameter: '15"' },
-  { name: "Small", tagline: "Compact & capable", feeds: "1\u20132", diameter: '13"' },
-  { name: "MiniMax", tagline: "The tailgate companion", feeds: "2\u20134", diameter: '13"' },
-  { name: "Mini", tagline: "Portable perfection", feeds: "1\u20132", diameter: '10"' },
+const eggSizes: { name: string; tagline: T; feeds: T; diameter: string }[] = [
+  { name: "2XL", tagline: { en: "The neighborhood centerpiece", es: "La pieza central del vecindario" }, feeds: { en: "10+", es: "10+" }, diameter: '29"' },
+  { name: "XLarge", tagline: { en: "The backyard centerpiece", es: "La pieza central del patio" }, feeds: { en: "6–10", es: "6–10" }, diameter: '24"' },
+  { name: "Large", tagline: { en: "The most popular EGG", es: "El EGG más popular" }, feeds: { en: "4–6", es: "4–6" }, diameter: '18.25"' },
+  { name: "Medium", tagline: { en: "Perfect for smaller families", es: "Perfecto para familias pequeñas" }, feeds: { en: "2–4", es: "2–4" }, diameter: '15"' },
+  { name: "Small", tagline: { en: "Compact & capable", es: "Compacto y capaz" }, feeds: { en: "1–2", es: "1–2" }, diameter: '13"' },
+  { name: "MiniMax", tagline: { en: "The tailgate companion", es: "El compañero para eventos" }, feeds: { en: "2–4", es: "2–4" }, diameter: '13"' },
+  { name: "Mini", tagline: { en: "Portable perfection", es: "Perfección portátil" }, feeds: { en: "1–2", es: "1–2" }, diameter: '10"' },
 ]
 
-const whyFeatures = [
+const whyFeatures: { title: T; description: T }[] = [
   {
-    title: "SIMPLE TO START",
-    description: "The Big Green Egg reaches perfect cooking temperature and is ready to use in just minutes. Our 100% lump charcoal is made in the USA from only the best cuts of natural oak and hickory for superb performance and results.",
+    title: { en: "SIMPLE TO START", es: "FÁCIL DE ENCENDER" },
+    description: {
+      en: "The Big Green Egg reaches perfect cooking temperature and is ready to use in just minutes. Our 100% lump charcoal is made in the USA from only the best cuts of natural oak and hickory for superb performance and results.",
+      es: "El Big Green Egg alcanza la temperatura perfecta de cocción y está listo para usar en solo minutos. Nuestro carbón 100% natural está hecho en EE.UU. con los mejores cortes de roble y nogal para un rendimiento y resultados superiores.",
+    },
   },
   {
-    title: "PRECISE TEMPERATURE CONTROL",
-    description: "Grill, smoke and bake on your EGG at exact temperatures by easily adjusting the patented air flow systems. You have total control over temperature at your fingertips, maintaining accuracy within a few degrees!",
+    title: { en: "PRECISE TEMPERATURE CONTROL", es: "CONTROL DE TEMPERATURA PRECISO" },
+    description: {
+      en: "Grill, smoke and bake on your EGG at exact temperatures by easily adjusting the patented air flow systems. You have total control over temperature at your fingertips, maintaining accuracy within a few degrees!",
+      es: "Asa, ahúma y hornea en tu EGG a temperaturas exactas ajustando fácilmente los sistemas patentados de flujo de aire. ¡Tienes control total de la temperatura al alcance de tu mano, manteniendo precisión de unos pocos grados!",
+    },
   },
   {
-    title: "SAFER TO USE",
-    description: "The Big Green Egg is extremely safe to use as the ceramic surface doesn\u2019t get as hot as a metal grill, and the heat source is protected within a ceramic fire box inside the base.",
+    title: { en: "SAFER TO USE", es: "MÁS SEGURO DE USAR" },
+    description: {
+      en: "The Big Green Egg is extremely safe to use as the ceramic surface doesn\u2019t get as hot as a metal grill, and the heat source is protected within a ceramic fire box inside the base.",
+      es: "El Big Green Egg es extremadamente seguro de usar ya que la superficie cerámica no se calienta tanto como una parrilla de metal, y la fuente de calor está protegida dentro de una caja de fuego cerámica en la base.",
+    },
   },
   {
-    title: "EASY CLEAN UP",
-    description: "The Big Green Egg features a professional grade stainless steel cooking grid and an elegant green exterior with a lifetime glaze that maintains its good looks and wipes clean easily without chemical cleaners.",
+    title: { en: "EASY CLEAN UP", es: "FÁCIL DE LIMPIAR" },
+    description: {
+      en: "The Big Green Egg features a professional grade stainless steel cooking grid and an elegant green exterior with a lifetime glaze that maintains its good looks and wipes clean easily without chemical cleaners.",
+      es: "El Big Green Egg cuenta con una rejilla de cocción de acero inoxidable de grado profesional y un elegante exterior verde con un esmalte de por vida que mantiene su apariencia y se limpia fácilmente sin productos químicos.",
+    },
   },
   {
-    title: "PATENTED TECHNOLOGY",
-    description: "Among many features that make the Big Green Egg by far the best cooking device of its kind are the patented components and state-of-the-art ceramic technologies that provide unrivaled thermal properties, material quality and cooking performance!",
+    title: { en: "PATENTED TECHNOLOGY", es: "TECNOLOGÍA PATENTADA" },
+    description: {
+      en: "Among many features that make the Big Green Egg by far the best cooking device of its kind are the patented components and state-of-the-art ceramic technologies that provide unrivaled thermal properties, material quality and cooking performance!",
+      es: "Entre las muchas características que hacen del Big Green Egg el mejor dispositivo de cocción de su tipo están los componentes patentados y las tecnologías cerámicas de última generación que proporcionan propiedades térmicas, calidad de materiales y rendimiento de cocción inigualables.",
+    },
   },
 ]
 
-const anatomyFeatures = [
-  { label: "Heated Air Exits", desc: "Dual-Function Metal Top controls airflow" },
-  { label: "Ceramic Chamber", desc: "Retains heat and keeps food moist" },
-  { label: "Sealed Fire Box", desc: "100% Natural Lump Charcoal" },
-  { label: "Draft Door", desc: "Precision airflow control" },
+const anatomyFeatures: { label: T; desc: T }[] = [
+  { label: { en: "Heated Air Exits", es: "Salida de Aire Caliente" }, desc: { en: "Dual-Function Metal Top controls airflow", es: "Tapa metálica de doble función controla el flujo de aire" } },
+  { label: { en: "Ceramic Chamber", es: "Cámara Cerámica" }, desc: { en: "Retains heat and keeps food moist", es: "Retiene el calor y mantiene la comida húmeda" } },
+  { label: { en: "Sealed Fire Box", es: "Caja de Fuego Sellada" }, desc: { en: "100% Natural Lump Charcoal", es: "Carbón Natural 100%" } },
+  { label: { en: "Draft Door", es: "Puerta de Tiro" }, desc: { en: "Precision airflow control", es: "Control de flujo de aire de precisión" } },
 ]
 
 export const BigGreenEggContent = () => {
   const eggLogo = brandLogos["big-green-egg"]
+  const { t } = useLanguage()
+
+  const localSlides = slides.map(s => ({
+    image: s.image,
+    headline: t(s.headline),
+    cta: { label: t(s.cta.label), href: s.cta.href },
+  }))
 
   return (
     <>
-      <PageHeroSlider slides={slides} />
+      <PageHeroSlider slides={localSlides} />
 
       {/* ── BRAND FEATURE ── */}
       <section className="py-[var(--section-py)]" style={{ background: "var(--cat-primary, #1E5C1E)" }}>
@@ -87,15 +110,16 @@ export const BigGreenEggContent = () => {
                   <Image src={eggLogo} alt="Big Green Egg logo" fill className="object-contain brightness-0 invert opacity-70" sizes="140px" />
                 </div>
               )}
-              <p className="section-label mb-4" style={{ color: "var(--cat-accent, #F5A623)" }}>Authorized Dealer</p>
+              <p className="section-label mb-4" style={{ color: "var(--cat-accent, #F5A623)" }}>{t({ en: "Authorized Dealer", es: "Distribuidor Autorizado" })}</p>
               <h2 className="heading text-[length:var(--text-h1)] mb-6 max-w-[20ch]" style={{ color: "var(--color-text-on-dark)" }}>
-                It&apos;s Not a Grill.{" "}
-                <span style={{ color: "var(--cat-accent, #F5A623)" }}>It&apos;s an Obsession.</span>
+                {t({ en: "It's Not a Grill.", es: "No Es una Parrilla." })}{" "}
+                <span style={{ color: "var(--cat-accent, #F5A623)" }}>{t({ en: "It's an Obsession.", es: "Es una Obsesión." })}</span>
               </h2>
               <p className="text-lg leading-relaxed max-w-[50ch]" style={{ color: "rgba(250,246,239,0.7)" }}>
-                The Big Green Egg has a cult following for a reason. One cooker that grills, smokes,
-                bakes, and roasts &mdash; with temperature control no gas grill can match. We keep several
-                models on display, organic charcoal in stock, and a full line of EGGcessories.
+                {t({
+                  en: "The Big Green Egg has a cult following for a reason. One cooker that grills, smokes, bakes, and roasts \u2014 with temperature control no gas grill can match. We keep several models on display, organic charcoal in stock, and a full line of EGGcessories.",
+                  es: "El Big Green Egg tiene seguidores de culto por una razón. Un solo asador que asa, ahúma, hornea y rostiza \u2014 con un control de temperatura que ninguna parrilla de gas puede igualar. Tenemos varios modelos en exhibición, carbón orgánico en inventario y una línea completa de EGGcessories.",
+                })}
               </p>
             </motion.div>
             <motion.div
@@ -130,12 +154,12 @@ export const BigGreenEggContent = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <p className="section-label mb-3" style={{ color: "var(--cat-accent, #F5A623)" }}>Find Your EGG</p>
+              <p className="section-label mb-3" style={{ color: "var(--cat-accent, #F5A623)" }}>{t({ en: "Find Your EGG", es: "Encuentra Tu EGG" })}</p>
               <h2 className="heading text-[length:var(--text-h1)] drop-shadow-lg" style={{ color: "#fff" }}>
-                Seven Sizes. One Obsession.
+                {t({ en: "Seven Sizes. One Obsession.", es: "Siete Tamaños. Una Obsesión." })}
               </h2>
               <p className="text-sm lg:text-base mt-2 drop-shadow-md" style={{ color: "rgba(255,255,255,0.85)" }}>
-                From the portable Mini to the neighborhood-feeding 2XL.
+                {t({ en: "From the portable Mini to the neighborhood-feeding 2XL.", es: "Desde el portátil Mini hasta el 2XL para todo el vecindario." })}
               </p>
             </motion.div>
           </div>
@@ -175,9 +199,9 @@ export const BigGreenEggContent = () => {
               >
                 <p className="font-accent font-bold text-base mb-0.5" style={{ color: "var(--cat-primary, #1E5C1E)" }}>{egg.diameter}</p>
                 <h4 className="heading text-sm mb-0.5" style={{ color: "var(--color-text)" }}>{egg.name}</h4>
-                <p className="text-[11px]" style={{ color: "var(--color-text-secondary)" }}>{egg.tagline}</p>
+                <p className="text-[11px]" style={{ color: "var(--color-text-secondary)" }}>{t(egg.tagline)}</p>
                 <p className="text-[11px] font-semibold mt-0.5" style={{ color: "var(--cat-secondary, #B85C00)" }}>
-                  Feeds {egg.feeds}
+                  {t({ en: `Feeds ${t(egg.feeds)}`, es: `Alimenta a ${t(egg.feeds)} personas` })}
                 </p>
               </motion.div>
             ))}
@@ -214,17 +238,17 @@ export const BigGreenEggContent = () => {
             <div className="space-y-8 lg:space-y-10">
               {whyFeatures.map((feature, i) => (
                 <motion.div
-                  key={feature.title}
+                  key={t(feature.title)}
                   initial={{ opacity: 0, x: 24 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 + i * 0.08 }}
                 >
                   <h3 className="heading text-xl lg:text-2xl mb-2 uppercase tracking-wider" style={{ color: "#1C1C1C" }}>
-                    {feature.title}
+                    {t(feature.title)}
                   </h3>
                   <p className="text-[15px] leading-relaxed" style={{ color: "#555" }}>
-                    {feature.description}
+                    {t(feature.description)}
                   </p>
                 </motion.div>
               ))}
@@ -239,11 +263,11 @@ export const BigGreenEggContent = () => {
             transition={{ duration: 0.8 }}
             className="mt-16 lg:mt-24"
           >
-            <p className="section-label text-center mb-8" style={{ color: "var(--cat-accent, #F5A623)" }}>How It Works</p>
+            <p className="section-label text-center mb-8" style={{ color: "var(--cat-accent, #F5A623)" }}>{t({ en: "How It Works", es: "Cómo Funciona" })}</p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
               {anatomyFeatures.map((item, i) => (
                 <motion.div
-                  key={item.label}
+                  key={t(item.label)}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -258,10 +282,10 @@ export const BigGreenEggContent = () => {
                     <span className="text-white font-bold text-sm">{i + 1}</span>
                   </div>
                   <h4 className="font-accent font-bold text-sm uppercase tracking-wider mb-2" style={{ color: "var(--color-text)" }}>
-                    {item.label}
+                    {t(item.label)}
                   </h4>
                   <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-                    {item.desc}
+                    {t(item.desc)}
                   </p>
                 </motion.div>
               ))}
@@ -298,15 +322,24 @@ export const BigGreenEggContent = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
             >
-              <p className="section-label mb-4" style={{ color: "var(--cat-accent, #F5A623)" }}>Always In Stock</p>
-              <h2 className="heading text-[length:var(--text-h2)] mb-4" style={{ color: "var(--color-text-on-dark)" }}>EGGcessories &amp; Charcoal</h2>
+              <p className="section-label mb-4" style={{ color: "var(--cat-accent, #F5A623)" }}>{t({ en: "Always In Stock", es: "Siempre en Inventario" })}</p>
+              <h2 className="heading text-[length:var(--text-h2)] mb-4" style={{ color: "var(--color-text-on-dark)" }}>{t({ en: "EGGcessories & Charcoal", es: "EGGcessories y Carbón" })}</h2>
               <p className="text-lg leading-relaxed mb-6" style={{ color: "rgba(250,246,239,0.7)" }}>
-                We keep a full line of Big Green Egg EGGcessories in stock &mdash; plates, grids, pizza stones, tables, covers, and more.
-                Plus organic Big Green Egg lump charcoal so you can fire it up the same day.
+                {t({
+                  en: "We keep a full line of Big Green Egg EGGcessories in stock \u2014 plates, grids, pizza stones, tables, covers, and more. Plus organic Big Green Egg lump charcoal so you can fire it up the same day.",
+                  es: "Tenemos una línea completa de EGGcessories de Big Green Egg en inventario \u2014 platos, rejillas, piedras para pizza, mesas, fundas y más. Además de carbón orgánico Big Green Egg para que lo enciendas el mismo día.",
+                })}
               </p>
               <div className="flex flex-wrap gap-3">
-                {["Plates & Grids", "Pizza Stones", "Tables & Nests", "Organic Charcoal", "Covers", "Rubs & Sauces"].map((item) => (
-                  <span key={item} className="pill" style={{ background: "rgba(245,166,35,0.15)", color: "var(--cat-accent, #F5A623)" }}>{item}</span>
+                {[
+                  { en: "Plates & Grids", es: "Platos y Rejillas" },
+                  { en: "Pizza Stones", es: "Piedras para Pizza" },
+                  { en: "Tables & Nests", es: "Mesas y Bases" },
+                  { en: "Organic Charcoal", es: "Carbón Orgánico" },
+                  { en: "Covers", es: "Fundas" },
+                  { en: "Rubs & Sauces", es: "Especias y Salsas" },
+                ].map((item) => (
+                  <span key={item.en} className="pill" style={{ background: "rgba(245,166,35,0.15)", color: "var(--cat-accent, #F5A623)" }}>{t(item)}</span>
                 ))}
               </div>
             </motion.div>
@@ -330,7 +363,7 @@ export const BigGreenEggContent = () => {
         </div>
       </section>
 
-      <CTABlock headline="Come Fire One Up" />
+      <CTABlock headline={t({ en: "Come Fire One Up", es: "Ven a Encender Uno" })} />
     </>
   )
 }

@@ -2,8 +2,10 @@
 
 import Image from "next/image"
 import { brandLogos, allBrands } from "@/lib/content/brands"
+import { useLanguage } from "@/lib/i18n/context"
 
 export const BrandStrip = () => {
+  const { t } = useLanguage()
   const brandsWithLogos = allBrands
     .filter((b) => brandLogos[b.slug])
     .map((b) => ({ name: b.name, logo: brandLogos[b.slug] }))
@@ -16,12 +18,11 @@ export const BrandStrip = () => {
     >
       <div className="max-w-[var(--content-max)] mx-auto px-[var(--section-px)] mb-10">
         <p className="text-center heading text-[length:var(--text-h4)] text-[var(--color-text)]">
-          Brands We&apos;re Proud to Carry
+          {t({ en: "Brands We\u2019re Proud to Carry", es: "Marcas Que Nos Enorgullece Manejar" })}
         </p>
       </div>
 
       <div className="relative">
-        {/* Edge masks */}
         <div
           className="absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
           style={{ background: "linear-gradient(to right, var(--color-surface), transparent)" }}
@@ -31,7 +32,6 @@ export const BrandStrip = () => {
           style={{ background: "linear-gradient(to left, var(--color-surface), transparent)" }}
         />
 
-        {/* Marquee */}
         <div className="flex overflow-hidden">
           <div className="animate-marquee flex shrink-0 items-center gap-0">
             {doubled.map((brand, i) => (

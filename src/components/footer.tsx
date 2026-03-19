@@ -4,14 +4,18 @@ import Link from "next/link"
 import { MapPin, Phone, Clock } from "lucide-react"
 import { company, navLinks } from "@/lib/content/company"
 import { FacebookIcon, InstagramIcon } from "@/components/social-icons"
+import { useLanguage, type T } from "@/lib/i18n/context"
 
-const companyLinks = [
-  { href: "/contact", label: "Contact" },
-  { href: "/contact", label: "Service & Repair" },
-  { href: "/contact", label: "Financing" },
+const companyLinks: { href: string; label: T }[] = [
+  { href: "/about", label: { en: "About Us", es: "Nosotros" } },
+  { href: "/contact", label: { en: "Contact", es: "Contacto" } },
+  { href: "/contact", label: { en: "Service & Repair", es: "Servicio y Reparaci\u00f3n" } },
+  { href: "/contact", label: { en: "Financing", es: "Financiamiento" } },
 ]
 
 export const Footer = () => {
+  const { t } = useLanguage()
+
   return (
     <footer className="bg-dark border-t border-border-dark">
       <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)] pt-16 pb-8">
@@ -23,7 +27,7 @@ export const Footer = () => {
               {company.name}
             </span>
             <p className="font-body text-text-on-dark/60 text-sm leading-relaxed mb-6">
-              {company.tagline}. Family-owned since {company.established}.
+              {t({ en: `${company.tagline}. Family-owned since ${company.established}.`, es: `Haz de tu hogar el mejor de la cuadra. Negocio familiar desde ${company.established}.` })}
             </p>
             <div className="flex items-center gap-4">
               <a
@@ -49,7 +53,7 @@ export const Footer = () => {
 
           {/* Contact */}
           <div>
-            <p className="section-label mb-5">Contact</p>
+            <p className="section-label mb-5">{t({ en: "Contact", es: "Contacto" })}</p>
             <ul className="space-y-3.5">
               <li>
                 <a
@@ -76,7 +80,7 @@ export const Footer = () => {
                   <Clock className="w-4 h-4 mt-0.5 shrink-0 text-primary/50" />
                   <div>
                     <p>{company.hours.weekday}</p>
-                    <p>{company.hours.weekend}</p>
+                    <p>{t({ en: company.hours.weekend, es: "Domingos Cerrado" })}</p>
                   </div>
                 </div>
               </li>
@@ -85,15 +89,15 @@ export const Footer = () => {
 
           {/* Shop */}
           <div>
-            <p className="section-label mb-5">Shop</p>
+            <p className="section-label mb-5">{t({ en: "Shop", es: "Tienda" })}</p>
             <ul className="space-y-3">
-              {navLinks.filter((l) => l.href !== "/contact").map((link) => (
+              {navLinks.filter((l) => l.href !== "/contact" && l.href !== "/about").map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-text-on-dark/60 text-sm font-body hover:text-primary transition-colors"
                   >
-                    {link.label}
+                    {t(link.label)}
                   </Link>
                 </li>
               ))}
@@ -102,7 +106,7 @@ export const Footer = () => {
 
           {/* Company */}
           <div>
-            <p className="section-label mb-5">Company</p>
+            <p className="section-label mb-5">{t({ en: "Company", es: "Empresa" })}</p>
             <ul className="space-y-3">
               {companyLinks.map((link, i) => (
                 <li key={`${link.href}-${i}`}>
@@ -110,7 +114,7 @@ export const Footer = () => {
                     href={link.href}
                     className="text-text-on-dark/60 text-sm font-body hover:text-primary transition-colors"
                   >
-                    {link.label}
+                    {t(link.label)}
                   </Link>
                 </li>
               ))}
@@ -120,7 +124,7 @@ export const Footer = () => {
 
         {/* Bottom bar */}
         <div className="mt-14 pt-6 border-t border-border-dark flex flex-col sm:flex-row justify-between items-center gap-2 text-text-on-dark/40 text-xs font-body">
-          <p>&copy; {new Date().getFullYear()} {company.name}. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {company.name}. {t({ en: "All rights reserved.", es: "Todos los derechos reservados." })}</p>
           <p>
             Built by{" "}
             <a

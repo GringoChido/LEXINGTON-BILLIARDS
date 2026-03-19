@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react"
 import type { Brand } from "@/lib/content/brands"
 import { brandLogos } from "@/lib/content/brands"
 import { ScenePlaceholder } from "./scene-placeholder"
+import { useLanguage } from "@/lib/i18n/context"
 
 interface BrandCardProps {
   brand: Brand
@@ -21,6 +22,7 @@ export const BrandCard = ({
   variant = "default",
 }: BrandCardProps) => {
   const logo = brandLogos[brand.slug]
+  const { t } = useLanguage()
 
   if (variant === "wide") {
     return (
@@ -36,7 +38,6 @@ export const BrandCard = ({
         className="rounded-2xl border overflow-hidden"
         style={{ borderColor: "var(--color-border)", background: "var(--color-cream)" }}
       >
-        {/* Large lifestyle image — full width */}
         {brand.image ? (
           <div className="relative w-full" style={{ aspectRatio: "21/9" }}>
             <Image
@@ -51,9 +52,7 @@ export const BrandCard = ({
           <ScenePlaceholder label={brand.scene} aspectRatio="21/9" />
         )}
 
-        {/* Content row: logo + details */}
         <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-5 lg:gap-10 p-5 md:p-8 lg:p-10 items-center">
-          {/* Logo */}
           <div className="flex items-center justify-center lg:justify-start">
             {logo ? (
               <div className="relative w-[160px] h-[64px] md:w-[200px] md:h-[80px] lg:w-[240px] lg:h-[90px]">
@@ -75,11 +74,10 @@ export const BrandCard = ({
             )}
           </div>
 
-          {/* Details */}
           <div>
             <div className="flex flex-wrap gap-2 mb-3">
               {brand.featured && (
-                <span className="pill pill-gold">Featured Brand</span>
+                <span className="pill pill-gold">{t({ en: "Featured Brand", es: "Marca Destacada" })}</span>
               )}
               {brand.established && (
                 <span className="pill pill-dark">Est. {brand.established}</span>
@@ -104,7 +102,7 @@ export const BrandCard = ({
               {brand.description}
             </p>
             <button className="btn-outline inline-flex items-center gap-2">
-              Learn More <ArrowRight className="w-4 h-4" />
+              {t({ en: "Learn More", es: "Saber M\u00e1s" })} <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -127,7 +125,6 @@ export const BrandCard = ({
       }`}
       style={{ borderColor: "var(--color-border)", background: "var(--color-cream)" }}
     >
-      {/* Lifestyle image — takes full half */}
       <div className="lg:[direction:ltr]">
         {brand.image ? (
           <div className="relative w-full h-full min-h-[280px]" style={{ aspectRatio: "4/3" }}>
@@ -144,9 +141,7 @@ export const BrandCard = ({
         )}
       </div>
 
-      {/* Content half: logo + text + CTA */}
       <div className="p-5 md:p-8 lg:p-10 flex flex-col justify-center lg:[direction:ltr]">
-        {/* Logo */}
         {logo ? (
           <div className="relative w-[140px] h-[56px] md:w-[180px] md:h-[70px] mb-5">
             <Image
@@ -166,17 +161,15 @@ export const BrandCard = ({
           </span>
         )}
 
-        {/* Pills */}
         <div className="flex flex-wrap gap-2 mb-3">
           {brand.featured && (
-            <span className="pill pill-gold">Featured Brand</span>
+            <span className="pill pill-gold">{t({ en: "Featured Brand", es: "Marca Destacada" })}</span>
           )}
           {brand.established && (
             <span className="pill pill-dark">Est. {brand.established}</span>
           )}
         </div>
 
-        {/* Brand name + tagline */}
         <h3
           className="heading text-[length:var(--text-h3)] mb-2"
           style={{ color: "var(--color-text)" }}
@@ -190,7 +183,6 @@ export const BrandCard = ({
           {brand.tagline}
         </p>
 
-        {/* Description */}
         <p
           className="text-base leading-relaxed mb-6"
           style={{ color: "var(--color-text-secondary)" }}
@@ -198,10 +190,9 @@ export const BrandCard = ({
           {brand.description}
         </p>
 
-        {/* CTA */}
         <div>
           <button className="btn-outline inline-flex items-center gap-2">
-            Learn More <ArrowRight className="w-4 h-4" />
+            {t({ en: "Learn More", es: "Saber M\u00e1s" })} <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </div>

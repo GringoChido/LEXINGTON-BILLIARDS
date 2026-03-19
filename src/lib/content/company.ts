@@ -31,14 +31,17 @@ export const company = {
   tagline: "Make Your Home the Best House on the Block",
 } as const
 
-export const navLinks = [
-  { href: "/pool-tables", label: "Pool Tables" },
-  { href: "/spas", label: "Hot Tubs & Spas" },
-  { href: "/big-green-egg", label: "Big Green Egg" },
-  { href: "/arcade-machines", label: "Arcade" },
-  { href: "/billiard-accessories", label: "Game Room Accessories" },
-  { href: "/contact", label: "Contact" },
-] as const
+import type { T } from "@/lib/i18n/context"
+
+export const navLinks: { href: string; label: T }[] = [
+  { href: "/pool-tables", label: { en: "Pool Tables", es: "Mesas de Billar" } },
+  { href: "/spas", label: { en: "Hot Tubs & Spas", es: "Jacuzzis y Spas" } },
+  { href: "/big-green-egg", label: { en: "Big Green Egg", es: "Big Green Egg" } },
+  { href: "/arcade-machines", label: { en: "Arcade", es: "Arcade" } },
+  { href: "/billiard-accessories", label: { en: "Game Room Accessories", es: "Accesorios" } },
+  { href: "/about", label: { en: "About", es: "Nosotros" } },
+  { href: "/contact", label: { en: "Contact", es: "Contacto" } },
+]
 
 export const whyUs = [
   {

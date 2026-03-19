@@ -66,7 +66,7 @@ export const ClothSwatches = ({ compact = false }: ClothSwatchesProps) => {
         className="text-center mt-4 text-sm font-bold"
         style={{ color: "var(--color-primary)" }}
       >
-        + 23 more colors in our showroom
+        + 23 more colors
       </p>
     </div>
   )
