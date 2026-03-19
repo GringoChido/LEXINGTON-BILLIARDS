@@ -88,6 +88,7 @@ export const spaBrands: Brand[] = [
     tagline: "Built for the way you live",
     description:
       "American Whirlpool leads our spa lineup with advanced hydrotherapy, energy-efficient engineering, and commercial-grade components. From intimate two-person models to full-size family spas — built to perform for decades.",
+    image: "/images/american-whirlpool-lifestyle.webp",
     scene: "American Whirlpool spa on patio deck at twilight, LED lighting, steam rising, landscaped garden",
     featured: true,
   },
@@ -97,6 +98,7 @@ export const spaBrands: Brand[] = [
     tagline: "Innovation in every jet",
     description:
       "Vita Spa combines cutting-edge jet technology with elegant design. Their spas deliver a hydrotherapy experience that rivals models at twice the price — exceptional value without compromise.",
+    image: "/images/vita-spa-lifestyle.jpg",
     scene: "Vita Spa hot tub on covered patio, couple relaxing, evening ambiance, string lights overhead",
   },
 ]

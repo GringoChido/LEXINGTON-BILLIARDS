@@ -16,12 +16,12 @@ const slides = [
     cta: { label: "See Our Spas", href: "#brands" },
   },
   {
-    sceneLabel: "Couple relaxing in spa, candles on deck, evening patio",
+    image: "/images/spa-slide-2.png",
     headline: "Lexington\u2019s Oldest Spa Dealer \u2014 Still the Best",
     cta: { label: "Visit the Showroom", href: "/contact" },
   },
   {
-    sceneLabel: "Aerial view of glowing spa in landscaped garden, night",
+    image: "/images/spa-slide-3.jpg",
     headline: "Free Delivery & Installation. Just Add Water.",
     cta: { label: "Call (859) 255-7639", href: "tel:8592557639" },
   },
