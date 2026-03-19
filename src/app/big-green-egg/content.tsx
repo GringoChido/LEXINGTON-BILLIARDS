@@ -267,11 +267,29 @@ export const BigGreenEggContent = () => {
               ))}
             </div>
           </motion.div>
+
+          {/* 2XL EGG hero image */}
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
+            className="mt-16 lg:mt-24 flex justify-center"
+          >
+            <Image
+              src="/images/bge-2xlarge.webp"
+              alt="Big Green Egg 2XL — the largest EGG in the lineup"
+              width={1200}
+              height={800}
+              className="w-full max-w-[900px] h-auto rounded-2xl"
+              sizes="(max-width: 1024px) 100vw, 900px"
+            />
+          </motion.div>
         </div>
       </section>
 
       {/* ── EGGcessories ── */}
-      <section className="py-[var(--section-py)]" style={{ background: "var(--cat-dark, #0F2E0F)" }}>
+      <section className="py-[var(--section-py)]" style={{ background: "var(--cat-primary, #1E5C1E)" }}>
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center">
             <motion.div

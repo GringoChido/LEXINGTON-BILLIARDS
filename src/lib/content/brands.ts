@@ -143,6 +143,7 @@ export const accessoryBrands: Brand[] = [
     description:
       "Bar stools, pub tables, poker tables, dartboards, spectator chairs, wall decor, and outdoor entertainment furniture. From game night essentials to weather-resistant patio bars — RAM brings everything together under one roof.",
     image: "/images/ram-lifestyle.webp",
+    scene: "RAM Game Room poker table and bar stools in upscale game room, dartboard on wall, pendant lighting",
   },
   {
     name: "Falcon Cues",
@@ -151,6 +152,7 @@ export const accessoryBrands: Brand[] = [
     description:
       "Falcon has been crafting precision cue sticks for serious players since 1987. Premium shafts, exotic wraps, and professional-grade tips — the cue that elevates your game.",
     image: "/images/falcon-cues-lifestyle.webp",
+    scene: "Falcon Cues premium pool cue closeup, exotic wood wrap, professional tip, felt background",
   },
   {
     name: "Imperial",
