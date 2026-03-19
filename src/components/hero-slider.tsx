@@ -8,7 +8,7 @@ import { company } from "@/lib/content/company"
 
 const slides = [
   {
-    image: "/images/pool-tables.webp",
+    image: "/images/home-hero-1.webp",
     headline: "Make Your Home the Best on the Block",
     sub: "Get ready for the spring at Lexington Billiards — pool tables, hot tubs, grills & arcade machines all under one roof.",
     ctaLabel: "Visit the Showroom",

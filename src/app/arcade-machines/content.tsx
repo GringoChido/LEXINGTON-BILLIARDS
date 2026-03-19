@@ -7,6 +7,7 @@ import { CTABlock } from "@/components/cta-block"
 import { ScenePlaceholder } from "@/components/scene-placeholder"
 import { arcadeBrands } from "@/lib/content/brands"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const slides = [
   {
@@ -123,7 +124,7 @@ export const ArcadeContent = () => {
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative aspect-[4/3] lg:aspect-auto min-h-[300px]">
-                  <ScenePlaceholder label={machines[0].scene} className="w-full h-full !rounded-none" dark />
+                  <Image src="/images/bourbon-barrel-arcade.webp" alt="Bourbon Barrel Multicade" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
                 </div>
                 <div className="p-8 lg:p-12 flex flex-col justify-center relative z-10">
                   <span className="pill mb-4 inline-block w-fit" style={{ background: "rgba(230,57,70,0.2)", color: "var(--cat-secondary, #E63946)" }}>{machines[0].badge}</span>
@@ -151,7 +152,9 @@ export const ArcadeContent = () => {
               style={{ borderColor: "rgba(0,180,216,0.2)", background: "var(--cat-surface, #16213E)" }}
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
-                <ScenePlaceholder label={machines[1].scene} aspectRatio="4/5" dark />
+                <div className="relative" style={{ aspectRatio: "4/5" }}>
+                  <Image src="/images/widescreen-upright-arcade.webp" alt="Widescreen Upright Arcade" fill className="object-cover" sizes="(max-width: 640px) 100vw, 33vw" />
+                </div>
                 <div className="p-8 flex flex-col justify-center">
                   <span className="pill mb-3 inline-block w-fit" style={{ background: "rgba(0,180,216,0.15)", color: "var(--cat-neon-blue, #00B4D8)" }}>{machines[1].badge}</span>
                   <h3 className="heading text-[length:var(--text-h3)] mb-2" style={{ color: "var(--cat-light, #F8F9FA)" }}>{machines[1].name}</h3>
