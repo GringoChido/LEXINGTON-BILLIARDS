@@ -98,7 +98,7 @@ export const spaBrands: Brand[] = [
     tagline: "Innovation in every jet",
     description:
       "Vita Spa combines cutting-edge jet technology with elegant design. Their spas deliver a hydrotherapy experience that rivals models at twice the price — exceptional value without compromise.",
-    image: "/images/vita-spa-lifestyle.jpg",
+    image: "/images/vita-spa-lifestyle.webp",
     scene: "Vita Spa hot tub on covered patio, couple relaxing, evening ambiance, string lights overhead",
   },
 ]

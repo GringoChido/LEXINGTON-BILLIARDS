@@ -11,17 +11,17 @@ import { ShieldCheck, Droplets, Truck, Wrench, CreditCard } from "lucide-react"
 
 const slides = [
   {
-    image: "/images/hot-tubs.jpg",
+    image: "/images/hot-tubs.webp",
     headline: "Your Backyard Is Missing a Hot Tub",
     cta: { label: "See Our Spas", href: "#brands" },
   },
   {
-    image: "/images/spa-slide-2.png",
+    image: "/images/spa-slide-2.webp",
     headline: "Lexington\u2019s Oldest Spa Dealer \u2014 Still the Best",
     cta: { label: "Visit the Showroom", href: "/contact" },
   },
   {
-    image: "/images/spa-slide-3.jpg",
+    image: "/images/spa-slide-3.webp",
     headline: "Free Delivery & Installation. Just Add Water.",
     cta: { label: "Call (859) 255-7639", href: "tel:8592557639" },
   },

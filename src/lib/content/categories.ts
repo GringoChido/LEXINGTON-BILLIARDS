@@ -46,8 +46,8 @@ export const experienceCategories: ExperienceCategory[] = [
 
 export const productCategories = [
   { href: "/pool-tables", label: "Pool Tables", shortLabel: "Tables", image: "/images/pool-tables.webp" },
-  { href: "/spas", label: "Hot Tubs & Spas", shortLabel: "Spas", image: "/images/hot-tubs.jpg" },
-  { href: "/big-green-egg", label: "Big Green Egg", shortLabel: "BGE", image: "/images/big-green-egg.jpg" },
+  { href: "/spas", label: "Hot Tubs & Spas", shortLabel: "Spas", image: "/images/hot-tubs.webp" },
+  { href: "/big-green-egg", label: "Big Green Egg", shortLabel: "BGE", image: "/images/big-green-egg.webp" },
   { href: "/arcade-machines", label: "Arcade Machines", shortLabel: "Arcade", image: "/images/arcade.jpg" },
   { href: "/billiard-accessories", label: "Game Room Accessories", shortLabel: "Accessories", image: "/images/accessories.jpg" },
 ] as const

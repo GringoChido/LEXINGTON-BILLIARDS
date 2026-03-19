@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 
 const slides = [
   {
-    image: "/images/bge-slide-1.jpg",
+    image: "/images/bge-slide-1.webp",
     headline: "Once You Cook on an Egg, Everything Else Is Just a Grill",
     cta: { label: "See the Lineup", href: "#eggs" },
   },
@@ -106,7 +106,7 @@ export const BigGreenEggContent = () => {
               className="rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
-                src="/images/bge-easy-recipes.jpg"
+                src="/images/bge-easy-recipes.webp"
                 alt="Friends gathered around a Big Green Egg, sharing food and conversation"
                 width={800}
                 height={533}
@@ -150,7 +150,7 @@ export const BigGreenEggContent = () => {
             transition={{ duration: 1 }}
           >
             <Image
-              src="/images/bge-family-lineup.jpg"
+              src="/images/bge-family-lineup.webp"
               alt="Big Green Egg complete family lineup — all seven sizes"
               width={1800}
               height={900}
