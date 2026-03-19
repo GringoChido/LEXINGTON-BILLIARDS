@@ -118,11 +118,11 @@ export const Navbar = () => {
             <div className="hidden lg:block w-[220px]" />
 
             {/* Mobile: language toggle + hamburger */}
-            <div className="lg:hidden ml-auto flex items-center gap-3">
+            <div className="lg:hidden ml-auto flex items-center gap-1">
               <LanguageToggle />
               <button
                 onClick={() => setOpen(!open)}
-                className="w-10 h-10 flex items-center justify-center text-text-on-dark"
+                className="w-11 h-11 flex items-center justify-center text-text-on-dark"
                 aria-label={open ? "Close menu" : "Open menu"}
               >
                 {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -153,7 +153,7 @@ export const Navbar = () => {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block py-3 font-display font-semibold text-[13px] uppercase tracking-wide text-text-on-dark/70 border-b border-border-dark hover:text-white transition-colors"
+                    className="block py-3.5 font-display font-semibold text-[13px] uppercase tracking-wide text-text-on-dark/70 border-b border-border-dark hover:text-white transition-colors"
                   >
                     {t(link.label)}
                   </Link>
@@ -176,18 +176,18 @@ export const Navbar = () => {
                 </a>
                 <Link
                   href="/contact"
-                  className="flex items-center justify-center gap-2 text-text-on-dark/60 text-sm hover:text-white transition-colors"
+                  className="flex items-center justify-center gap-2 text-text-on-dark/60 text-sm hover:text-white transition-colors py-2"
                   onClick={() => setOpen(false)}
                 >
                   <MapPin className="w-4 h-4" />
                   {company.address.full}
                 </Link>
-                <div className="flex items-center gap-4 justify-center pt-1">
+                <div className="flex items-center gap-2 justify-center pt-1">
                   <a
                     href={company.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-text-on-dark/60 hover:text-white transition-colors"
+                    className="w-11 h-11 flex items-center justify-center text-text-on-dark/60 hover:text-white transition-colors"
                     aria-label="Facebook"
                   >
                     <FacebookIcon className="w-5 h-5" />
@@ -196,7 +196,7 @@ export const Navbar = () => {
                     href={company.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-text-on-dark/60 hover:text-white transition-colors"
+                    className="w-11 h-11 flex items-center justify-center text-text-on-dark/60 hover:text-white transition-colors"
                     aria-label="Instagram"
                   >
                     <InstagramIcon className="w-5 h-5" />

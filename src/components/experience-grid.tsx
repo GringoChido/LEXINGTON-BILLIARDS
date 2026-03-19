@@ -56,8 +56,8 @@ export const ExperienceGrid = () => {
   const { t } = useLanguage()
 
   return (
-    <section className="py-24 md:py-32" style={{ background: "var(--color-cream)" }}>
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="py-[var(--section-py)] px-[var(--section-px)]" style={{ background: "var(--color-cream)" }}>
+      <div className="max-w-[var(--content-max)] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -144,9 +144,9 @@ const TileCard = ({ tile }: { tile: (typeof tiles)[number] }) => {
           <p className="text-white/80 font-medium text-sm md:text-base leading-snug md:translate-y-2 md:opacity-80 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
             {t(tile.hook)}
           </p>
-          <div className="mt-3 md:mt-4 md:overflow-hidden md:h-0 group-hover:h-10 md:transition-all md:duration-300">
+          <div className="mt-3 md:mt-4">
             <span
-              className="inline-flex items-center gap-2 font-display font-bold px-4 py-2 rounded-full text-sm text-white"
+              className="inline-flex items-center gap-2 font-display font-bold px-4 py-2 rounded-full text-sm text-white md:opacity-80 md:translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
               style={{ background: "var(--color-primary)" }}
             >
               {t({ en: "Explore", es: "Explorar" })} &rarr;

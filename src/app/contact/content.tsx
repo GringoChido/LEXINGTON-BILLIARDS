@@ -38,7 +38,7 @@ const contactInfo = [
 ]
 
 const inputClasses =
-  "w-full bg-white border border-border rounded-lg px-4 py-3 text-sm text-text placeholder:text-text-muted outline-none focus:border-primary/40 focus:ring-2 focus:ring-primary/10 transition-colors"
+  "w-full bg-white border border-border rounded-lg px-4 py-3 text-base sm:text-sm text-text placeholder:text-text-muted outline-none focus:border-primary/40 focus:ring-2 focus:ring-primary/10 transition-colors"
 
 export const ContactContent = () => {
   const { t } = useLanguage()

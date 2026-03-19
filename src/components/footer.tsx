@@ -95,7 +95,7 @@ export const Footer = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-text-on-dark/60 text-sm font-body hover:text-primary transition-colors"
+                    className="text-text-on-dark/60 text-sm font-body hover:text-primary transition-colors inline-block py-1"
                   >
                     {t(link.label)}
                   </Link>
@@ -112,7 +112,7 @@ export const Footer = () => {
                 <li key={`${link.href}-${i}`}>
                   <Link
                     href={link.href}
-                    className="text-text-on-dark/60 text-sm font-body hover:text-primary transition-colors"
+                    className="text-text-on-dark/60 text-sm font-body hover:text-primary transition-colors inline-block py-1"
                   >
                     {t(link.label)}
                   </Link>

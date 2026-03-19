@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fraunces.variable} ${dmSans.variable} ${dmMono.variable} bg-background text-text font-body antialiased`}
+        className={`${fraunces.variable} ${dmSans.variable} ${dmMono.variable} bg-background text-text font-body antialiased overflow-x-hidden`}
       >
         <Providers>
           {children}

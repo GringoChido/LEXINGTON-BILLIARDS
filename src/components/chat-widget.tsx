@@ -162,8 +162,8 @@ export const ChatWidget = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] rounded-2xl shadow-2xl overflow-hidden flex flex-col"
-            style={{ height: "min(520px, calc(100vh - 6rem))", background: "var(--color-cream, #FAF6EF)" }}
+            className="fixed bottom-0 left-0 right-0 sm:bottom-6 sm:left-auto sm:right-6 z-50 w-full sm:w-[360px] sm:max-w-[calc(100vw-2rem)] sm:rounded-2xl rounded-t-2xl shadow-2xl overflow-hidden flex flex-col"
+            style={{ height: "min(520px, calc(100vh - 4rem))", background: "var(--color-cream, #FAF6EF)" }}
           >
             {/* Header */}
             <div className="bg-dark px-5 py-4 flex items-center justify-between shrink-0">
@@ -173,7 +173,7 @@ export const ChatWidget = () => {
               </div>
               <button
                 onClick={() => setOpen(false)}
-                className="text-white/60 hover:text-white transition-colors"
+                className="w-11 h-11 flex items-center justify-center text-white/60 hover:text-white transition-colors shrink-0"
                 aria-label="Close chat"
               >
                 <X className="w-5 h-5" />
@@ -218,7 +218,7 @@ export const ChatWidget = () => {
                       <button
                         key={i}
                         onClick={() => handleQuickReply(qr)}
-                        className="text-xs px-3 py-1.5 rounded-full bg-white border border-border text-text hover:border-primary hover:text-primary transition-colors"
+                        className="text-xs px-3 py-2.5 rounded-full bg-white border border-border text-text hover:border-primary hover:text-primary transition-colors min-h-[44px]"
                       >
                         {t(qr.question)}
                       </button>
@@ -231,10 +231,10 @@ export const ChatWidget = () => {
             </div>
 
             {/* Quick contact bar */}
-            <div className="px-4 py-2 bg-white/60 border-t border-border flex items-center justify-center gap-4 shrink-0">
+            <div className="px-2 py-1 bg-white/60 border-t border-border flex items-center justify-center gap-2 shrink-0">
               <a
                 href={company.phone.href}
-                className="flex items-center gap-1.5 text-xs text-primary font-semibold hover:text-primary-hover transition-colors"
+                className="flex items-center gap-1.5 text-xs text-primary font-semibold hover:text-primary-hover transition-colors min-h-[44px] px-2"
               >
                 <Phone className="w-3.5 h-3.5" />
                 {t({ en: "Call", es: "Llamar" })}
@@ -244,7 +244,7 @@ export const ChatWidget = () => {
                 href={company.address.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-xs text-text-secondary hover:text-primary transition-colors"
+                className="flex items-center gap-1.5 text-xs text-text-secondary hover:text-primary transition-colors min-h-[44px] px-2"
               >
                 <MapPin className="w-3.5 h-3.5" />
                 {t({ en: "Directions", es: "Direcci\u00f3n" })}
@@ -265,12 +265,12 @@ export const ChatWidget = () => {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
                 placeholder={t(i18n.placeholder)}
-                className="flex-1 text-sm bg-transparent outline-none text-text placeholder:text-text-muted"
+                className="flex-1 text-base sm:text-sm bg-transparent outline-none text-text placeholder:text-text-muted"
               />
               <button
                 onClick={handleSend}
                 disabled={!input.trim()}
-                className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-hover transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-hover transition-colors disabled:opacity-30 disabled:cursor-not-allowed shrink-0"
                 aria-label="Send"
               >
                 <Send className="w-4 h-4" />

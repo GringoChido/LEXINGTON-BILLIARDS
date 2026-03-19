@@ -147,7 +147,7 @@ export const BigGreenEggContent = () => {
         {/* Family photo as hero background */}
         <div className="relative w-full">
           {/* Heading overlaid on top of image */}
-          <div className="absolute inset-x-0 top-0 z-10 pt-12 lg:pt-16 text-center">
+          <div className="absolute inset-x-0 top-0 z-10 pt-8 sm:pt-12 lg:pt-16 text-center px-4">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -185,7 +185,7 @@ export const BigGreenEggContent = () => {
         </div>
 
         {/* Size strip — overlapping the bottom of the image */}
-        <div className="relative z-10 -mt-8 lg:-mt-12 mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
+        <div className="relative z-10 mt-4 sm:-mt-8 lg:-mt-12 mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 lg:gap-3">
             {eggSizes.map((egg, i) => (
               <motion.div
@@ -255,60 +255,141 @@ export const BigGreenEggContent = () => {
             </div>
           </div>
 
-          {/* Anatomy strip below — horizontal cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mt-16 lg:mt-24"
-          >
-            <p className="section-label text-center mb-8" style={{ color: "var(--cat-accent, #F5A623)" }}>{t({ en: "How It Works", es: "Cómo Funciona" })}</p>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-              {anatomyFeatures.map((item, i) => (
-                <motion.div
-                  key={t(item.label)}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="text-center p-6 rounded-2xl"
-                  style={{ background: "var(--cat-surface, #F7F3EE)" }}
-                >
-                  <div
-                    className="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center"
-                    style={{ background: "var(--cat-primary, #1E5C1E)" }}
-                  >
-                    <span className="text-white font-bold text-sm">{i + 1}</span>
-                  </div>
-                  <h4 className="font-accent font-bold text-sm uppercase tracking-wider mb-2" style={{ color: "var(--color-text)" }}>
-                    {t(item.label)}
-                  </h4>
-                  <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-                    {t(item.desc)}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          {/* Anatomy — Egg centered with 2 features on each side */}
+          <div className="mt-16 lg:mt-24">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="section-label text-center mb-10 lg:mb-14"
+              style={{ color: "var(--cat-accent, #F5A623)" }}
+            >
+              {t({ en: "How It Works", es: "Cómo Funciona" })}
+            </motion.p>
 
-          {/* 2XL EGG hero image */}
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
-            className="mt-16 lg:mt-24 flex justify-center"
-          >
-            <Image
-              src="/images/bge-2xlarge.webp"
-              alt="Big Green Egg 2XL — the largest EGG in the lineup"
-              width={1200}
-              height={800}
-              className="w-full max-w-[900px] h-auto rounded-2xl"
-              sizes="(max-width: 1024px) 100vw, 900px"
-            />
-          </motion.div>
+            {/* Mobile: stack cards, then egg */}
+            <div className="lg:hidden space-y-4">
+              <div className="flex justify-center">
+                <Image
+                  src="/images/bge-2xlarge.webp"
+                  alt="Big Green Egg 2XL"
+                  width={500}
+                  height={600}
+                  className="w-full max-w-[320px] h-auto"
+                  sizes="320px"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                {anatomyFeatures.map((item, i) => (
+                  <motion.div
+                    key={t(item.label)}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.08 }}
+                    className="text-center p-5 rounded-2xl"
+                    style={{ background: "var(--cat-surface, #F7F3EE)" }}
+                  >
+                    <div
+                      className="w-10 h-10 rounded-full mx-auto mb-3 flex items-center justify-center"
+                      style={{ background: "var(--cat-primary, #1E5C1E)" }}
+                    >
+                      <span className="text-white font-bold text-sm">{i + 1}</span>
+                    </div>
+                    <h4 className="font-accent font-bold text-xs uppercase tracking-wider mb-1.5" style={{ color: "var(--color-text)" }}>
+                      {t(item.label)}
+                    </h4>
+                    <p className="text-[11px] leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+                      {t(item.desc)}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Desktop: 3-column — left cards | egg | right cards */}
+            <div className="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-8 xl:gap-12 items-center">
+              {/* Left 2 cards */}
+              <div className="space-y-6">
+                {anatomyFeatures.slice(0, 2).map((item, i) => (
+                  <motion.div
+                    key={t(item.label)}
+                    initial={{ opacity: 0, x: -24 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="text-right p-7 rounded-2xl"
+                    style={{ background: "var(--cat-surface, #F7F3EE)" }}
+                  >
+                    <div className="flex items-center justify-end gap-3 mb-2">
+                      <h4 className="font-accent font-bold text-sm uppercase tracking-wider" style={{ color: "var(--color-text)" }}>
+                        {t(item.label)}
+                      </h4>
+                      <div
+                        className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
+                        style={{ background: "var(--cat-primary, #1E5C1E)" }}
+                      >
+                        <span className="text-white font-bold text-sm">{i + 1}</span>
+                      </div>
+                    </div>
+                    <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+                      {t(item.desc)}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Center egg */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="flex justify-center"
+              >
+                <Image
+                  src="/images/bge-2xlarge.webp"
+                  alt="Big Green Egg 2XL"
+                  width={500}
+                  height={600}
+                  className="w-[340px] xl:w-[400px] h-auto"
+                  sizes="400px"
+                />
+              </motion.div>
+
+              {/* Right 2 cards */}
+              <div className="space-y-6">
+                {anatomyFeatures.slice(2, 4).map((item, i) => (
+                  <motion.div
+                    key={t(item.label)}
+                    initial={{ opacity: 0, x: 24 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="text-left p-7 rounded-2xl"
+                    style={{ background: "var(--cat-surface, #F7F3EE)" }}
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <div
+                        className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
+                        style={{ background: "var(--cat-primary, #1E5C1E)" }}
+                      >
+                        <span className="text-white font-bold text-sm">{i + 3}</span>
+                      </div>
+                      <h4 className="font-accent font-bold text-sm uppercase tracking-wider" style={{ color: "var(--color-text)" }}>
+                        {t(item.label)}
+                      </h4>
+                    </div>
+                    <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+                      {t(item.desc)}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

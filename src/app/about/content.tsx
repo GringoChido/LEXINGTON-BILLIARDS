@@ -82,6 +82,12 @@ const categories = [
     href: "/billiard-accessories",
     image: "/images/tile-accessories.webp",
   },
+  {
+    title: { en: "Services & Repair", es: "Servicios y Reparación" } as T,
+    desc: { en: "Re-cloth, re-cushion, cue repair, spa maintenance, and professional delivery within 50 miles.", es: "Cambio de paño, cambio de bandas, reparación de tacos, mantenimiento de spas y entrega profesional dentro de 50 millas." } as T,
+    href: "/contact",
+    image: "/images/repair-service.webp",
+  },
 ]
 
 const serviceItems = [
@@ -131,7 +137,7 @@ export const AboutContent = () => {
             <p className="text-white/65 text-lg leading-relaxed mb-8 max-w-[52ch]">
               {t(i18n.heroSub)}
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center gap-6">
               <div className="text-center">
                 <p className="heading text-[length:var(--text-stat)] text-primary">{company.yearsInBusiness}+</p>
                 <p className="text-white/50 text-xs font-accent uppercase tracking-wider">{t({ en: "Years", es: "A\u00f1os" })}</p>

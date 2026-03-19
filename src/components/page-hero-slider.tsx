@@ -95,7 +95,7 @@ export const PageHeroSlider = ({
       <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C1C]/80 via-[#1C1C1C]/30 to-[#1C1C1C]/20 z-[1]" />
 
       {/* Content */}
-      <div className="relative z-10 min-h-[70vh] lg:min-h-[85vh] flex items-end pb-16 lg:pb-24 pt-[var(--header-height)]">
+      <div className="relative z-10 min-h-[70vh] lg:min-h-[85vh] flex items-end pb-16 lg:pb-24 pt-[var(--header-height-mobile)] lg:pt-[var(--header-height)]">
         <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)] w-full">
           <AnimatePresence mode="wait">
             <motion.div

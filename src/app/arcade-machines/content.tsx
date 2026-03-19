@@ -17,7 +17,7 @@ const slides = [
     cta: { label: { en: "See Our Machines", es: "Ver Nuestras Máquinas" } as T, href: "#machines" },
   },
   {
-    image: "/images/gameroom-slide-2.webp",
+    image: "/images/retroarcade.webp",
     headline: { en: "Custom Multicades. Classic Games. Your Design.", es: "Multicades Personalizados. Juegos Clásicos. Tu Diseño." } as T,
     cta: { label: { en: "Visit the Showroom", es: "Visita el Showroom" } as T, href: "/contact" },
   },

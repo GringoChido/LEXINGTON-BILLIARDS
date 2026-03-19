@@ -111,7 +111,7 @@ export const HeroSlider = () => {
             className="object-cover"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/40 md:from-black/70 md:via-black/40 md:to-black/20" />
         </motion.div>
       </AnimatePresence>
 
