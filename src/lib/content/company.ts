@@ -39,6 +39,7 @@ export const navLinks: { href: string; label: T }[] = [
   { href: "/big-green-egg", label: { en: "Big Green Egg", es: "Big Green Egg" } },
   { href: "/arcade-machines", label: { en: "Arcade", es: "Arcade" } },
   { href: "/billiard-accessories", label: { en: "Game Room Accessories", es: "Accesorios" } },
+  { href: "/blog", label: { en: "Blog", es: "Blog" } },
   { href: "/about", label: { en: "About", es: "Nosotros" } },
   { href: "/contact", label: { en: "Contact", es: "Contacto" } },
 ]

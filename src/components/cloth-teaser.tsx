@@ -19,9 +19,9 @@ export const ClothTeaser = () => {
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
         >
           <div>
-            <p className="section-label mb-4" style={{ color: "var(--color-primary)" }}>{t({ en: "Your Table, Your Color", es: "Tu Mesa, Tu Color" })}</p>
+            <p className="section-label mb-4" style={{ color: "var(--color-primary)" }}>{t({ en: "Your Choice", es: "Tu Elección" })}</p>
             <h2 className="heading text-[length:var(--text-h2)] mb-4" style={{ color: "var(--color-text)" }}>
-              {t({ en: "29 Cloth Colors. Pick Yours.", es: "29 Colores de Pa\u00f1o. Elige el Tuyo." })}
+              {t({ en: "29 Cloth Colors", es: "29 Colores de Paño" })}
             </h2>
             <p className="text-base leading-relaxed mb-6" style={{ color: "var(--color-text-secondary)" }}>
               {t({

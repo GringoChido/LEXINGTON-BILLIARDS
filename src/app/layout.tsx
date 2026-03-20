@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Fraunces, DM_Sans, DM_Mono } from "next/font/google"
 import { Providers } from "@/components/providers"
 import { ChatWidget } from "@/components/chat-widget"
+import { StructuredData } from "@/components/structured-data"
 import "./globals.css"
 
 const fraunces = Fraunces({
@@ -52,6 +53,7 @@ export default function RootLayout({
       <body
         className={`${fraunces.variable} ${dmSans.variable} ${dmMono.variable} bg-background text-text font-body antialiased overflow-x-hidden`}
       >
+        <StructuredData />
         <Providers>
           {children}
           <ChatWidget />

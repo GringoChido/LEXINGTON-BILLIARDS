@@ -8,7 +8,7 @@ import { ScenePlaceholder } from "@/components/scene-placeholder"
 import { spaBrands } from "@/lib/content/brands"
 import { useLanguage, type T } from "@/lib/i18n/context"
 import { motion } from "framer-motion"
-import { ShieldCheck, Droplets, Truck, Wrench, CreditCard } from "lucide-react"
+import { ShieldCheck, Droplets, Truck, Wrench, CreditCard, HeartPulse } from "lucide-react"
 
 const slides = [
   {
@@ -53,6 +53,11 @@ const serviceFeatures = [
     icon: CreditCard,
     title: { en: "Financing Available", es: "Financiamiento Disponible" } as T,
     description: { en: "Flexible financing options to fit your budget. Ask about current promotions.", es: "Opciones de financiamiento flexibles para tu presupuesto. Pregunta por las promociones actuales." } as T,
+  },
+  {
+    icon: HeartPulse,
+    title: { en: "Water Care Training", es: "Capacitación en Cuidado del Agua" } as T,
+    description: { en: "We teach you how to balance your water chemistry so your spa stays crystal clear between services.", es: "Te enseñamos a equilibrar la química del agua para que tu spa se mantenga cristalino entre servicios." } as T,
   },
 ]
 

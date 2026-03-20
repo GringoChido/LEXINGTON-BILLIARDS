@@ -10,6 +10,29 @@ const clothColors = [
   { name: "Camel", hex: "#C4A265" },
   { name: "Navy", hex: "#1C2951" },
   { name: "Red", hex: "#8B2500" },
+  { name: "Spruce", hex: "#1B4332" },
+  { name: "Electric Blue", hex: "#0066CC" },
+  { name: "Burgundy", hex: "#5C1A1B" },
+  { name: "Dark Green", hex: "#1A5632" },
+  { name: "Charcoal", hex: "#3A3A3A" },
+  { name: "Steel Grey", hex: "#6B7B8D" },
+  { name: "Tan", hex: "#D2B48C" },
+  { name: "Black", hex: "#1A1A1A" },
+  { name: "English Green", hex: "#3D6B47" },
+  { name: "Euro Blue", hex: "#2A5DA8" },
+  { name: "Purple", hex: "#4A2065" },
+  { name: "Bottle Green", hex: "#264D35" },
+  { name: "Mocha", hex: "#7A5C48" },
+  { name: "Olive", hex: "#5C6B3A" },
+  { name: "Powder Blue", hex: "#6CA0C4" },
+  { name: "Chocolate", hex: "#3E2723" },
+  { name: "Khaki", hex: "#A69060" },
+  { name: "Brick", hex: "#9B3B2B" },
+  { name: "Sage", hex: "#7D8B6A" },
+  { name: "Copper", hex: "#A0522D" },
+  { name: "Taupe", hex: "#8B7D6B" },
+  { name: "Midnight Blue", hex: "#191970" },
+  { name: "Ivory", hex: "#E8DCC8" },
 ]
 
 interface ClothSwatchesProps {
@@ -22,7 +45,7 @@ export const ClothSwatches = ({ compact = false }: ClothSwatchesProps) => {
   return (
     <div>
       <div
-        className={`grid gap-3 ${compact ? "grid-cols-6" : "grid-cols-3 sm:grid-cols-6"}`}
+        className={`grid gap-2.5 ${compact ? "grid-cols-6 sm:grid-cols-6" : "grid-cols-5 sm:grid-cols-6 lg:grid-cols-8"}`}
       >
         {clothColors.map((color, i) => (
           <motion.button
@@ -66,7 +89,7 @@ export const ClothSwatches = ({ compact = false }: ClothSwatchesProps) => {
         className="text-center mt-4 text-sm font-bold"
         style={{ color: "var(--color-primary)" }}
       >
-        + 23 more colors
+        {clothColors.length} colors available
       </p>
     </div>
   )
