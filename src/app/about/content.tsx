@@ -54,7 +54,7 @@ const i18n = {
 const categories = [
   {
     title: { en: "Pool Tables", es: "Mesas de Billar" } as T,
-    desc: { en: "Seven premium brands including Brunswick, Olhausen, and C.L. Bailey. 29 cloth colors.", es: "Siete marcas premium incluyendo Brunswick, Olhausen y C.L. Bailey. 29 colores de pa\u00f1o." } as T,
+    desc: { en: "Six premium brands including Brunswick, Connelly, and C.L. Bailey. 29 cloth colors.", es: "Seis marcas premium incluyendo Brunswick, Connelly y C.L. Bailey. 29 colores de pa\u00f1o." } as T,
     href: "/pool-tables",
     image: "/images/tile-pool-tables.webp",
   },

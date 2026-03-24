@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import type { Brand } from "@/lib/content/brands"
@@ -13,6 +14,23 @@ interface BrandCardProps {
   index?: number
   reversed?: boolean
   variant?: "default" | "wide" | "compact"
+  href?: string
+}
+
+const LearnMoreBtn = ({ href, label }: { href?: string; label: string }) => {
+  const cls = "btn-outline inline-flex items-center gap-2"
+  if (href) {
+    return (
+      <Link href={href} className={cls}>
+        {label} <ArrowRight className="w-4 h-4" />
+      </Link>
+    )
+  }
+  return (
+    <button className={cls}>
+      {label} <ArrowRight className="w-4 h-4" />
+    </button>
+  )
 }
 
 export const BrandCard = ({
@@ -20,9 +38,11 @@ export const BrandCard = ({
   index = 0,
   reversed = false,
   variant = "default",
+  href,
 }: BrandCardProps) => {
   const logo = brandLogos[brand.slug]
   const { t } = useLanguage()
+  const learnMore = t({ en: "Learn More", es: "Saber M\u00e1s" })
 
   if (variant === "wide") {
     return (
@@ -101,9 +121,7 @@ export const BrandCard = ({
             >
               {brand.description}
             </p>
-            <button className="btn-outline inline-flex items-center gap-2">
-              {t({ en: "Learn More", es: "Saber M\u00e1s" })} <ArrowRight className="w-4 h-4" />
-            </button>
+            <LearnMoreBtn href={href} label={learnMore} />
           </div>
         </div>
       </motion.div>
@@ -191,9 +209,7 @@ export const BrandCard = ({
         </p>
 
         <div>
-          <button className="btn-outline inline-flex items-center gap-2">
-            {t({ en: "Learn More", es: "Saber M\u00e1s" })} <ArrowRight className="w-4 h-4" />
-          </button>
+          <LearnMoreBtn href={href} label={learnMore} />
         </div>
       </div>
     </motion.div>

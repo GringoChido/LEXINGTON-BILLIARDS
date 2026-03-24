@@ -9,11 +9,11 @@ import { PoolTablesContent } from "./content"
 export const metadata: Metadata = {
   title: "Pool Tables in Lexington, KY | Free Delivery & Setup Since 1975",
   description:
-    "C.L. Bailey, Brunswick, Olhausen, Imperial, and American Heritage pool tables. Free delivery within 50 miles, professional installation, and 29 cloth color choices. Lexington's oldest billiards dealer since 1975.",
+    "C.L. Bailey, Brunswick, A.E. Schmidt, Connelly, Imperial, and American Heritage pool tables. Free delivery within 50 miles, professional installation, and 29 cloth color choices. Lexington's oldest billiards dealer since 1975.",
   openGraph: {
     title: "Pool Tables in Lexington, KY | Free Delivery & Setup Since 1975",
     description:
-      "C.L. Bailey, Brunswick, Olhausen, Imperial, and American Heritage pool tables. Free delivery within 50 miles, professional installation, and 29 cloth color choices. Lexington's oldest billiards dealer since 1975.",
+      "C.L. Bailey, Brunswick, A.E. Schmidt, Connelly, Imperial, and American Heritage pool tables. Free delivery within 50 miles, professional installation, and 29 cloth color choices. Lexington's oldest billiards dealer since 1975.",
     images: [
       {
         url: "https://lexingtonbilliardsandspas.com/images/pool-tables.webp",
@@ -41,7 +41,7 @@ const poolTableFAQs = [
   {
     question: "What brands of pool tables do you carry?",
     answer:
-      "We carry C.L. Bailey, Brunswick, A.E. Schmidt, Connelly, Olhausen, Imperial, and American Heritage. Each brand is hand-selected for quality construction and long-term durability.",
+      "We carry C.L. Bailey, Brunswick, A.E. Schmidt, Connelly, Imperial, and American Heritage. Each brand is hand-selected for quality construction and long-term durability.",
   },
   {
     question: "Can I choose the felt color on my pool table?",

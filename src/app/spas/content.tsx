@@ -126,7 +126,7 @@ export const SpasContent = () => {
           />
           <div className="space-y-16 lg:space-y-24">
             {spaBrands.map((brand, i) => (
-              <BrandCard key={brand.slug} brand={brand} index={i} reversed={i % 2 !== 0} variant={i === 0 ? "wide" : "default"} />
+              <BrandCard key={brand.slug} brand={brand} index={i} reversed={i % 2 === 0} variant={i === 0 ? "wide" : "default"} href={`/spas/${brand.slug}`} />
             ))}
           </div>
         </div>

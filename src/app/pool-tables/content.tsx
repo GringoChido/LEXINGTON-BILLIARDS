@@ -144,7 +144,7 @@ export const PoolTablesContent = () => {
           />
           <div className="space-y-16 lg:space-y-24">
             {poolTableBrands.map((brand, i) => (
-              <BrandCard key={brand.slug} brand={brand} index={i} reversed={i % 2 !== 0} variant={i === 0 ? "wide" : "default"} />
+              <BrandCard key={brand.slug} brand={brand} index={i} reversed={i % 2 === 0} variant={i === 0 ? "wide" : "default"} href={`/pool-tables/${brand.slug}`} />
             ))}
           </div>
         </div>

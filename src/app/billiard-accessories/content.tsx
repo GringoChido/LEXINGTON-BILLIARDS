@@ -156,7 +156,7 @@ export const BilliardAccessoriesContent = () => {
           <SectionHeading label={t(i18n.brandsLabel)} headline={t(i18n.brandsHeadline)} description={t(i18n.brandsDesc)} />
           <div className="space-y-16 lg:space-y-24">
             {accessoryBrands.map((brand, i) => (
-              <BrandCard key={brand.slug} brand={brand} index={i} reversed={i % 2 !== 0} variant={i === 0 ? "wide" : "default"} />
+              <BrandCard key={brand.slug} brand={brand} index={i} reversed={i % 2 === 0} variant={i === 0 ? "wide" : "default"} href={`/billiard-accessories/${brand.slug}`} />
             ))}
           </div>
         </div>

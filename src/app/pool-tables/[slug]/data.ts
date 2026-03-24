@@ -1,0 +1,188 @@
+import type { BrandDetailContent } from "@/components/brand-detail-page"
+
+export type BrandData = { tagline: string; established?: string; content: BrandDetailContent }
+
+export const brandContent: Record<string, BrandData> = {
+  "cl-bailey": {
+    tagline: "The pool table we recommend first",
+    content: {
+      heroImage: "/images/brands/scene-cl-bailey.webp",
+      story: "Founded in the tradition of American craftsmanship, C.L. Bailey tables are built with solid hardwood construction and classic design that makes a real pool table accessible to every family. This is the brand Lexington Billiards stocks deepest and recommends first \u2014 because it delivers real quality at a price point that works for real families.",
+      highlights: [
+        "Solid hardwood construction",
+        "Furniture-grade finishes",
+        "Accessory kit included with every table",
+        "Free delivery & professional setup",
+        "Multiple size options (7ft, 8ft)",
+        "Family-friendly value without compromise",
+      ],
+      collections: [
+        { name: "The Addison", description: "Traditional styling with classic carved legs and rich wood tones. A timeless centerpiece for any game room." },
+        { name: "The Dutchess", description: "Transitional design that blends traditional craftsmanship with contemporary clean lines." },
+        { name: "The Elan", description: "Contemporary profile with sleek legs and modern finishes for today\u2019s home." },
+        { name: "The Randall", description: "Rustic character with distressed wood finishes and farmhouse-inspired details." },
+      ],
+      craftsmanship: "Every C.L. Bailey table features solid hardwood rails and legs, premium K-66 rubber cushions for consistent bounce, a 1-inch backed slate playing surface for true roll, and precision-machined components that keep the table playing perfectly for decades. The furniture-grade finishes are hand-applied in multiple coats to protect the wood and enhance the grain.",
+      whyBuyFromUs: "C.L. Bailey is the brand we stock deepest and know best. When you buy a C.L. Bailey from Lexington Billiards, you get free delivery within 50 miles, professional installation and leveling, your choice of 29 premium cloth colors, and a complete accessory kit \u2014 all included. We\u2019ve been setting up C.L. Bailey tables in Central Kentucky homes for decades, and we service every one we sell.",
+      faqs: [
+        { question: "Where are C.L. Bailey tables made?", answer: "C.L. Bailey tables are manufactured with solid hardwood construction following traditional American craftsmanship standards. Every table is built with quality materials and precision engineering to deliver a professional playing experience at a family-friendly price." },
+        { question: "What sizes are available?", answer: "C.L. Bailey offers 7-foot and 8-foot tables. A 7-foot table needs a minimum room size of 13x16 feet, while an 8-foot table requires 13.5x17 feet. Visit our Lexington showroom and we\u2019ll help you measure your space." },
+        { question: "Do C.L. Bailey tables come with accessories?", answer: "Yes. Every C.L. Bailey table from Lexington Billiards includes a complete accessory kit with balls, two cues, a rack, brush, chalk, and a table cover. Plus your choice of 29 premium cloth colors \u2014 all included in the price." },
+        { question: "How does C.L. Bailey compare to Brunswick?", answer: "C.L. Bailey delivers excellent quality at a more accessible price point. Both brands use slate playing surfaces and solid wood construction. Brunswick commands a premium for its 180-year heritage and tournament pedigree. C.L. Bailey offers outstanding value for families who want a real, quality pool table without the premium brand markup." },
+        { question: "What warranty does C.L. Bailey offer?", answer: "C.L. Bailey backs their tables with a manufacturer warranty covering defects in materials and workmanship. When you buy from Lexington Billiards, you also get our 50 years of service expertise \u2014 we stand behind every table we sell with lifetime service support." },
+      ],
+    },
+  },
+  brunswick: {
+    tagline: "The gold standard since 1845",
+    established: "1845",
+    content: {
+      heroImage: "/images/brands/scene-brunswick.webp",
+      story: "The oldest and most iconic name in billiards. Brunswick has been building pool tables since 1845 \u2014 nearly two centuries of tournament-grade engineering and design innovation. When you buy a Brunswick, you\u2019re buying a piece of history backed by the most trusted name in the game.",
+      highlights: [
+        "Since 1845 \u2014 the gold standard in billiards",
+        "Tournament-grade Italian slate",
+        "Patented SuperSpeed cushion technology",
+        "Lifetime warranty on select models",
+        "Furniture-quality hardwood construction",
+        "Used in professional tournaments worldwide",
+      ],
+      collections: [
+        { name: "Gold Crown", description: "The tournament and commercial standard. Found in pool halls, leagues, and professional events around the world." },
+        { name: "Centurion", description: "Premium residential tables with tournament-level playability and stunning furniture-grade aesthetics." },
+        { name: "Allenton", description: "Transitional design that brings Brunswick quality to contemporary and traditional homes alike." },
+        { name: "Winfield", description: "Traditional elegance with carved details and rich wood finishes for the classic game room." },
+      ],
+      craftsmanship: "Brunswick tables feature certified 1-inch Italian slate, SuperSpeed K-66 profile cushion rubber for faster and more accurate play, and precision dovetail and mortise-and-tenon joinery that keeps the frame rock-solid for generations. Hand-applied multi-step finishes protect the hardwood and bring out the natural beauty of the grain. Every detail is engineered for serious play.",
+      whyBuyFromUs: "As an authorized Brunswick dealer, Lexington Billiards delivers the full Brunswick experience \u2014 from our showroom where you can play on Brunswick tables before you buy, to free delivery and professional installation in your home. We\u2019ve been selling and servicing Brunswick tables in Central Kentucky for 50 years. When your Brunswick needs service, you call the same family that sold it to you.",
+      faqs: [
+        { question: "Why is Brunswick considered the best?", answer: "Brunswick has been the gold standard in billiards since 1845. Nearly two centuries of engineering, tournament use, and innovation have made Brunswick the most trusted name in the industry. Their patented SuperSpeed cushion technology, certified Italian slate, and furniture-grade construction set the benchmark every other brand is measured against." },
+        { question: "What is the Brunswick Gold Crown?", answer: "The Gold Crown is Brunswick\u2019s flagship tournament and commercial table. It\u2019s the table you\u2019ll find in professional pool halls, league play, and televised tournaments around the world. The Gold Crown represents the pinnacle of billiard table engineering \u2014 designed for serious, competitive play." },
+        { question: "How long do Brunswick tables last?", answer: "A properly maintained Brunswick pool table can last 50 years or more. The combination of certified Italian slate, premium hardwood construction, and precision engineering means these tables are built to be passed down through generations. Lexington Billiards provides lifetime service support on every Brunswick we sell." },
+        { question: "Are Brunswick tables worth the investment?", answer: "Yes. Brunswick tables hold their value better than any other brand in billiards. The combination of heritage, build quality, and brand recognition means a Brunswick is both a premium playing experience and a sound investment. Many Brunswick tables from the 1960s and 70s are still in daily use today." },
+        { question: "What is Brunswick SuperSpeed cushion technology?", answer: "SuperSpeed is Brunswick\u2019s patented cushion rubber profile that delivers faster, more accurate ball response than standard K-66 rubber. The proprietary profile and compound produce consistent bounce angles and speed across the entire playing surface \u2014 the same technology used in professional tournament play." },
+      ],
+    },
+  },
+  "ae-schmidt": {
+    tagline: "America\u2019s oldest pool table manufacturer",
+    established: "1850",
+    content: {
+      heroImage: "/images/brands/scene-ae-schmidt.webp",
+      story: "The oldest pool table manufacturer in the United States. A.E. Schmidt has been building tables in St. Louis, Missouri since 1850 \u2014 over 170 years of heirloom-quality craftsmanship passed down through six generations. These are tables your grandchildren will play on.",
+      highlights: [
+        "America\u2019s oldest manufacturer (since 1850)",
+        "Made in St. Louis, Missouri",
+        "Heirloom-quality American hardwoods",
+        "Hand-carved details available",
+        "Six generations of craftsmanship",
+        "Custom options available",
+      ],
+      collections: [
+        { name: "The Kensington", description: "Ornate traditional design with hand-carved details, turned legs, and rich finishes that evoke old-world billiard rooms." },
+        { name: "The Lincoln", description: "Classic American styling with clean lines and elegant proportions. A timeless addition to any home." },
+        { name: "The Monroe", description: "Contemporary profile with modern finishes for the player who wants heritage craftsmanship in a current aesthetic." },
+        { name: "Custom & Bespoke", description: "Work directly with A.E. Schmidt craftsmen to create a one-of-a-kind table. Choose your wood species, finish, carvings, and dimensions." },
+      ],
+      craftsmanship: "A.E. Schmidt tables are built using old-world joinery techniques that have been refined over 170 years. Hand-selected American hardwoods are shaped using both time-tested hand methods and precision modern tools. Every table features 1-inch backed Italian slate and hand-rubbed oil and lacquer finishes applied in multiple coats. The result is a table that plays perfectly and looks like heirloom furniture.",
+      whyBuyFromUs: "A.E. Schmidt tables are special \u2014 they represent the absolute pinnacle of American pool table craftsmanship. Lexington Billiards is proud to offer these heirloom-quality tables with the same care they deserve: free delivery, expert installation, and lifetime service support. When you invest in an A.E. Schmidt, you deserve a dealer with 50 years of experience handling fine billiard furniture.",
+      faqs: [
+        { question: "Where are A.E. Schmidt tables made?", answer: "Every A.E. Schmidt table is built in their facility in St. Louis, Missouri \u2014 the same city where the company was founded in 1850. Six generations of the Schmidt family have overseen production, maintaining the hand-crafted quality that makes these tables genuine American heirlooms." },
+        { question: "Can I customize an A.E. Schmidt table?", answer: "Yes. A.E. Schmidt offers custom and bespoke options where you can choose your wood species, finish color, carving details, and even custom dimensions. Their craftsmen work with you to create a one-of-a-kind table. Ask us at Lexington Billiards and we\u2019ll walk you through the custom process." },
+        { question: "How old is A.E. Schmidt?", answer: "A.E. Schmidt was founded in 1850, making it the oldest pool table manufacturer in the United States \u2014 over 170 years of continuous operation. The company has been passed down through six generations of the Schmidt family." },
+        { question: "What makes A.E. Schmidt different from other brands?", answer: "Heritage and craftsmanship. A.E. Schmidt tables are built using old-world joinery techniques refined over 170 years, with hand-selected American hardwoods and hand-rubbed finishes. Every table is built to be an heirloom \u2014 a piece of furniture that gains character and value with age." },
+        { question: "Do A.E. Schmidt tables hold their value?", answer: "Yes. A.E. Schmidt tables are among the most collectible in the industry. Their limited production, hand-crafted quality, and 170-year heritage mean these tables appreciate over time. Many vintage Schmidt tables from the early 1900s are still in use and highly sought after by collectors." },
+      ],
+    },
+  },
+  connelly: {
+    tagline: "Precision crafted in Arizona",
+    content: {
+      heroImage: "/images/brands/scene-connelly.webp",
+      story: "Every Connelly table is built entirely by hand in their Tucson, Arizona facility. No outsourcing, no shortcuts. Premium hardwoods, Italian slate, and furniture-grade finishes \u2014 Connelly builds tables for players who know the difference between good and exceptional.",
+      highlights: [
+        "100% made in Tucson, Arizona",
+        "Solid hardwood construction",
+        "Italian slate playing surface",
+        "Furniture-grade hand-rubbed finishes",
+        "Lifetime structural warranty",
+        "Custom color options available",
+      ],
+      collections: [
+        { name: "Cochise", description: "Southwestern-inspired design with warm wood tones and sturdy proportions that reflect the Arizona landscape." },
+        { name: "Catalina", description: "Contemporary clean lines with a focus on modern materials and minimalist aesthetics." },
+        { name: "Scottsdale", description: "Transitional styling that pairs traditional craftsmanship with updated design sensibility." },
+        { name: "Del Sol", description: "Rustic character with natural wood grain, distressed finishes, and relaxed southwestern charm." },
+      ],
+      craftsmanship: "Connelly starts with kiln-dried solid hardwoods, shapes them with precision CNC machinery, then finishes every table by hand. The hand-rubbed catalyzed lacquer finish is applied in multiple coats for a surface that\u2019s both beautiful and durable. Premium Italian slate and carefully matched K-66 cushion rubber deliver a playing surface that serious players appreciate. Every table carries a lifetime structural warranty.",
+      whyBuyFromUs: "Connelly tables are for the discerning buyer who appreciates American-made quality. Lexington Billiards brings these Arizona-crafted tables to Central Kentucky with the service they deserve \u2014 free delivery, expert installation, your choice of 29 cloth colors, and a complete accessory kit. We know Connelly tables inside and out, and we service every one we sell for life.",
+      faqs: [
+        { question: "Where are Connelly tables made?", answer: "Every Connelly table is built entirely in their facility in Tucson, Arizona. There\u2019s no outsourcing \u2014 from raw lumber to finished table, everything happens under one roof with their own craftsmen." },
+        { question: "What wood does Connelly use?", answer: "Connelly uses kiln-dried solid hardwoods selected for strength, grain quality, and beauty. The wood is precision-machined and then hand-finished with a catalyzed lacquer that protects the surface and highlights the natural grain character." },
+        { question: "How does Connelly compare to Brunswick?", answer: "Both are premium American pool table brands with excellent reputations. Brunswick has nearly two centuries of heritage and tournament pedigree. Connelly offers a more boutique experience \u2014 every table built by hand in a single facility with a focus on custom finishes and personalized quality. Both deliver exceptional playability." },
+        { question: "Can I choose custom finishes?", answer: "Yes. Connelly offers multiple standard finish options and can accommodate custom color requests. Visit our Lexington showroom to see finish samples and discuss custom options with our team." },
+        { question: "What warranty does Connelly offer?", answer: "Connelly backs their tables with a lifetime structural warranty, covering the frame and structural components for as long as you own the table. This reflects their confidence in the build quality of every table that leaves their Tucson facility." },
+      ],
+    },
+  },
+  imperial: {
+    tagline: "Game room furniture, perfected",
+    content: {
+      heroImage: "/images/brands/scene-imperial.webp",
+      story: "Imperial brings together billiards, shuffleboard, foosball, and game room furniture under one roof. Known for quality construction and officially licensed designs from the NFL, NBA, MLB, NHL, and NCAA \u2014 Imperial lets you represent your team in your game room.",
+      highlights: [
+        "Licensed NFL, NBA, MLB, NHL, NCAA designs",
+        "Pool tables, shuffleboard, and foosball",
+        "Complete game room furniture line",
+        "Team-branded cloth & accessories",
+        "Quality at every price point",
+        "Wide selection of styles and finishes",
+      ],
+      collections: [
+        { name: "Barnstable", description: "Traditional styling with turned legs and rich wood finishes. A classic game room centerpiece." },
+        { name: "Penelope", description: "Contemporary design with clean lines and modern proportions for today\u2019s living spaces." },
+        { name: "Lincoln", description: "Rustic charm with distressed finishes and farmhouse-inspired details." },
+        { name: "Licensed Team Tables", description: "Officially licensed pool tables featuring your favorite NFL, NBA, MLB, NHL, or NCAA team logos and colors." },
+      ],
+      craftsmanship: "Imperial tables feature solid wood rails and legs, a 1-inch slate playing surface, and K-66 profile cushion rubber for consistent play. The construction balances quality materials with smart engineering to deliver excellent value. Licensed team tables use officially approved logos and colors with commercial-grade printing on the cloth.",
+      whyBuyFromUs: "Imperial\u2019s range means there\u2019s something for every game room and every budget. At Lexington Billiards, we carry Imperial pool tables, shuffleboard tables, and game room accessories. Free delivery and setup within 50 miles, plus our 50 years of service expertise. Whether you want a tournament-ready table or a Kentucky Wildcats-branded game room showpiece, we\u2019ll set it up right.",
+      faqs: [
+        { question: "Does Imperial make licensed team pool tables?", answer: "Yes. Imperial holds official licenses from the NFL, NBA, MLB, NHL, and NCAA. You can get pool table felt, cues, dart cabinets, and accessories featuring your team\u2019s official logo and colors. University of Kentucky Wildcats gear is among our most popular." },
+        { question: "What other games does Imperial make?", answer: "Beyond pool tables, Imperial manufactures shuffleboard tables, foosball tables, air hockey tables, and a full line of game room furniture including bar stools, pub tables, and wall decor." },
+        { question: "Are Imperial tables regulation size?", answer: "Yes. Imperial offers 7-foot, 8-foot, and 9-foot tables with regulation-spec playing surfaces. Every size features a 1-inch slate bed and K-66 cushion rubber for true, consistent play." },
+        { question: "What is the Imperial warranty?", answer: "Imperial provides a manufacturer warranty covering defects in materials and workmanship. Combined with Lexington Billiards\u2019 lifetime service support, your Imperial table is covered for the long haul." },
+        { question: "Can I get my team\u2019s logo on the felt?", answer: "Yes. Imperial\u2019s officially licensed team felt is available for NFL, NBA, MLB, NHL, and NCAA teams. The logos and colors are printed using commercial-grade processes for vibrant, durable results. Ask us about availability for your specific team." },
+      ],
+    },
+  },
+  "american-heritage": {
+    tagline: "Where style meets play",
+    content: {
+      heroImage: "/images/brands/scene-american-heritage.webp",
+      story: "American Heritage believes a pool table should be as beautiful as any piece of furniture in your home. Their tables combine stunning design with serious playability \u2014 convertible dining tops, elegant carved legs, and finishes that make a game room feel like a showroom.",
+      highlights: [
+        "Furniture-first design philosophy",
+        "Dining table conversion tops available",
+        "Elegant carved hardwood legs",
+        "Premium slate playing surface",
+        "Multiple finish options",
+        "Bridges the gap between furniture and billiards",
+      ],
+      collections: [
+        { name: "Alta", description: "Modern lines with a focus on minimalist proportions and contemporary materials." },
+        { name: "Elliot", description: "Transitional design that pairs classic proportions with updated finish options." },
+        { name: "Marietta", description: "Traditional elegance with carved details, turned legs, and rich wood finishes." },
+        { name: "Quest", description: "Contemporary design with an available dining conversion top \u2014 pool table by night, dinner table by day." },
+      ],
+      craftsmanship: "American Heritage builds with select hardwood solids and veneers, featuring hand-carved accents on their traditional models. Every table has a 1-inch slate bed and premium K-66 cushion rubber for serious playability. Multi-step hand-applied finishes give each table a depth and luster that matches the finest furniture in your home. The optional dining conversion tops are engineered for a seamless fit.",
+      whyBuyFromUs: "American Heritage tables solve a real problem \u2014 how do you get a quality pool table into a room that also needs to function as a living space? Their dining conversion options and furniture-grade design make it possible. Lexington Billiards delivers these dual-purpose tables with free setup, your choice of cloth color, and the service expertise to keep them playing and looking perfect for years.",
+      faqs: [
+        { question: "Can American Heritage tables convert to dining tables?", answer: "Yes. Select American Heritage models, like the Quest, offer precision-fit dining conversion tops that transform your pool table into an elegant dining surface. The tops are engineered to fit securely and look beautiful \u2014 guests won\u2019t know there\u2019s a pool table underneath." },
+        { question: "What styles does American Heritage offer?", answer: "American Heritage covers the full spectrum \u2014 from the minimalist Alta to the traditionally carved Marietta. Their transitional Elliot model bridges classic and contemporary, while the Quest adds dining conversion capability. There\u2019s a style for every home." },
+        { question: "Are American Heritage tables good for serious players?", answer: "Absolutely. Despite their furniture-forward design, every American Heritage table features a 1-inch slate playing surface and premium K-66 cushion rubber. These tables play as well as they look \u2014 the furniture-grade aesthetics don\u2019t come at the expense of playability." },
+        { question: "What finishes are available?", answer: "American Heritage offers multiple finish options across their product lines, from light natural tones to rich dark stains. Each finish is hand-applied in multiple coats for depth and durability. Visit our Lexington showroom to see finish samples in person." },
+        { question: "How does American Heritage compare to other premium brands?", answer: "American Heritage occupies a unique niche \u2014 they prioritize furniture-grade design and aesthetics alongside premium playability. Where brands like Brunswick focus on tournament heritage and Connelly on hand-crafted Arizona quality, American Heritage excels at making pool tables that are genuinely beautiful pieces of furniture." },
+      ],
+    },
+  },
+}

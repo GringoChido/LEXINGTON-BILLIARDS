@@ -47,7 +47,7 @@ export const navLinks: { href: string; label: T }[] = [
 export const whyUs = [
   {
     title: "Built on Pool Tables Since 1975",
-    description: "The Wilson family has sold, delivered, and serviced pool tables in Central Kentucky for 50 years. C.L. Bailey, Brunswick, Olhausen, Imperial, American Heritage.",
+    description: "The Wilson family has sold, delivered, and serviced pool tables in Central Kentucky for 50 years. C.L. Bailey, Brunswick, Connelly, Imperial, American Heritage.",
   },
   {
     title: "Lexington's Oldest Spa Dealer",

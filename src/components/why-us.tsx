@@ -18,8 +18,8 @@ const whyUsItems: { title: T; description: T }[] = [
   {
     title: { en: "Built on Pool Tables Since 1975", es: "Construido Sobre Mesas de Billar Desde 1975" },
     description: {
-      en: "The Wilson family has sold, delivered, and serviced pool tables in Central Kentucky for 50 years. C.L. Bailey, Brunswick, Olhausen, Imperial, American Heritage.",
-      es: "La familia Wilson ha vendido, entregado y dado servicio a mesas de billar en el centro de Kentucky durante 50 a\u00f1os. C.L. Bailey, Brunswick, Olhausen, Imperial, American Heritage.",
+      en: "The Wilson family has sold, delivered, and serviced pool tables in Central Kentucky for 50 years. C.L. Bailey, Brunswick, Connelly, Imperial, American Heritage.",
+      es: "La familia Wilson ha vendido, entregado y dado servicio a mesas de billar en el centro de Kentucky durante 50 a\u00f1os. C.L. Bailey, Brunswick, Connelly, Imperial, American Heritage.",
     },
   },
   {

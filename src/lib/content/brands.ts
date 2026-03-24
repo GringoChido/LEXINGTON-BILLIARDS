@@ -51,16 +51,6 @@ export const poolTableBrands: Brand[] = [
     image: "/images/brands/scene-connelly.webp",
   },
   {
-    name: "Olhausen",
-    slug: "olhausen",
-    tagline: "Made in America since 1972",
-    description:
-      "Every Olhausen table is handcrafted in Portland, Tennessee with premium hardwoods and Italian slate. Built to last generations, not just years.",
-    scene: "Olhausen pool table in modern game room, clean lines, contemporary finish, LED table light above",
-    image: "/images/brands/scene-olhausen.webp",
-    established: "1972",
-  },
-  {
     name: "Imperial",
     slug: "imperial",
     tagline: "Game room furniture, perfected",
@@ -178,7 +168,6 @@ export const brandLogos: Record<string, string> = {
   "brunswick": "/images/brands/brunswick.svg",
   "ae-schmidt": "/images/brands/ae-schmidt.webp",
   "connelly": "/images/brands/connelly.svg",
-  "olhausen": "/images/brands/olhausen.svg",
   "imperial": "/images/brands/imperial.webp",
   "american-heritage": "/images/brands/american-heritage.webp",
   "american-whirlpool": "/images/brands/american-whirlpool.webp",

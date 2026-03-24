@@ -44,8 +44,8 @@ const quickReplies: QuickReply[] = [
   {
     question: { en: "What brands do you carry?", es: "\u00bfQu\u00e9 marcas manejan?" },
     answer: {
-      en: "We carry Brunswick, Olhausen, C.L. Bailey, Connelly, A.E. Schmidt, Imperial, American Heritage pool tables. American Whirlpool & Vita Spa hot tubs. Big Green Egg grills. Custom arcade machines. RAM Game Room furniture & more!",
-      es: "Manejamos mesas de billar Brunswick, Olhausen, C.L. Bailey, Connelly, A.E. Schmidt, Imperial, American Heritage. Jacuzzis American Whirlpool y Vita Spa. Parrillas Big Green Egg. M\u00e1quinas arcade personalizadas. Muebles RAM Game Room \u00a1y m\u00e1s!",
+      en: "We carry Brunswick, C.L. Bailey, Connelly, A.E. Schmidt, Imperial, American Heritage pool tables. American Whirlpool & Vita Spa hot tubs. Big Green Egg grills. Custom arcade machines. RAM Game Room furniture & more!",
+      es: "Manejamos mesas de billar Brunswick, C.L. Bailey, Connelly, A.E. Schmidt, Imperial, American Heritage. Jacuzzis American Whirlpool y Vita Spa. Parrillas Big Green Egg. M\u00e1quinas arcade personalizadas. Muebles RAM Game Room \u00a1y m\u00e1s!",
     },
   },
   {
