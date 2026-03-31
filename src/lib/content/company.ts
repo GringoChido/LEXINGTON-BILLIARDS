@@ -24,7 +24,7 @@ export const company = {
   },
   social: {
     facebook: "https://www.facebook.com/Lexington-Billiards-Spas-128542447211835/",
-    instagram: "#",
+    instagram: "https://www.instagram.com/lexingtonbilliards/",
   },
   deliveryRadius: "50 miles",
   serviceArea: "Central Kentucky",

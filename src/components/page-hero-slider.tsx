@@ -58,7 +58,7 @@ export const PageHeroSlider = ({
           {slides[current].image ? (
             <Image
               src={slides[current].image}
-              alt=""
+              alt={slides[current].headline}
               fill
               priority={current === 0}
               className="object-cover"

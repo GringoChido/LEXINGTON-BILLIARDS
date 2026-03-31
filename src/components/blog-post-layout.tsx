@@ -95,6 +95,46 @@ export const BlogPostLayout = ({
         </div>
       </section>
 
+      {/* About the Author */}
+      <section className="py-8">
+        <div className="mx-auto max-w-[var(--narrow-max)] px-[var(--section-px)]">
+          <div
+            className="rounded-xl border p-6 flex items-start gap-4"
+            style={{ borderColor: "var(--color-border)", background: "var(--color-surface)" }}
+          >
+            <div
+              className="w-12 h-12 rounded-full shrink-0 flex items-center justify-center font-display font-bold text-lg"
+              style={{ background: "var(--color-primary)", color: "white" }}
+            >
+              GW
+            </div>
+            <div>
+              <p
+                className="font-display font-bold text-sm mb-1"
+                style={{ color: "var(--color-text)" }}
+              >
+                {post.author}
+              </p>
+              <p
+                className="text-xs leading-relaxed"
+                style={{ color: "var(--color-text-secondary)" }}
+              >
+                Owner of Lexington Billiards & Spas since 1975. Greg has spent
+                50+ years selling, delivering, and servicing pool tables, hot
+                tubs, and game room furniture in Central Kentucky.{" "}
+                <Link
+                  href="/about"
+                  className="underline"
+                  style={{ color: "var(--color-primary)" }}
+                >
+                  Read our story
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Product page CTA */}
       <section className="py-8">
         <div className="mx-auto max-w-[var(--narrow-max)] px-[var(--section-px)] text-center">

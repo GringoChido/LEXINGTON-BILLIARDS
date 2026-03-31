@@ -150,6 +150,7 @@ export const accessoryBrands: Brand[] = [
     tagline: "Officially licensed game room gear",
     description:
       "Imperial holds official licenses from the NFL, NBA, MLB, NHL, and NCAA. Team-branded pool table felt, cues, dart cabinets, and wall art — represent your team in your game room.",
+    image: "/images/brands/scene-imperial.webp",
     scene: "Imperial NFL-branded pool table felt and team cues in sports-themed game room, jerseys on wall",
   },
   {
@@ -158,6 +159,7 @@ export const accessoryBrands: Brand[] = [
     tagline: "The light that changes the room",
     description:
       "Toltec builds pendant lights and billiard fixtures that transform a game room from functional to unforgettable. Hand-blown art glass shades in dozens of styles.",
+    image: "/images/brands/scene-toltec.jpg",
     scene: "Toltec billiard pendant light over pool table, hand-blown art glass shade, warm ambient glow",
   },
 ]

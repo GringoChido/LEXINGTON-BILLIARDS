@@ -8,6 +8,9 @@ import { BigGreenEggContent } from "./content"
 
 export const metadata: Metadata = {
   title: "Big Green Egg Dealer in Lexington, KY | All Sizes In Stock",
+  alternates: {
+    canonical: "https://lexingtonbilliardsandspas.com/big-green-egg",
+  },
   description:
     "Authorized Big Green Egg dealer in Lexington, KY. All sizes in stock — 2XL to Mini. EGGcessories, organic lump charcoal, and expert advice. Serving Central Kentucky since 1975.",
   openGraph: {

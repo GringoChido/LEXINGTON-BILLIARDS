@@ -9,8 +9,11 @@ import { useLanguage, type T } from "@/lib/i18n/context"
 const companyLinks: { href: string; label: T }[] = [
   { href: "/about", label: { en: "About Us", es: "Nosotros" } },
   { href: "/contact", label: { en: "Contact", es: "Contacto" } },
-  { href: "/contact", label: { en: "Service & Repair", es: "Servicio y Reparaci\u00f3n" } },
-  { href: "/contact", label: { en: "Financing", es: "Financiamiento" } },
+  { href: "/services", label: { en: "Service & Repair", es: "Servicio y Reparación" } },
+  { href: "/financing", label: { en: "Financing", es: "Financiamiento" } },
+  { href: "/brands", label: { en: "Our Brands", es: "Nuestras Marcas" } },
+  { href: "/privacy", label: { en: "Privacy Policy", es: "Política de Privacidad" } },
+  { href: "/terms", label: { en: "Terms of Service", es: "Términos de Servicio" } },
 ]
 
 export const Footer = () => {

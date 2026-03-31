@@ -2,46 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lexingtonbilliardsandspas.com/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://lexingtonbilliardsandspas.com/pool-tables</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lexingtonbilliardsandspas.com/spas</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lexingtonbilliardsandspas.com/big-green-egg</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lexingtonbilliardsandspas.com/arcade-machines</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lexingtonbilliardsandspas.com/billiard-accessories</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- New Pages -->
   <url>
-    <loc>https://lexingtonbilliardsandspas.com/blog</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://lexingtonbilliardsandspas.com/services</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/financing</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/brands</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/blog</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/about</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/contact</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/privacy</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/terms</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <!-- Pool Table Blog Posts -->
   <url>
     <loc>https://lexingtonbilliardsandspas.com/blog/how-much-does-a-pool-table-cost</loc>
     <lastmod>2026-03-19</lastmod>
@@ -126,6 +170,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Hot Tub Blog Posts -->
   <url>
     <loc>https://lexingtonbilliardsandspas.com/blog/how-much-does-a-hot-tub-cost</loc>
     <lastmod>2026-03-19</lastmod>
@@ -210,15 +255,71 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Big Green Egg Blog Posts -->
   <url>
-    <loc>https://lexingtonbilliardsandspas.com/about</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://lexingtonbilliardsandspas.com/blog/big-green-egg-prices-by-size</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lexingtonbilliardsandspas.com/contact</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://lexingtonbilliardsandspas.com/blog/what-can-you-cook-on-big-green-egg</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/blog/is-big-green-egg-worth-it</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/blog/best-eggcessories</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/blog/big-green-egg-beginner-guide</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/blog/kamado-vs-big-green-egg</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Arcade Machine Blog Posts -->
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/blog/custom-arcade-cabinet-cost</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/blog/best-arcade-games-for-home</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/blog/bourbon-barrel-arcade-kentucky</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/blog/retro-vs-modern-arcade-machines</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexingtonbilliardsandspas.com/blog/arcade-machine-maintenance-guide</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -50,6 +50,9 @@ export const generateMetadata = async ({
   return {
     title: seo.title,
     description: seo.description,
+    alternates: {
+      canonical: `https://lexingtonbilliardsandspas.com/pool-tables/${slug}`,
+    },
     openGraph: {
       title: seo.title,
       description: seo.description,

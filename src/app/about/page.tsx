@@ -5,6 +5,9 @@ import { AboutContent } from "./content"
 
 export const metadata: Metadata = {
   title: "About Us | Family-Owned Since 1975 | Lexington Billiards & Spas",
+  alternates: {
+    canonical: "https://lexingtonbilliardsandspas.com/about",
+  },
   description:
     "Family-owned since 1975. The Wilson family has been selling, delivering, and servicing pool tables, hot tubs, and game room furniture in Central Kentucky for over 50 years.",
   openGraph: {

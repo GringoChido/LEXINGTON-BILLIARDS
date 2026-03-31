@@ -8,6 +8,9 @@ import { SpasContent } from "./content"
 
 export const metadata: Metadata = {
   title: "Hot Tubs & Spas in Lexington, KY | Factory-Authorized Dealer Since 1975",
+  alternates: {
+    canonical: "https://lexingtonbilliardsandspas.com/spas",
+  },
   description:
     "Lexington's oldest spa dealer. American Whirlpool and Vita Spa hot tubs with free delivery and installation, factory-authorized service, financing available. Serving Central Kentucky since 1975.",
   openGraph: {

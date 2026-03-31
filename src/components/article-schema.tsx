@@ -14,6 +14,12 @@ export const ArticleSchema = ({ post }: { post: BlogPost }) => {
     author: {
       "@type": "Person",
       name: post.author,
+      url: `${BASE_URL}/about`,
+      jobTitle: "Owner",
+      worksFor: {
+        "@type": "Organization",
+        name: "Lexington Billiards & Spas",
+      },
     },
     publisher: {
       "@type": "Organization",

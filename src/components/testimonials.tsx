@@ -32,11 +32,40 @@ const testimonialItems: { quote: T; author: string; location: string }[] = [
   },
 ]
 
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Lexington Billiards & Spas",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    reviewCount: "3",
+    bestRating: "5",
+  },
+  review: testimonialItems.map((item) => ({
+    "@type": "Review",
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "5",
+      bestRating: "5",
+    },
+    author: {
+      "@type": "Person",
+      name: item.author,
+    },
+    reviewBody: item.quote.en,
+  })),
+}
+
 export const Testimonials = () => {
   const { t } = useLanguage()
 
   return (
     <section className="py-[var(--section-py)]" style={{ background: "var(--color-surface)" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
       <div className="mx-auto max-w-[var(--content-max)] px-[var(--section-px)]">
         <SectionHeading
           label={t({ en: "From Our Customers", es: "De Nuestros Clientes" })}

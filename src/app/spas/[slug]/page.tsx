@@ -54,6 +54,9 @@ export const generateMetadata = async ({
   return {
     title: seo.title,
     description: seo.description,
+    alternates: {
+      canonical: `${BASE_URL}/spas/${slug}`,
+    },
     openGraph: {
       title: seo.title,
       description: seo.description,

@@ -4,8 +4,62 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { CTABlock } from "@/components/cta-block"
 import { ArticleSchema } from "@/components/article-schema"
+import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
+import { HowToSchema } from "@/components/howto-schema"
 import { BlogPostLayout } from "@/components/blog-post-layout"
-import { blogPosts, getPostBySlug } from "@/lib/content/blog"
+import { blogPosts, getPostBySlug, categoryLabels } from "@/lib/content/blog"
+
+const howToData: Record<string, { name: string; description: string; steps: { name: string; text: string }[] }> = {
+  "how-to-clean-pool-table-felt": {
+    name: "How to Clean Pool Table Felt",
+    description: "Step-by-step guide to properly clean and maintain your pool table cloth without damaging it.",
+    steps: [
+      { name: "Brush the felt", text: "Use a pool table brush to sweep the felt from one end to the other in straight, overlapping strokes. Always brush in one direction — head rail to foot rail. Never use circular motions." },
+      { name: "Vacuum gently", text: "Use a handheld vacuum on the lowest setting or use the upholstery attachment. Hold it slightly above the felt surface. Never press the nozzle directly into the cloth." },
+      { name: "Remove stains", text: "For chalk stains, use a damp (not wet) white cloth and blot gently. For tougher stains, use a specialized billiard cloth cleaner. Never use household cleaners, bleach, or excessive water." },
+      { name: "Clean the rails and pockets", text: "Wipe the rails with a damp cloth to remove chalk buildup. Clean leather pockets with a leather conditioner. Empty pocket debris regularly." },
+      { name: "Maintain regularly", text: "Brush after every playing session. Vacuum monthly. Cover the table when not in use to prevent dust accumulation and sun fading." },
+    ],
+  },
+  "how-to-level-a-pool-table": {
+    name: "How to Level a Pool Table",
+    description: "Step-by-step guide to leveling your pool table at home using simple tools.",
+    steps: [
+      { name: "Get a precision level", text: "Use a machinist's level or a high-quality carpenter's level at least 4 feet long. Phone apps are not accurate enough for pool table leveling." },
+      { name: "Check the slate", text: "Place the level on the slate surface (not the cloth) in multiple directions — lengthwise, widthwise, and diagonally. Check from center and edges." },
+      { name: "Identify the low spots", text: "Note which direction the bubble moves. The table is low on the side the bubble moves toward." },
+      { name: "Adjust the leg levelers", text: "Most quality tables have threaded leg levelers. Turn them to raise or lower each corner. Make small adjustments — 1/4 turn at a time." },
+      { name: "Use the marble test", text: "Place a billiard ball in the center of the table and watch if it rolls. Repeat at multiple spots. A properly leveled table will hold the ball still." },
+      { name: "Re-check and fine-tune", text: "Go back to the level and verify. It may take several rounds of adjustment. If the table still won't level, the floor itself may be uneven — shims under the legs can help." },
+    ],
+  },
+  "how-to-move-a-pool-table": {
+    name: "How to Move a Pool Table",
+    description: "Professional guide to disassembling, transporting, and reassembling a slate pool table without damage.",
+    steps: [
+      { name: "Remove the pockets", text: "Start by removing all six pockets. Leather pockets are typically screwed or bolted to the rails. Bag and label all hardware." },
+      { name: "Remove the rails", text: "Unbolt all rail sections from the slate. Rails are typically held by bolts accessible from underneath. Keep rails paired and labeled." },
+      { name: "Remove the felt", text: "If the felt is stapled, carefully pull staples with a flat tool. If glued, peel slowly to avoid tearing. Old felt may not survive removal — plan for new cloth." },
+      { name: "Remove the slate", text: "Unscrew the slate pieces from the frame. Three-piece slate is standard — each piece weighs 150-250 lbs. Requires 2-3 people minimum. Carry vertically, never flat." },
+      { name: "Disassemble the frame", text: "Remove legs and cross supports. Label everything for reassembly. Wrap legs to prevent scratches during transport." },
+      { name: "Transport carefully", text: "Use moving blankets on all components. Slate must be transported upright, secured against shifting. Never stack slate pieces on top of each other." },
+      { name: "Reassemble and level", text: "Reverse the process at the new location. Level the frame, place slate, fill seams with beeswax, install new felt, attach rails, and do final leveling." },
+    ],
+  },
+  "how-to-winterize-hot-tub-kentucky": {
+    name: "How to Winterize Your Hot Tub in Kentucky",
+    description: "Step-by-step winterization guide for Kentucky hot tub owners who need to shut down their spa for winter.",
+    steps: [
+      { name: "Turn off the power", text: "Switch off the hot tub at the breaker panel. Never work on a powered spa." },
+      { name: "Drain the water", text: "Use the drain valve or a submersible pump to empty all water. A pump is faster — a full hot tub holds 300-500 gallons." },
+      { name: "Blow out the lines", text: "Use a shop vac or air compressor on the blower setting to force water out of all plumbing lines, jets, and fittings. This prevents freeze damage." },
+      { name: "Remove and clean filters", text: "Take out all filter cartridges. Clean with filter cleaner, dry completely, and store indoors." },
+      { name: "Add antifreeze to lines", text: "Pour non-toxic RV antifreeze (propylene glycol, NOT ethylene glycol) into remaining low points in the plumbing." },
+      { name: "Clean and cover", text: "Wipe down the shell, secure the cover with locking straps, and place a tarp over the top for extra protection against Kentucky ice storms." },
+    ],
+  },
+}
+
 
 const BASE_URL = "https://lexingtonbilliardsandspas.com"
 
@@ -68,6 +122,30 @@ const mdxContent: Record<string, React.ComponentType> = {
     require("@/../content/blog/when-to-replace-hot-tub-cover.mdx").default,
   "monthly-hot-tub-maintenance-checklist":
     require("@/../content/blog/monthly-hot-tub-maintenance-checklist.mdx").default,
+  // ── Pillar 3: Big Green Egg ──
+  "big-green-egg-prices-by-size":
+    require("@/../content/blog/big-green-egg-prices-by-size.mdx").default,
+  "what-can-you-cook-on-big-green-egg":
+    require("@/../content/blog/what-can-you-cook-on-big-green-egg.mdx").default,
+  "is-big-green-egg-worth-it":
+    require("@/../content/blog/is-big-green-egg-worth-it.mdx").default,
+  "best-eggcessories":
+    require("@/../content/blog/best-eggcessories.mdx").default,
+  "big-green-egg-beginner-guide":
+    require("@/../content/blog/big-green-egg-beginner-guide.mdx").default,
+  "kamado-vs-big-green-egg":
+    require("@/../content/blog/kamado-vs-big-green-egg.mdx").default,
+  // ── Pillar 4: Arcade Machines ──
+  "custom-arcade-cabinet-cost":
+    require("@/../content/blog/custom-arcade-cabinet-cost.mdx").default,
+  "best-arcade-games-for-home":
+    require("@/../content/blog/best-arcade-games-for-home.mdx").default,
+  "bourbon-barrel-arcade-kentucky":
+    require("@/../content/blog/bourbon-barrel-arcade-kentucky.mdx").default,
+  "retro-vs-modern-arcade-machines":
+    require("@/../content/blog/retro-vs-modern-arcade-machines.mdx").default,
+  "arcade-machine-maintenance-guide":
+    require("@/../content/blog/arcade-machine-maintenance-guide.mdx").default,
 }
 
 type Params = Promise<{ slug: string }>
@@ -88,6 +166,9 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    alternates: {
+      canonical: `${BASE_URL}/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
@@ -111,6 +192,8 @@ export default async function BlogPostPage({
   const Content = mdxContent[slug]
   if (!Content) notFound()
 
+  const howTo = howToData[slug]
+
   return (
     <>
       <Navbar />
@@ -119,6 +202,21 @@ export default async function BlogPostPage({
           <Content />
         </BlogPostLayout>
         <ArticleSchema post={post} />
+        <BreadcrumbSchema
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Blog", href: "/blog" },
+            { name: post.title, href: `/blog/${slug}` },
+          ]}
+        />
+        {howTo && (
+          <HowToSchema
+            name={howTo.name}
+            description={howTo.description}
+            image={post.image}
+            steps={howTo.steps}
+          />
+        )}
         <CTABlock headline="Ready to Make Your Home Legendary?" />
       </main>
       <Footer />

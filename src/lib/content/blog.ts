@@ -17,12 +17,14 @@ export type BlogCategory =
   | "pool-tables"
   | "hot-tubs"
   | "big-green-egg"
+  | "arcade"
   | "game-room"
 
 export const categoryLabels: Record<BlogCategory, string> = {
   "pool-tables": "Pool Tables",
   "hot-tubs": "Hot Tubs & Spas",
   "big-green-egg": "Big Green Egg",
+  "arcade": "Arcade Machines",
   "game-room": "Game Room",
 }
 
@@ -45,6 +47,11 @@ export const categoryColors: Record<
     text: "#2D6A2F",
     pill: "pill-dark",
   },
+  "arcade": {
+    bg: "rgba(139,69,19,0.1)",
+    text: "#8B4513",
+    pill: "pill-orange",
+  },
   "game-room": {
     bg: "rgba(232,98,26,0.1)",
     text: "#E8621A",
@@ -56,6 +63,7 @@ export const categoryToProductPage: Record<BlogCategory, string> = {
   "pool-tables": "/pool-tables",
   "hot-tubs": "/spas",
   "big-green-egg": "/big-green-egg",
+  "arcade": "/arcade-machines",
   "game-room": "/arcade-machines",
 }
 
@@ -430,6 +438,155 @@ export const blogPosts: BlogPost[] = [
     imageAlt: "Hot tub maintenance supplies and water testing kit",
     readingTime: "7 min read",
     tags: ["hot tubs", "maintenance", "checklist", "water care"],
+  },
+  // ── Pillar 3: Big Green Egg ──
+  {
+    slug: "big-green-egg-prices-by-size",
+    title: "Big Green Egg Prices by Size: 2026 Complete Guide",
+    description:
+      "A complete price breakdown for every Big Green Egg size from Mini to 2XL. What each size costs, what's included, and which one is right for you.",
+    category: "big-green-egg",
+    author: "Greg Wilson",
+    publishedAt: "2026-03-30",
+    image: "/images/blog/pool-table-cost-guide.webp",
+    imageAlt: "Big Green Egg grills in multiple sizes on display",
+    readingTime: "8 min read",
+    featured: true,
+    tags: ["Big Green Egg", "pricing", "sizes", "buying guide"],
+  },
+  {
+    slug: "what-can-you-cook-on-big-green-egg",
+    title: "What Can You Cook on a Big Green Egg? 25+ Ideas",
+    description:
+      "From brisket to pizza to bread to dessert — the Big Green Egg does it all. 25+ dishes organized by cooking method with temperature guides.",
+    category: "big-green-egg",
+    author: "Greg Wilson",
+    publishedAt: "2026-03-30",
+    image: "/images/blog/pool-table-cost-guide.webp",
+    imageAlt: "Food cooking on a Big Green Egg ceramic grill",
+    readingTime: "9 min read",
+    tags: ["Big Green Egg", "recipes", "cooking", "grilling"],
+  },
+  {
+    slug: "is-big-green-egg-worth-it",
+    title: "Is a Big Green Egg Worth It? An Honest Dealer Review",
+    description:
+      "An honest assessment from a dealer who sells Big Green Eggs every day. Pros, cons, who it's for, and who should skip it.",
+    category: "big-green-egg",
+    author: "Greg Wilson",
+    publishedAt: "2026-03-30",
+    image: "/images/blog/pool-table-cost-guide.webp",
+    imageAlt: "Big Green Egg on a patio with accessories",
+    readingTime: "7 min read",
+    featured: true,
+    tags: ["Big Green Egg", "review", "buying guide", "comparison"],
+  },
+  {
+    slug: "best-eggcessories",
+    title: "Best EGGcessories: Must-Have Big Green Egg Accessories",
+    description:
+      "The top must-have accessories for your Big Green Egg. ConvEGGtor, pizza stone, ash tool, and more — what they do and why you need them.",
+    category: "big-green-egg",
+    author: "Greg Wilson",
+    publishedAt: "2026-03-30",
+    image: "/images/blog/pool-table-cost-guide.webp",
+    imageAlt: "Big Green Egg accessories and EGGcessories display",
+    readingTime: "7 min read",
+    tags: ["Big Green Egg", "accessories", "EGGcessories"],
+  },
+  {
+    slug: "big-green-egg-beginner-guide",
+    title: "How to Use a Big Green Egg for Beginners",
+    description:
+      "Your first cook on a Big Green Egg — from lighting to temperature control to common mistakes. A beginner's guide from a dealer who's helped hundreds of new Egg owners.",
+    category: "big-green-egg",
+    author: "Greg Wilson",
+    publishedAt: "2026-03-30",
+    image: "/images/blog/pool-table-cost-guide.webp",
+    imageAlt: "Lighting charcoal in a Big Green Egg for the first time",
+    readingTime: "8 min read",
+    tags: ["Big Green Egg", "beginner", "how-to", "temperature"],
+  },
+  {
+    slug: "kamado-vs-big-green-egg",
+    title: "Kamado Grill vs. Big Green Egg: What's the Difference?",
+    description:
+      "What 'kamado' means, how Big Green Egg compares to generic kamado grills, and why buying from an authorized dealer matters.",
+    category: "big-green-egg",
+    author: "Greg Wilson",
+    publishedAt: "2026-03-30",
+    image: "/images/blog/pool-table-cost-guide.webp",
+    imageAlt: "Big Green Egg compared with generic kamado grill",
+    readingTime: "7 min read",
+    tags: ["Big Green Egg", "kamado", "comparison", "buying guide"],
+  },
+  // ── Pillar 4: Arcade Machines ──
+  {
+    slug: "custom-arcade-cabinet-cost",
+    title: "Custom Arcade Cabinet Cost: What to Budget For",
+    description:
+      "Price ranges for custom multicade cabinets, virtual pinball, cocktail tables, and commercial machines. What affects cost and what you get for your money.",
+    category: "arcade",
+    author: "Greg Wilson",
+    publishedAt: "2026-03-30",
+    image: "/images/blog/pool-table-cost-guide.webp",
+    imageAlt: "Custom arcade cabinet in a game room",
+    readingTime: "7 min read",
+    featured: true,
+    tags: ["arcade", "pricing", "custom cabinet", "buying guide"],
+  },
+  {
+    slug: "best-arcade-games-for-home",
+    title: "Best Arcade Games for Home: The Ultimate Game List",
+    description:
+      "The classic arcade games everyone loves and why 60+ games in one cabinet is the way to go. Organized by era and style.",
+    category: "arcade",
+    author: "Greg Wilson",
+    publishedAt: "2026-03-30",
+    image: "/images/blog/pool-table-cost-guide.webp",
+    imageAlt: "Classic arcade games on a multicade cabinet screen",
+    readingTime: "8 min read",
+    tags: ["arcade", "games", "classic games", "multicade"],
+  },
+  {
+    slug: "bourbon-barrel-arcade-kentucky",
+    title: "Bourbon Barrel Arcade: Kentucky-Made Custom Cabinets",
+    description:
+      "The story behind bourbon barrel arcade cabinets — a uniquely Kentucky creation. Build process, materials, and why these are the most talked-about game room piece.",
+    category: "arcade",
+    author: "Greg Wilson",
+    publishedAt: "2026-03-30",
+    image: "/images/blog/pool-table-cost-guide.webp",
+    imageAlt: "Bourbon barrel arcade cabinet built in Kentucky",
+    readingTime: "6 min read",
+    featured: true,
+    tags: ["arcade", "bourbon barrel", "Kentucky", "custom"],
+  },
+  {
+    slug: "retro-vs-modern-arcade-machines",
+    title: "Retro vs. Modern Arcade Machines: Which Should You Buy?",
+    description:
+      "Original vintage arcade machines vs. modern multicade reproductions. Maintenance, cost, reliability, and game variety compared.",
+    category: "arcade",
+    author: "Greg Wilson",
+    publishedAt: "2026-03-30",
+    image: "/images/blog/pool-table-cost-guide.webp",
+    imageAlt: "Retro and modern arcade machines side by side",
+    readingTime: "7 min read",
+    tags: ["arcade", "retro", "modern", "comparison"],
+  },
+  {
+    slug: "arcade-machine-maintenance-guide",
+    title: "Arcade Machine Maintenance: Keep Your Games Running",
+    description:
+      "Screen care, button replacement, software updates, and when to call a professional. Keep your home arcade in perfect condition.",
+    category: "arcade",
+    author: "Greg Wilson",
+    publishedAt: "2026-03-30",
+    image: "/images/blog/pool-table-cost-guide.webp",
+    imageAlt: "Maintaining an arcade machine with new buttons and joystick",
+    readingTime: "6 min read",
+    tags: ["arcade", "maintenance", "repair", "how-to"],
   },
 ]
 

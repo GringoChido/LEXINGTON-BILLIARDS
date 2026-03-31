@@ -8,6 +8,9 @@ import { PoolTablesContent } from "./content"
 
 export const metadata: Metadata = {
   title: "Pool Tables in Lexington, KY | Free Delivery & Setup Since 1975",
+  alternates: {
+    canonical: "https://lexingtonbilliardsandspas.com/pool-tables",
+  },
   description:
     "C.L. Bailey, Brunswick, A.E. Schmidt, Connelly, Imperial, and American Heritage pool tables. Free delivery within 50 miles, professional installation, and 29 cloth color choices. Lexington's oldest billiards dealer since 1975.",
   openGraph: {

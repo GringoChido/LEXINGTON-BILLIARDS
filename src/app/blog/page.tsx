@@ -6,6 +6,9 @@ import { BlogListing } from "@/components/blog-listing"
 
 export const metadata: Metadata = {
   title: "Blog | Pool Tables, Hot Tubs & Game Room Guides",
+  alternates: {
+    canonical: "https://lexingtonbilliardsandspas.com/blog",
+  },
   description:
     "Expert guides, buying advice, and tips from Lexington Billiards & Spas. 50 years of knowledge about pool tables, hot tubs, Big Green Egg, and game room design.",
   openGraph: {

@@ -8,6 +8,9 @@ import { BilliardAccessoriesContent } from "./content"
 
 export const metadata: Metadata = {
   title: "Game Room Accessories in Lexington, KY | Cues, Lighting & Furniture",
+  alternates: {
+    canonical: "https://lexingtonbilliardsandspas.com/billiard-accessories",
+  },
   description:
     "Pool cues, billiard lighting, bar stools, cloth, and game room furniture. Falcon Cues, Imperial, Toltec Lighting, and RAM. Visit our Lexington showroom.",
   openGraph: {
@@ -37,6 +40,21 @@ const accessoryFAQs = [
     question: "What kind of pool table light do I need?",
     answer:
       "Your light should be 2/3 the length of your table and hang 32-36 inches above the playing surface. Toltec billiard lights come in dozens of art glass styles. Visit our showroom to see them installed over actual tables.",
+  },
+  {
+    question: "Do you carry University of Kentucky game room gear?",
+    answer:
+      "Yes. Imperial carries officially licensed University of Kentucky Wildcats pool table felt, cues, dart cabinets, pub tables, and wall art. We keep popular UK items in stock and can order the full NCAA range.",
+  },
+  {
+    question: "Do you offer cue repair services?",
+    answer:
+      "Yes. We offer professional cue repair including re-tipping, shaft straightening, wrap replacement, and ferrule repair. Bring in any brand of cue — our technicians will get it playing like new.",
+  },
+  {
+    question: "Can I buy replacement pool table cloth from you?",
+    answer:
+      "Yes. We stock Championship and Simonis cloth in 29 colors. We also offer professional re-cloth service — we'll install new cloth on your table and have it playing perfectly the same day.",
   },
 ]
 
