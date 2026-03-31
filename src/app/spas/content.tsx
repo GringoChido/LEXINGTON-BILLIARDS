@@ -4,7 +4,6 @@ import { PageHeroSlider } from "@/components/page-hero-slider"
 import { BrandCard } from "@/components/brand-card"
 import { SectionHeading } from "@/components/section-heading"
 import { CTABlock } from "@/components/cta-block"
-import { ScenePlaceholder } from "@/components/scene-placeholder"
 import { spaBrands } from "@/lib/content/brands"
 import { useLanguage, type T } from "@/lib/i18n/context"
 import { motion } from "framer-motion"
@@ -69,12 +68,12 @@ const pills = [
 ]
 
 const showroomProducts = [
-  { name: { en: "2-Person Intimate", es: "2 Personas Íntimo" } as T, scene: "Small two-person spa, cozy patio" },
-  { name: { en: "4-Person Family", es: "4 Personas Familiar" } as T, scene: "Medium family spa, deck setting" },
-  { name: { en: "6-Person Party", es: "6 Personas para Fiestas" } as T, scene: "Large spa, outdoor entertaining" },
-  { name: { en: "8-Person Premium", es: "8 Personas Premium" } as T, scene: "Luxury large spa, evening glow" },
-  { name: { en: "Swim Spa", es: "Swim Spa" } as T, scene: "Swim spa, long pool shape, covered patio" },
-  { name: { en: "Spa + Gazebo Package", es: "Paquete Spa + Gazebo" } as T, scene: "Spa under gazebo, string lights" },
+  { name: { en: "2-Person Intimate", es: "2 Personas Íntimo" } as T, image: "/images/spas/2-person-intimate.webp", alt: "Small modern spa with turquoise water and stone patio surround" },
+  { name: { en: "4-Person Family", es: "4 Personas Familiar" } as T, image: "/images/spas/4-person-family.webp", alt: "Family hot tub on a wooden deck surrounded by lush garden" },
+  { name: { en: "6-Person Party", es: "6 Personas para Fiestas" } as T, image: "/images/spas/6-person-party.webp", alt: "Friends enjoying a large outdoor hot tub in the evening" },
+  { name: { en: "8-Person Premium", es: "8 Personas Premium" } as T, image: "/images/spas/8-person-premium.webp", alt: "Luxury premium spa and pool with evening lighting" },
+  { name: { en: "Swim Spa", es: "Swim Spa" } as T, image: "/images/spas/swim-spa.webp", alt: "Swim spa with wooden deck and lounge area" },
+  { name: { en: "Spa + Gazebo Package", es: "Paquete Spa + Gazebo" } as T, image: "/images/spas/spa-gazebo-package.webp", alt: "Beautiful gazebo with string lights, perfect for a spa setup" },
 ]
 
 export const SpasContent = () => {
@@ -151,7 +150,14 @@ export const SpasContent = () => {
                 className="rounded-xl overflow-hidden card-hover border"
                 style={{ borderColor: "var(--color-border)", background: "var(--color-background)" }}
               >
-                <ScenePlaceholder label={product.scene} aspectRatio="4/3" />
+                <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
+                  <img
+                    src={product.image}
+                    alt={product.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div className="p-5">
                   <h4 className="heading text-[length:var(--text-h4)] mb-2" style={{ color: "var(--color-text)" }}>{t(product.name)}</h4>
                   <span className="text-sm font-bold" style={{ color: "var(--cat-secondary, #1A8FA0)" }}>{t({ en: "See in Showroom", es: "Ver en Showroom" })} &rarr;</span>
